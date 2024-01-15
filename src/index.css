@@ -461,15 +461,14 @@ li:hover::before {
     display: block;
     border: white;
     font-size: 50px;
-    line-height: 100px;
     flex-direction: column;
     justify-content: center;
-    margin-left: 359px;
-    margin-top: -100px;
+    margin-left: 265px;
+    margin-top: -110px;
     border: transparent;
     padding-right: -10px;
     padding-left: -19px;
-    width: 300px;
+    width: 350px;
     position: relative;
   }
   .navBar {
@@ -499,5 +498,9 @@ li:hover::before {
     color: white;
     background-color: black;
     border-color: black;
+    height: 150px;
+padding-top: 50px;
+padding-left: 50px;
+justify-content: center;
   }
 }

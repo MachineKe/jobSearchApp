@@ -4,30 +4,6 @@ import { MdOutlineClose } from "react-icons/md";
 import { useState } from "react";
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(true);
-  // const [showHamButton, setShowHamButton] = useState("");
-  // const [showCloseButton, setShowCloseButton] = useState("");
-
-  // const openMenu = () => {
-  //   setNavOpen(false);
-  // };
-  // const closeMenu = () => {
-  //   setNavOpen(true);
-  // };
-
-  // const showHamBtn = () => {
-  //   setShowHamButton(true);
-
-  //   setShowCloseButton(true);
-  // };
-  // const showCloseBtn = () => {
-  //   setShowHamButton(false);
-  //   setShowCloseButton(true);
-  // };
-
-  // const navFunc = () => {
-  //   closeMenu();
-  //   openMenu();
-  // };
 
   return (
     <div className="navBar">
@@ -37,7 +13,6 @@ const NavBar = () => {
         </p1>
 
         <div className="mobileMenu">
-          
           <button
             className="menuBtn"
             id="openMenuBtn"
@@ -45,8 +20,6 @@ const NavBar = () => {
           >
             {navOpen ? <GiHamburgerMenu /> : <MdOutlineClose />}
           </button>
-          
-     
 
           {!navOpen && (
             <div id="mobileMenu">
