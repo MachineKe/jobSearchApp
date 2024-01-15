@@ -3,34 +3,31 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 import { useState } from "react";
 const NavBar = () => {
-  const [navOpen, setNavOpen] = useState('');
-  const [showHamButton, setShowHamButton] = useState('');
-  const [showCloseButton, setShowCloseButton] = useState('');
+  const [navOpen, setNavOpen] = useState(true);
+  // const [showHamButton, setShowHamButton] = useState("");
+  // const [showCloseButton, setShowCloseButton] = useState("");
 
-  const openMenu = () => {
-    setNavOpen(false);
-  };
-  const closeMenu = () => {
-    setNavOpen(true);
-  };
+  // const openMenu = () => {
+  //   setNavOpen(false);
+  // };
+  // const closeMenu = () => {
+  //   setNavOpen(true);
+  // };
 
-  const showHamBtn = () => {
-       setShowHamButton(true)
+  // const showHamBtn = () => {
+  //   setShowHamButton(true);
 
-        setShowCloseButton(true)
+  //   setShowCloseButton(true);
+  // };
+  // const showCloseBtn = () => {
+  //   setShowHamButton(false);
+  //   setShowCloseButton(true);
+  // };
 
-  }
-  const showCloseBtn = () => {
-    setShowHamButton(false)
-        setShowCloseButton(true)
-
-  }
-
-  const navFunc = () => {
-    closeMenu();
-    showHamBtn();
-showCloseBtn()
-  }
+  // const navFunc = () => {
+  //   closeMenu();
+  //   openMenu();
+  // };
 
   return (
     <div className="navBar">
@@ -40,16 +37,16 @@ showCloseBtn()
         </p1>
 
         <div className="mobileMenu">
-         
-         
-      {! showHamButton &&   <button className="menuBtn" id="openMenuBtn" onClick={openMenu}>
-            <GiHamburgerMenu />
-          </button> 
-}
-
-         {!showCloseButton && <button className="menuBtn" id="closeMenuBtn" onClick={navFunc}>
-            <MdOutlineClose />
-          </button>}
+          
+          <button
+            className="menuBtn"
+            id="openMenuBtn"
+            onClick={() => setNavOpen(!navOpen)}
+          >
+            {navOpen ? <GiHamburgerMenu /> : <MdOutlineClose />}
+          </button>
+          
+     
 
           {!navOpen && (
             <div id="mobileMenu">
