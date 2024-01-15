@@ -471,6 +471,7 @@ margin-top: -130px;
   .navBar {
     height: 1px;
     z-index: 1;
+
   }
 
   .logoDiv {
@@ -486,12 +487,15 @@ margin-top: -50px;
     font-size: 120px;
     align-content: center;
     color: black;
+    border-color: transparent;
     background-color: transparent;
 margin-left: 470px;
-margin-top: 7px;
     height: 95px;
-    border: none;
-    padding-top: 10px;
+    padding-top: 19px;
+    padding-bottom: 100px;
+    &:active {
+    border:solid red 2px;
+    }
   }
   .menuList {
     color: white;
