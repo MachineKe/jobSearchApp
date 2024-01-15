@@ -459,48 +459,49 @@ li:hover::before {
   }
   .mobileMenu {
     display: block;
-    border: white;
     font-size: 50px;
     flex-direction: column;
     justify-content: center;
-    margin-left: 265px;
+    margin-left: 100px;
     margin-top: -110px;
-    border: transparent;
-    padding-right: -10px;
-    padding-left: -19px;
-    width: 350px;
+    width: 550px;
     position: relative;
+margin-top: -130px;
   }
   .navBar {
-    height: 10px;
+    height: 1px;
     z-index: 1;
-    margin-top: 0;
   }
 
   .logoDiv {
     height: inherit;
     background-color: transparent;
+margin-top: -50px;
   }
   .logo {
-    font-size: 40px;
+    font-size: 70px;
+
   }
   .menuBtn {
-    font-size: 100px;
-    width: 100%;
+    font-size: 120px;
     align-content: center;
     color: black;
-    background-color: white;
-    padding-left: 200px;
+    background-color: transparent;
+margin-left: 470px;
+margin-top: 7px;
     height: 95px;
     border: none;
+    padding-top: 10px;
   }
   .menuList {
     color: white;
     background-color: black;
+    opacity: 70%;
     border-color: black;
     height: 150px;
 padding-top: 50px;
-padding-left: 50px;
+padding-left: 20px;
 justify-content: center;
+width: 600px;
   }
 }
