@@ -28,8 +28,8 @@ const NavBar = () => {
 
   const navFunc = () => {
     closeMenu();
-//     showHamBtn();
-// showCloseBtn()
+    showHamBtn();
+showCloseBtn()
   }
 
   return (
