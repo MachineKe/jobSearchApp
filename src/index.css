@@ -17,6 +17,8 @@
 body {
   background-color: white;
   width: 100%;
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
 li {
