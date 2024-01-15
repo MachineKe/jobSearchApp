@@ -477,20 +477,25 @@ li:hover::before {
   .navBar {
     height: 10px;
     z-index: 1;
+    margin-top: 0;
   }
 
   .logoDiv {
     height: inherit;
+    background-color: transparent;
+  }
+  .logo {
+    font-size: 40px;
   }
   .menuBtn {
     font-size: 100px;
     width: 100%;
     align-content: center;
     color: black;
-    background-color: black;
-    padding-left: 200px;
-    height: 100px;
     background-color: white;
+    padding-left: 200px;
+    height: 95px;
+    border: none;
   }
   .menuList {
     color: white;

@@ -1,23 +1,36 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
-
+import { useState } from "react";
 const NavBar = () => {
+  const [navOpen, setNavOpen] = useState('');
+  const [showHamButton, setShowHamButton] = useState('');
+  const [showCloseButton, setShowCloseButton] = useState('');
 
-  const openMenuBtn = document.getElementById("openMenuBtn");
-  const closeMenuBtn = document.getElementById("closeMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
   const openMenu = () => {
-    mobileMenu.style.display = "block";
-    closeMenuBtn.style.display = "block";
-    openMenuBtn.style.display = "none";
-    
+    setNavOpen(false);
   };
   const closeMenu = () => {
-    closeMenuBtn.style.display = "none";
-    openMenuBtn.style.display = "block";
-    mobileMenu.style.display = "none";
+    setNavOpen(true);
   };
+
+  const showHamBtn = () => {
+       setShowHamButton(true)
+
+        setShowCloseButton(true)
+
+  }
+  const showCloseBtn = () => {
+    setShowHamButton(false)
+        setShowCloseButton(true)
+
+  }
+
+  const navFunc = () => {
+    closeMenu();
+//     showHamBtn();
+// showCloseBtn()
+  }
 
   return (
     <div className="navBar">
@@ -27,22 +40,28 @@ const NavBar = () => {
         </p1>
 
         <div className="mobileMenu">
-          <button className="menuBtn" id="openMenuBtn" onClick={openMenu}>
+         
+         
+      {! showHamButton &&   <button className="menuBtn" id="openMenuBtn" onClick={openMenu}>
             <GiHamburgerMenu />
-          </button>
+          </button> 
+}
 
-          <button className="menuBtn" id="closeMenuBtn" onClick={closeMenu}>
+         {!showCloseButton && <button className="menuBtn" id="closeMenuBtn" onClick={navFunc}>
             <MdOutlineClose />
-          </button>
-          <div id="mobileMenu">
-            <li className="menuList">Jobs</li>
-            <li className="menuList">Companies</li>
-            <li className="menuList">About</li>
-            <li className="menuList">Contact</li>
-            <li className="menuList">Blog</li>
-            <li className="menuList">Login</li>
-            <li className="menuList">Register</li>
-          </div>
+          </button>}
+
+          {!navOpen && (
+            <div id="mobileMenu">
+              <li className="menuList">Jobs</li>
+              <li className="menuList">Companies</li>
+              <li className="menuList">About</li>
+              <li className="menuList">Contact</li>
+              <li className="menuList">Blog</li>
+              <li className="menuList">Login</li>
+              <li className="menuList">Register</li>
+            </div>
+          )}
         </div>
 
         <div className="menu">
