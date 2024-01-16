@@ -172,10 +172,11 @@ const Jobs = () => {
                 <input
                   type="text"
                   className="input"
-                  placeholder="Search by company..."
+                  placeholder="Search Job Company..."
                   value={searchTermCompany}
-                  onChange={(e) => setSearchTermLocation(e.target.value)}
+                  onChange={(e) => setSearchTermCompany(e.target.value)}
                 />
+
                 <AiOutlineCloseCircle className="closeIcon" />
               </div>
             </div>
@@ -185,10 +186,11 @@ const Jobs = () => {
                 <input
                   type="text"
                   className="input"
-                  placeholder="Search by location..."
+                  placeholder="Search Job Location..."
                   value={searchTermLocation}
-                  onChange={(e) => setSearchTermCompany(e.target.value)}
+                  onChange={(e) => setSearchTermLocation(e.target.value)}
                 />
+
                 <AiOutlineCloseCircle className="closeIcon" />
               </div>
             </div>
