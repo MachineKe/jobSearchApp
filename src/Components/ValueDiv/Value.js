@@ -30,11 +30,11 @@ const Value = () => {
             <div className="innermostimgDiv">
               <img src={companyLogo1} alt="" className="mycompanyLogo" />
             </div>
-            <span className="logoText">Unlocking Doors!</span>
+            <span className="logoText">Crafting Careers!</span>
           </div>
           <p className="morelogoText">
-            Unlocking Doors, Unleashing Potential - Your Journey to Professional
-            Excellence Begins Now.
+            Crafting Careers, Shaping Success - Find Your Ideal Job, Transform
+            Your Professional Destiny
           </p>
         </div>
       </div>
@@ -44,11 +44,11 @@ const Value = () => {
             <div className="innermostimgDiv">
               <img src={companyLogo2} alt="" className="mycompanyLogo" />
             </div>
-            <span className="logoText">Unlocking Doors!</span>
+            <span className="logoText">Where Talent Meets Opportunity!</span>
           </div>
           <p className="morelogoText">
-            Unlocking Doors, Unleashing Potential - Your Journey to Professional
-            Excellence Begins Now.
+            Where Talent Meets Opportunity - Fueling Your Career Aspirations
+            with Every Interaction
           </p>
         </div>
       </div>
