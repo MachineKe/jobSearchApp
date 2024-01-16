@@ -53,7 +53,6 @@ const Search = () => {
             Sort by:
           </label>
           <select name="" id="relevance" className="selection">
-            {" "}
             <option value="">Relevance</option>
             <option value="">Inclusive</option>
             <option value="">Starts With</option>

@@ -457,7 +457,7 @@ li:hover::before {
 /* Media queries */
 @media only screen and (max-width: 600px) {
   .App {
-    width: 10vh;
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -540,4 +540,13 @@ li:hover::before {
     margin-left: 60px;
   padding-top: 10px;
   }
+/* filters */
+.secDiv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
 }
