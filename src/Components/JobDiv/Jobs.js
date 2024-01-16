@@ -12,11 +12,10 @@ import maasai from "../../Assets/streamlit_dark.png";
 import doc from "../../Assets/jax.png";
 import mwalimu from "../../Assets/Notepad_plus_plus.png";
 import { useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
 import { BsHouseDoor } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
-
-// high order array containing jobs
+import { IoBriefcaseOutline } from "react-icons/io5";
+// hh order array containing jobs
 const Data = [
   {
     id: 1,
@@ -152,8 +151,7 @@ const Jobs = () => {
           <div className="firstDiv">
             <div className="byJob">
               <div className="icon">
-                <AiOutlineSearch />
-
+                <IoBriefcaseOutline />
                 <input
                   type="search"
                   className="input"
@@ -161,7 +159,6 @@ const Jobs = () => {
                   value={searchTermTitle}
                   onChange={(e) => setSearchTermTitle(e.target.value)}
                 />
-
               </div>
             </div>
             <div className="byCompany">
@@ -174,7 +171,6 @@ const Jobs = () => {
                   value={searchTermCompany}
                   onChange={(e) => setSearchTermCompany(e.target.value)}
                 />
-
               </div>
             </div>
             <div className="byLocation">
@@ -187,9 +183,9 @@ const Jobs = () => {
                   value={searchTermLocation}
                   onChange={(e) => setSearchTermLocation(e.target.value)}
                 />
-
               </div>
             </div>
+            {/* <button className="searchBtn">Search</button> */}
           </div>
         </form>
 
