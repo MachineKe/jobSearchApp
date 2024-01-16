@@ -173,7 +173,7 @@ const Jobs = () => {
                   type="text"
                   className="input"
                   placeholder="Search by company..."
-                  value={searchTermLocation}
+                  value={searchTermCompany}
                   onChange={(e) => setSearchTermLocation(e.target.value)}
                 />
                 <AiOutlineCloseCircle className="closeIcon" />
@@ -186,7 +186,7 @@ const Jobs = () => {
                   type="text"
                   className="input"
                   placeholder="Search by location..."
-                  value={searchTermCompany}
+                  value={searchTermLocation}
                   onChange={(e) => setSearchTermCompany(e.target.value)}
                 />
                 <AiOutlineCloseCircle className="closeIcon" />
