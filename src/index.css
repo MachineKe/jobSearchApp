@@ -287,9 +287,8 @@ li:hover::before {
   }
 }
 /* Company moto */
-.motDiv {
+.motoDiv {
   margin-bottom: 4rem;
-  margin-top: 6rem;
 }
 
 .motoQuote {
@@ -579,7 +578,6 @@ li:hover::before {
   }
   /* jobs */
   .jobsContainer {
-    /* margin-top: -10px; */
   }
   .singleJob {
     padding-right: 50px;
@@ -595,8 +593,30 @@ li:hover::before {
     &:hover {
       color: white;
     }
-    .jobInfo {
-      color: black;
-    }
   }
+    .jobInfo {
+      color: rgba(0, 0, 0, 0.592);
+    }
+/* company moto */
+
+.outerimgDiv {
+  width: 500px;
+  padding-right: 200px;
+  margin-left: 20px;
+  height: 150px;
+  float: left;
+}
+
+.card {
+  width : 300px;
+  margin-left:30px;
+}
+.motoQuote {
+  width: 300px;
+  margin-left: 0;
+}
+/* footer */
+.footerDiv {
+  margin-left: 0;
+}
 }
