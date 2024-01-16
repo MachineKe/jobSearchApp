@@ -578,5 +578,37 @@ li:hover::before {
   }
   /* jobs */
   .jobsContainer {
-  }
+  /* margin-left: 1000px;
+gap: 2px; */
+/* height: 100vh;   */
+}
+
+  .singleJob {
+/* flex-wrap: wrap;
+display: flex;
+margin-left: 10px;
+width: 100vh;
+  margin-left: 1000px;
+gap: 2px; */
+padding-right: 30px;
+margin-left: 0px;
+/* height: 350px;   */
+line-height: 20px;
+font-weight: 600;
+}
+.jobInfo {
+  /* flex-wrap: wrap;
+  width: 100px;
+  margin-left: 1000px;
+gap: 2px; */
+
+}
+
+.singleJobSpan{
+  /* flex-wrap: wrap;
+  color: red;
+    margin-left: 100px;
+gap: 2px; */
+
+}
 }
