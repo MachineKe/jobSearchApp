@@ -235,7 +235,7 @@ const Jobs = () => {
           <span className="clearSelect">Clear All</span>
         </div>
       </div>
-      );
+
       <div className="jobsContainer">
         {filteredData.map(
           ({ id, image, title, time, location, desc, company }) => {

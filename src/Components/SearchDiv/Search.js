@@ -1,10 +1,10 @@
-import React from "react";
-import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import { BsHouseDoor } from "react-icons/bs";
-import { CiLocationOn } from "react-icons/ci";
+// import React from "react";
+// import { AiOutlineSearch } from "react-icons/ai";
+// import { AiOutlineCloseCircle } from "react-icons/ai";
+// import { BsHouseDoor } from "react-icons/bs";
+// import { CiLocationOn } from "react-icons/ci";
 // const Search = () => {
-  // return (
+// return (
 //     <div className="searchDiv">
 //       <form action="">
 //         <div className="firstDiv">
