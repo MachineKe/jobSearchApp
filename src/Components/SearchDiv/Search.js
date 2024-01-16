@@ -52,7 +52,7 @@ const Search = () => {
           <label htmlFor="relevance" className="relevanceLabel">
             Sort by:
           </label>
-          <select name="" id="relevance" className="selection">
+          <select name="" id="relevance" className="selection sortSelection">
             <option value="">Relevance</option>
             <option value="">Inclusive</option>
             <option value="">Starts With</option>
@@ -60,10 +60,10 @@ const Search = () => {
           </select>
         </div>
         <div className="singleSearch">
-          <label htmlFor="type" className="relevanceLabel">
+          <label htmlFor="type" className="relevanceLabel typeLabel">
             Type:
           </label>
-          <select name="" id="relevance" className="selection">
+          <select name="" id="relevance" className="selection typeSelection">
             {" "}
             <option value="">Full-Time</option>
             <option value="">Remote</option>
@@ -72,10 +72,10 @@ const Search = () => {
           </select>
         </div>{" "}
         <div className="singleSearch">
-          <label htmlFor="level" className="relevanceLabel">
+          <label htmlFor="level" className="relevanceLabel levelLabel">
             Level:
           </label>
-          <select name="" id="relevance" className="selection">
+          <select name="" id="relevance" className="selection levelSelection">
             {" "}
             <option value="">Senior</option>
             <option value="">Junior</option>

@@ -517,7 +517,6 @@ li:hover::before {
     flex-wrap: wrap;
     gap: 30px;
     background-color: rgba(128, 128, 128, 0.089);
-
   }
   .searchDiv {
     max-width: fit-content;
@@ -525,28 +524,40 @@ li:hover::before {
     float: left;
     display: flex;
     flex-wrap: wrap;
-    
   }
   .input {
     width: 350px;
-  
   }
-  .byJob, .byCompany, .byLocation {
-    border:2px solid black;
+  .byJob,
+  .byCompany,
+  .byLocation {
+    border: 2px solid black;
     width: 250px;
     border-radius: 10px;
   }
   .searchBtn {
     margin-left: 60px;
-  padding-top: 10px;
+    padding-top: 10px;
   }
-/* filters */
-.secDiv {
-  display: flex;
-  flex-wrap: wrap;
-  width: 200px;
-  align-items: center;
-  justify-content: center;
-}
-
+  /* filters */
+  .secDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+  }
+  /* options */
+  .typeSelection {
+    width: 123px;
+  }
+  .levelSelection {
+    width: 120px;
+  }
+  .typeLabel {
+    margin-left: 15px;
+  }
+  .levelLabel {
+    margin-left: 16px;
+  }
 }
