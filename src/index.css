@@ -499,7 +499,7 @@ li:hover::before {
   }
   .mobileMenu {
     font-size: 20px;
-margin-top: -130px;
+    margin-top: -130px;
   }
   .menuList {
     color: white;
@@ -508,5 +508,36 @@ margin-top: -130px;
     padding-left: 100px;
     width: 312px;
     height: 75px;
+  }
+  /* search bars */
+  .firstDiv {
+    float: left;
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: rgba(128, 128, 128, 0.089);
+
+  }
+  .searchDiv {
+    max-width: fit-content;
+    width: 350px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  .input {
+    width: 350px;
+  
+  }
+  .byJob, .byCompany, .byLocation {
+    border:2px solid black;
+    width: 250px;
+    border-radius: 10px;
+  }
+  .searchBtn {
+    margin-left: 60px;
+  padding-top: 10px;
   }
 }

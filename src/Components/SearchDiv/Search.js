@@ -8,24 +8,31 @@ const Search = () => {
     <div className="searchDiv">
       <form action="">
         <div className="firstDiv">
-          <div className="icon">
-            <AiOutlineSearch />
-            <input
-              type="text"
-              className="input"
-              placeholder="Search Job Here..."
-            />
-            <AiOutlineCloseCircle className="closeIcon" />
+          <div className="byJob">
+            <div className="icon">
+              <AiOutlineSearch />
+              <input
+                type="text"
+                className="input"
+                placeholder="Search Job Here..."
+              />
+
+              <AiOutlineCloseCircle className="closeIcon" />
+            </div>
           </div>
-          <div className="icon">
-            <BsHouseDoor />
-            <input
-              type="text"
-              className="input"
-              placeholder="Search by company..."
-            />
-            <AiOutlineCloseCircle className="closeIcon" />
-          </div>{" "}
+          <div className="byCompany">
+            <div className="icon">
+              <BsHouseDoor />
+              <input
+                type="text"
+                className="input"
+                placeholder="Search by company..."
+              />
+              <AiOutlineCloseCircle className="closeIcon" />
+            </div>
+          </div>
+<div className="byLocation">
+
           <div className="icon">
             <CiLocationOn />
             <input
@@ -35,6 +42,7 @@ const Search = () => {
             />
             <AiOutlineCloseCircle className="closeIcon" />
           </div>
+        </div>
           <button className="searchBtn">Search</button>
         </div>
       </form>
