@@ -279,9 +279,10 @@ li:hover::before {
   &:hover {
     color: black;
     background-color: white;
-  &:active, &:focus {
-    background-color: papayawhip;
-  }
+    &:active,
+    &:focus {
+      background-color: papayawhip;
+    }
   }
 }
 /* Company moto */
@@ -518,7 +519,7 @@ li:hover::before {
   /* search bars */
   .firstDiv {
     float: left;
-    width: 280px;
+    width: 290px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -530,6 +531,8 @@ li:hover::before {
     float: left;
     display: flex;
     flex-wrap: wrap;
+    margin-left: 4px;
+    border-radius: 20px;
   }
   .input {
     width: 350px;
@@ -567,13 +570,12 @@ li:hover::before {
     margin-left: 16px;
   }
 
-.clearSelect {
-margin-left: 60px;
-  &:hover {
-    color: red;
+  .clearSelect {
+    margin-left: 60px;
+    &:hover {
+      color: red;
+    }
   }
-  
-}
   /* jobs */
   .jobsContainer {
   }
