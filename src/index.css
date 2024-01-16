@@ -266,6 +266,7 @@ li:hover::before {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: block;
+  color: black;
 }
 .applyBtn {
   border: 2px;
@@ -578,37 +579,18 @@ li:hover::before {
   }
   /* jobs */
   .jobsContainer {
-  /* margin-left: 1000px;
-gap: 2px; */
-/* height: 100vh;   */
-}
-
+  }
   .singleJob {
-/* flex-wrap: wrap;
-display: flex;
-margin-left: 10px;
-width: 100vh;
-  margin-left: 1000px;
-gap: 2px; */
-padding-right: 50px;
-margin-left: 0px;
-/* height: 350px;   */
-line-height: 20px;
-font-weight: 600;
-}
-.jobInfo {
-  /* flex-wrap: wrap;
-  width: 100px;
-  margin-left: 1000px;
-gap: 2px; */
-
-}
-
-.singleJobSpan{
-  /* flex-wrap: wrap;
-  color: red;
-    margin-left: 100px;
-gap: 2px; */
-
-}
+    padding-right: 50px;
+    margin-left: 0px;
+    line-height: 20px;
+    font-weight: 600;
+    /* border: black solid 2px; */
+    margin-top: 30px;
+  }
+  .jobsContainer .companyName {
+    &:hover {
+      color: white;
+    }
+  }
 }
