@@ -190,7 +190,7 @@ const Jobs = () => {
         </form>
 
         <div className="secDiv">
-          <div className="singleSearch">
+          {/* <div className="singleSearch">
             <label htmlFor="relevance" className="relevanceLabel">
               Sort by:
             </label>
@@ -200,7 +200,7 @@ const Jobs = () => {
               <option value="">Starts With</option>
               <option value="">Contains</option>
             </select>
-          </div>
+          </div> */}
           <div className="singleSearch">
             <label htmlFor="type" className="relevanceLabel typeLabel">
               Type:
