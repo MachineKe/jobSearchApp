@@ -566,6 +566,14 @@ li:hover::before {
   .levelLabel {
     margin-left: 16px;
   }
+
+.clearSelect {
+margin-left: 60px;
+  &:hover {
+    color: red;
+  }
+  
+}
   /* jobs */
   .jobsContainer {
   }
