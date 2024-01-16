@@ -11,6 +11,11 @@ import mjenzi from "../../Assets/docusaurus.png";
 import maasai from "../../Assets/streamlit_dark.png";
 import doc from "../../Assets/jax.png";
 import mwalimu from "../../Assets/Notepad_plus_plus.png";
+import { useState } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { BsHouseDoor } from "react-icons/bs";
+import { CiLocationOn } from "react-icons/ci";
 
 // high order array containing jobs
 const Data = [
@@ -123,32 +128,138 @@ const Data = [
     company: "Tenwek High School",
   },
 ];
-
 const Jobs = () => {
+  const [searchTermTitle, setSearchTermTitle] = useState("");
+  const [searchTermLocation, setSearchTermLocation] = useState("");
+  const [searchTermCompany, setSearchTermCompany] = useState("");
+
+  const filteredData = Data.filter(({ title, location, company }) => {
+    const titleMatch = title
+      .toLowerCase()
+      .includes(searchTermTitle.toLowerCase());
+    const locationMatch = location
+      .toLowerCase()
+      .includes(searchTermLocation.toLowerCase());
+    const companyMatch = company
+      .toLowerCase()
+      .includes(searchTermCompany.toLowerCase());
+
+    return titleMatch && locationMatch && companyMatch;
+  });
+
   return (
     <div>
-      <div className="jobsContainer">
-        {Data.map(({ id, image, title, time, location, desc, company }) => {
-          return (
-            <div key={id} className="singleJob">
-              <span className="singleJobSpan">
-                <h1 className="singleJobHead">{title}</h1>
-                <span className="durationIcon">
-                  <BiTimeFive />
-                  {time}
-                </span>
-              </span>
-              <h6 className="locationName">{location}</h6>
+      <div className="searchDiv">
+        <form action="">
+          <div className="firstDiv">
+            <div className="byJob">
+              <div className="icon">
+                <AiOutlineSearch />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Search Job Title..."
+                  value={searchTermTitle}
+                  onChange={(e) => setSearchTermTitle(e.target.value)}
+                />
 
-              <p className="jobInfo">{desc}</p>
-              <div className="company">
-                <img src={image} alt="Company Logo" className="companyLogo" />
-                <span className="companyName">{company}</span>
+                <AiOutlineCloseCircle className="closeIcon" />
               </div>
-              <button className="applyBtn">Apply</button>
             </div>
-          );
-        })}
+            <div className="byCompany">
+              <div className="icon">
+                <BsHouseDoor />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Search by company..."
+                  value={searchTermLocation}
+                  onChange={(e) => setSearchTermLocation(e.target.value)}
+                />
+                <AiOutlineCloseCircle className="closeIcon" />
+              </div>
+            </div>
+            <div className="byLocation">
+              <div className="icon">
+                <CiLocationOn />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Search by location..."
+                  value={searchTermCompany}
+                  onChange={(e) => setSearchTermCompany(e.target.value)}
+                />
+                <AiOutlineCloseCircle className="closeIcon" />
+              </div>
+            </div>
+            {/* <button className="searchBtn">Search</button> */}
+          </div>
+        </form>
+
+        <div className="secDiv">
+          <div className="singleSearch">
+            <label htmlFor="relevance" className="relevanceLabel">
+              Sort by:
+            </label>
+            <select name="" id="relevance" className="selection sortSelection">
+              <option value="">Relevance</option>
+              <option value="">Inclusive</option>
+              <option value="">Starts With</option>
+              <option value="">Contains</option>
+            </select>
+          </div>
+          <div className="singleSearch">
+            <label htmlFor="type" className="relevanceLabel typeLabel">
+              Type:
+            </label>
+            <select name="" id="relevance" className="selection typeSelection">
+              {" "}
+              <option value="">Full-Time</option>
+              <option value="">Remote</option>
+              <option value="">Contract</option>
+              <option value="">Part-Time</option>
+            </select>
+          </div>{" "}
+          <div className="singleSearch">
+            <label htmlFor="level" className="relevanceLabel levelLabel">
+              Level:
+            </label>
+            <select name="" id="relevance" className="selection levelSelection">
+              {" "}
+              <option value="">Senior</option>
+              <option value="">Junior</option>
+              <option value="">Advocate</option>
+              <option value="">Intermediate</option>
+            </select>
+          </div>
+          <span className="clearSelect">Clear All</span>
+        </div>
+      </div>
+      );
+      <div className="jobsContainer">
+        {filteredData.map(
+          ({ id, image, title, time, location, desc, company }) => {
+            return (
+              <div key={id} className="singleJob">
+                <span className="singleJobSpan">
+                  <h1 className="singleJobHead">{title}</h1>
+                  <span className="durationIcon">
+                    <BiTimeFive />
+                    {time}
+                  </span>
+                </span>
+                <h6 className="locationName">{location}</h6>
+
+                <p className="jobInfo">{desc}</p>
+                <div className="company">
+                  <img src={image} alt="Company Logo" className="companyLogo" />
+                  <span className="companyName">{company}</span>
+                </div>
+                <button className="applyBtn">Apply</button>
+              </div>
+            );
+          }
+        )}
       </div>
     </div>
   );
