@@ -13,7 +13,6 @@ import doc from "../../Assets/jax.png";
 import mwalimu from "../../Assets/Notepad_plus_plus.png";
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsHouseDoor } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 
@@ -132,7 +131,6 @@ const Jobs = () => {
   const [searchTermTitle, setSearchTermTitle] = useState("");
   const [searchTermLocation, setSearchTermLocation] = useState("");
   const [searchTermCompany, setSearchTermCompany] = useState("");
-
   const filteredData = Data.filter(({ title, location, company }) => {
     const titleMatch = title
       .toLowerCase()
@@ -155,46 +153,43 @@ const Jobs = () => {
             <div className="byJob">
               <div className="icon">
                 <AiOutlineSearch />
+
                 <input
-                  type="text"
+                  type="search"
                   className="input"
                   placeholder="Search Job Title..."
                   value={searchTermTitle}
                   onChange={(e) => setSearchTermTitle(e.target.value)}
                 />
 
-                <AiOutlineCloseCircle className="closeIcon" />
               </div>
             </div>
             <div className="byCompany">
               <div className="icon">
                 <BsHouseDoor />
                 <input
-                  type="text"
+                  type="search"
                   className="input"
                   placeholder="Search Job Company..."
                   value={searchTermCompany}
                   onChange={(e) => setSearchTermCompany(e.target.value)}
                 />
 
-                <AiOutlineCloseCircle className="closeIcon" />
               </div>
             </div>
             <div className="byLocation">
               <div className="icon">
                 <CiLocationOn />
                 <input
-                  type="text"
+                  type="search"
                   className="input"
                   placeholder="Search Job Location..."
                   value={searchTermLocation}
                   onChange={(e) => setSearchTermLocation(e.target.value)}
                 />
 
-                <AiOutlineCloseCircle className="closeIcon" />
               </div>
             </div>
-            {/* <button className="searchBtn">Search</button> */}
           </div>
         </form>
 
