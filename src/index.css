@@ -173,7 +173,7 @@ li:hover::before {
 }
 
 /* Job Content */
-.jobContainer {
+.jobsContainer {
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
@@ -183,6 +183,9 @@ li:hover::before {
   &:hover {
     color: white;
   }
+}
+.jobsContainer .applyBtn {
+  color: black;
 }
 .singleJob {
   float: left;
@@ -274,8 +277,11 @@ li:hover::before {
   font-weight: 600;
   color: var(--textColor);
   &:hover {
-    color: var(--textColor);
+    color: black;
     background-color: white;
+  &:active, &:focus {
+    background-color: papayawhip;
+  }
   }
 }
 /* Company moto */
@@ -559,5 +565,8 @@ li:hover::before {
   }
   .levelLabel {
     margin-left: 16px;
+  }
+  /* jobs */
+  .jobsContainer {
   }
 }
