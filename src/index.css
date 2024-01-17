@@ -594,6 +594,10 @@ input[type="search"]::-webkit-search-cancel-button {
   /* jobs */
   .jobsContainer {
   }
+.durationTypeLevel {
+
+color: black;
+}
   .singleJob {
     padding-right: 50px;
     margin-left: 10px;

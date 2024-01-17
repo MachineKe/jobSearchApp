@@ -15,7 +15,7 @@ import { useState } from "react";
 import { BsHouseDoor } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { IoBriefcaseOutline } from "react-icons/io5";
-// hh order array containing jobs
+// high order array containing jobs
 const Data = [
   {
     id: 1,
@@ -27,8 +27,7 @@ const Data = [
     company: "DVC Limited",
     type: "Remote",
     level: "Juniour",
-      duration: "Juniour",
-
+    duration: "Full-time",
   },
   {
     id: 2,
@@ -40,6 +39,7 @@ const Data = [
     company: "PyCharm",
     type: "Remote",
     level: "Intermediate",
+    duration: "Full-time",
   },
   {
     id: 3,
@@ -49,8 +49,9 @@ const Data = [
     location: "Greece",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Cadilac",
-    type: "Full-Time",
+    type: "On-Site",
     level: "Senior",
+    duration: "Full-time",
   },
   {
     id: 4,
@@ -60,8 +61,9 @@ const Data = [
     location: "USA",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "AWS",
-    type: "Contract",
-    level: "Advocate",
+    type: "On-Site",
+    level: "Intern",
+    duration: "Contract",
   },
   {
     id: 5,
@@ -71,6 +73,9 @@ const Data = [
     location: "Nairobi, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Machine Operators",
+    type: "On-Site",
+    level: "Senior",
+    duration: "Contract",
   },
   {
     id: 6,
@@ -80,6 +85,9 @@ const Data = [
     location: "Ngara, Nairobi, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "The Hennesis Hotel",
+    type: "On-Site",
+    level: "Intermediate",
+    duration: "Full-Time",
   },
   {
     id: 7,
@@ -89,6 +97,9 @@ const Data = [
     location: "Nairobi, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Daima Associates",
+    type: "On-Site",
+    level: "Intern",
+    duration: "Contract",
   },
   {
     id: 8,
@@ -98,6 +109,9 @@ const Data = [
     location: "Nairobi, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Mjenzi Mkuu",
+    type: "On-Site",
+    level: "Senior",
+    duration: "Contract",
   },
   {
     id: 9,
@@ -107,6 +121,9 @@ const Data = [
     location: "Nairobi, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Mjenzi Mkuu",
+    type: "On-Site",
+    level: "Senior",
+    duration: "Contract",
   },
   {
     id: 10,
@@ -116,6 +133,9 @@ const Data = [
     location: "Narok, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Maasai Mara University",
+    type: "On-Site",
+    level: "Senior",
+    duration: "Contract",
   },
   {
     id: 11,
@@ -125,6 +145,9 @@ const Data = [
     location: "Nakuru, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "MediHeal Hospital",
+    type: "On-Site",
+    level: "Intern",
+    duration: "Contract",
   },
   {
     id: 12,
@@ -134,6 +157,9 @@ const Data = [
     location: "Kericho City, Kenya",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Tenwek High School",
+    type: "On-Site",
+    level: "Intermediate",
+    duration: "Full-Time",
   },
 ];
 const Jobs = () => {
@@ -203,10 +229,13 @@ const Jobs = () => {
             <label htmlFor="relevance" className="relevanceLabel durationLabel">
               Duration:
             </label>
-            <select name="" id="relevance" className="selection durationSelection">
-                            <option value="">Full-Time</option>
+            <select
+              name=""
+              id="relevance"
+              className="selection durationSelection"
+            >
+              <option value="">Full-Time</option>
               <option value="">Contract</option>
-
             </select>
           </div>
           <div className="singleSearch">
@@ -237,7 +266,18 @@ const Jobs = () => {
 
       <div className="jobsContainer">
         {filteredData.map(
-          ({ id, image, title, time, location, desc, company }) => {
+          ({
+            id,
+            image,
+            title,
+            time,
+            location,
+            desc,
+            company,
+            duration,
+            type,
+            level,
+          }) => {
             return (
               <div key={id} className="singleJob">
                 <span className="singleJobSpan">
@@ -248,7 +288,11 @@ const Jobs = () => {
                   </span>
                 </span>
                 <h6 className="locationName">{location}</h6>
-
+                <div durationTypeLevel>
+                <h4>{duration}</h4>
+                <h5>{type}</h5>
+                <h6>{level}</h6>
+                </div>
                 <p className="jobInfo">{desc}</p>
                 <div className="company">
                   <img src={image} alt="Company Logo" className="companyLogo" />
