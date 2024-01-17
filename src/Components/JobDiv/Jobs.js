@@ -23,7 +23,7 @@ const Data = [
     title: "Web Developer",
     time: "Now",
     location: "Canada",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "We are seeking a skilled and motivated Web Developer to join our dynamic team at DVC, a leading job search website. As a Web Developer, you will play a crucial role in the design, development, and maintenance of our platform, ensuring an exceptional user experience for job seekers and employers alike. Your primary focus will be on creating efficient, scalable, and visually appealing web solutions that enhance the functionality and usability of our job search website",
     company: "DVC Limited",
     type: "Remote",
     level: "Juniour",
@@ -35,7 +35,7 @@ const Data = [
     title: "UI Designer",
     time: "14Hrs",
     location: "Manchester",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you a creative thinker with a passion for crafting visually stunning user interfaces? Join our team at PyCharm as a UI Designer and play a pivotal role in shaping the digital experiences of our users. As a UI Designer, you'll collaborate with cross-functional teams to create intuitive and aesthetically pleasing interfaces that elevate the usability of our products.",
     company: "PyCharm",
     type: "Remote",
     level: "Intermediate",
@@ -47,7 +47,7 @@ const Data = [
     title: "Software Engineer",
     time: "20Hrs",
     location: "Greece",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you a talented and innovative Software Engineer eager to contribute to cutting-edge projects and drive technological advancements? Join our team at Cadilac and be part of a dynamic environment where your skills will be at the forefront of developing robust and scalable software solutions",
     company: "Cadilac",
     type: "On-Site",
     level: "Senior",
@@ -59,7 +59,7 @@ const Data = [
     title: "DevOps Engineer",
     time: "1 Day",
     location: "USA",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you a skilled DevOps professional looking for a dynamic opportunity to shape and optimize the software development lifecycle? Join us at AWS as a DevOps Engineer and play a crucial role in streamlining our development processes, ensuring efficient delivery, and maintaining the reliability of our systems.",
     company: "AWS",
     type: "On-Site",
     level: "Intern",
@@ -71,7 +71,7 @@ const Data = [
     title: "Machine Operator",
     time: "1 week",
     location: "Nairobi, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you a skilled and detail-oriented individual with experience in machine operation? Join our team at Machine Operators as a Machine Operator and play a crucial role in ensuring the efficient and accurate operation of our machinery.",
     company: "Machine Operators",
     type: "On-Site",
     level: "Senior",
@@ -83,7 +83,7 @@ const Data = [
     title: "Waiter/Waitres",
     time: "2 weeks",
     location: "Ngara, Nairobi, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you a customer-focused individual with a passion for providing exceptional dining experiences? Join our team at The Hennesis Hotel as a Waiter/Waitress and contribute to creating memorable moments for our guests.",
     company: "The Hennesis Hotel",
     type: "On-Site",
     level: "Intermediate",
@@ -95,7 +95,7 @@ const Data = [
     title: "Research Assistant",
     time: "4 days",
     location: "Nairobi, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you a detail-oriented individual with a passion for contributing to meaningful research projects? Join our team at Daima Associates as a Research Assistant and play a vital role in advancing knowledge and innovation.",
     company: "Daima Associates",
     type: "On-Site",
     level: "Intern",
@@ -107,8 +107,9 @@ const Data = [
     title: "Mason",
     time: "2 days",
     location: "Nairobi, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
-    company: "Mjenzi Mkuu",
+    desc: "Are you a skilled and experienced mason looking for a rewarding opportunity in the construction industry? Join our team at [Construction Company Name] as a Mason and play a crucial role in the creation and enhancement of structures through your expertise in masonry.",
+    company: "Mjenzi",
+
     type: "On-Site",
     level: "Senior",
     duration: "Contract",
@@ -119,8 +120,9 @@ const Data = [
     title: "Contractor",
     time: "2 days",
     location: "Nairobi, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
-    company: "Mjenzi Mkuu",
+    desc: "Are you an experienced and motivated contractor with a passion for overseeing construction projects from inception to completion? Join our team at [Your Contracting Business Name] and take a leadership role in delivering high-quality construction services to our clients.",
+    company: "Mjenzi",
+
     type: "On-Site",
     level: "Senior",
     duration: "Contract",
@@ -131,7 +133,7 @@ const Data = [
     title: "Lecturer",
     time: "2Hrs",
     location: "Narok, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you an enthusiastic and knowledgeable individual passionate about sharing your expertise with eager minds? Consider joining Maasai Mara University as a Lecturer in the [Department Name] department and contribute to the academic growth and development of students.",
     company: "Maasai Mara University",
     type: "On-Site",
     level: "Senior",
@@ -140,11 +142,12 @@ const Data = [
   {
     id: 11,
     image: doc,
-    title: "Clinical officer",
+    title: "Neurosurgeon",
     time: "2Hrs",
     location: "Nakuru, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you an experienced and skilled Neurosurgeon seeking a rewarding opportunity to contribute to cutting-edge medical care? Join our team at [Hospital/Clinic Name] and play a pivotal role in providing exceptional neurosurgical services to our patients.",
     company: "MediHeal Hospital",
+
     type: "On-Site",
     level: "Intern",
     duration: "Contract",
@@ -155,8 +158,9 @@ const Data = [
     title: "Teacher",
     time: "5Hrs",
     location: "Kericho City, Kenya",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
+    desc: "Are you an inspiring and dedicated educator with a passion for fostering a love of learning? Join the team at Tenwek High School as a Teacher and contribute to the academic and personal development of students in a dynamic educational environment.",
     company: "Tenwek High School",
+
     type: "On-Site",
     level: "Intermediate",
     duration: "Full-Time",
@@ -289,9 +293,9 @@ const Jobs = () => {
                 </span>
                 <h6 className="locationName">{location}</h6>
                 <div durationTypeLevel>
-                <h4 className="durationText">{duration}</h4>
-                <h5 className="typeText">{type}</h5>
-                <h6 className='levelText'>{level}</h6>
+                  <h4 className="durationText">{duration}</h4>
+                  <h5 className="typeText">{type}</h5>
+                  <h6 className="levelText">{level}</h6>
                 </div>
                 <p className="jobInfo">{desc}</p>
                 <div className="company">
