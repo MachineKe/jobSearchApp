@@ -289,9 +289,9 @@ const Jobs = () => {
                 </span>
                 <h6 className="locationName">{location}</h6>
                 <div durationTypeLevel>
-                <h4>{duration}</h4>
-                <h5>{type}</h5>
-                <h6>{level}</h6>
+                <h4 className="durationText">{duration}</h4>
+                <h5 className="typeText">{type}</h5>
+                <h6 className='levelText'>{level}</h6>
                 </div>
                 <p className="jobInfo">{desc}</p>
                 <div className="company">

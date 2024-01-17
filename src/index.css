@@ -140,19 +140,6 @@ input[type="search"]::-webkit-search-cancel-button {
   }
 }
 
-.searchBtn {
-  background-color: #2a68ff;
-  height: 100%;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  padding: 5px;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  &:hover {
-    background-color: #93c5fd;
-  }
-}
 .secDiv {
   display: flex;
   align-items: center;
@@ -191,9 +178,6 @@ input[type="search"]::-webkit-search-cancel-button {
   align-items: center;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  &:hover {
-    color: white;
-  }
 }
 .jobsContainer .applyBtn {
   color: black;
@@ -211,6 +195,7 @@ input[type="search"]::-webkit-search-cancel-button {
   &:hover {
     background-color: #2a68ff;
     box-shadow: 0 10px 15px -3px #f1f4f8;
+color: white;
   }
 }
 
@@ -224,10 +209,6 @@ input[type="search"]::-webkit-search-cancel-button {
 .singleJobHead {
   font-size: 16px;
   font-weight: 600;
-  color: #252b36;
-  &:hover {
-    color: #fff;
-  }
 }
 
 .durationIcon {
@@ -242,7 +223,6 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .jobInfo {
   font-size: 13px;
-  color: #959595;
   padding-top: 20px;
   border-top: 2px solid;
   margin-top: 20px;
@@ -261,23 +241,23 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .companyLogo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border: solid #2a68ff 2px;
   border-radius: 50%;
-  &:hover {
-    border: solid #fff 2px;
+  
+    border: solid white 2px;
     border-radius: 50%;
-    color: white;
-  }
+  
 }
+
+
 
 .companyName {
   font-size: 14px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: block;
-  color: black;
 }
 .applyBtn {
   border: 2px;
@@ -575,16 +555,12 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 120px;
   }
   .typeLabel {
-    margin-left: 35px;
+    margin-left: 15px;
   }
   .levelLabel {
-    margin-left: 35px;
+    margin-left: 16px;
   }
-.durationSelection {
-  width: 122px;
-}
-/* .durationLabel {
-} */
+
   .clearSelect {
     margin-left: 60px;
     &:hover {
@@ -592,12 +568,6 @@ input[type="search"]::-webkit-search-cancel-button {
     }
   }
   /* jobs */
-  .jobsContainer {
-  }
-.durationTypeLevel {
-
-color: black;
-}
   .singleJob {
     padding-right: 50px;
     margin-left: 10px;
