@@ -25,6 +25,8 @@ const Data = [
     location: "Canada",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "DVC Limited",
+    type: "Remote",
+    level: "Juniour",
   },
   {
     id: 2,
@@ -34,6 +36,8 @@ const Data = [
     location: "Manchester",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "PyCharm",
+    type: "Remote",
+    level: "Intermediate",
   },
   {
     id: 3,
@@ -43,6 +47,8 @@ const Data = [
     location: "Greece",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "Cadilac",
+    type: "Full-Time",
+    level: "Senior",
   },
   {
     id: 4,
@@ -52,6 +58,8 @@ const Data = [
     location: "USA",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias totam libero vitae recusandae architecto explicabo voluptates, at praesentium. Labore eum ut autem consequuntur necessitatibus in temporibus quasi culpa odio.",
     company: "AWS",
+    type: "Contract",
+    level: "Advocate",
   },
   {
     id: 5,
@@ -189,31 +197,28 @@ const Jobs = () => {
           </div>
         </form>
 
-        <div className="secDiv">
-          {/* <div className="singleSearch">
+        {/* <div className="secDiv"> */}
+        {/* <div className="singleSearch">
             <label htmlFor="relevance" className="relevanceLabel">
-              Sort by:
+              Duration:
             </label>
             <select name="" id="relevance" className="selection sortSelection">
-              <option value="">Relevance</option>
-              <option value="">Inclusive</option>
-              <option value="">Starts With</option>
-              <option value="">Contains</option>
+                            <option value="">Full-Time</option>
+              <option value="">Contract</option>
+
             </select>
           </div> */}
-          <div className="singleSearch">
+        {/* <div className="singleSearch">
             <label htmlFor="type" className="relevanceLabel typeLabel">
               Type:
             </label>
             <select name="" id="relevance" className="selection typeSelection">
               {" "}
-              <option value="">Full-Time</option>
               <option value="">Remote</option>
-              <option value="">Contract</option>
-              <option value="">Part-Time</option>
+              <option value="">On-Site</option>
             </select>
-          </div>{" "}
-          <div className="singleSearch">
+          </div> */}
+        {/* <div className="singleSearch">
             <label htmlFor="level" className="relevanceLabel levelLabel">
               Level:
             </label>
@@ -221,12 +226,12 @@ const Jobs = () => {
               {" "}
               <option value="">Senior</option>
               <option value="">Junior</option>
-              <option value="">Advocate</option>
+              <option value="">Intern</option>
               <option value="">Intermediate</option>
             </select>
-          </div>
-          <span className="clearSelect">Clear All</span>
-        </div>
+          </div> */}
+        {/* <span className="clearSelect">Clear All</span> */}
+        {/* </div> */}
       </div>
 
       <div className="jobsContainer">

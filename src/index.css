@@ -542,7 +542,6 @@ input[type="search"]::-webkit-search-cancel-button {
     float: left;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 4px;
     border-radius: 20px;
   }
   .input {
