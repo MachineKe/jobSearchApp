@@ -575,12 +575,16 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 120px;
   }
   .typeLabel {
-    margin-left: 15px;
+    margin-left: 35px;
   }
   .levelLabel {
-    margin-left: 16px;
+    margin-left: 35px;
   }
-
+.durationSelection {
+  width: 122px;
+}
+/* .durationLabel {
+} */
   .clearSelect {
     margin-left: 60px;
     &:hover {

@@ -200,10 +200,10 @@ const Jobs = () => {
 
         <div className="secDiv">
           <div className="singleSearch">
-            <label htmlFor="relevance" className="relevanceLabel">
+            <label htmlFor="relevance" className="relevanceLabel durationLabel">
               Duration:
             </label>
-            <select name="" id="relevance" className="selection sortSelection">
+            <select name="" id="relevance" className="selection durationSelection">
                             <option value="">Full-Time</option>
               <option value="">Contract</option>
 
