@@ -27,6 +27,8 @@ const Data = [
     company: "DVC Limited",
     type: "Remote",
     level: "Juniour",
+      duration: "Juniour",
+
   },
   {
     id: 2,
@@ -193,12 +195,11 @@ const Jobs = () => {
                 />
               </div>
             </div>
-            {/* <button className="searchBtn">Search</button> */}
           </div>
         </form>
 
-        {/* <div className="secDiv"> */}
-        {/* <div className="singleSearch">
+        <div className="secDiv">
+          <div className="singleSearch">
             <label htmlFor="relevance" className="relevanceLabel">
               Duration:
             </label>
@@ -207,8 +208,8 @@ const Jobs = () => {
               <option value="">Contract</option>
 
             </select>
-          </div> */}
-        {/* <div className="singleSearch">
+          </div>
+          <div className="singleSearch">
             <label htmlFor="type" className="relevanceLabel typeLabel">
               Type:
             </label>
@@ -217,8 +218,8 @@ const Jobs = () => {
               <option value="">Remote</option>
               <option value="">On-Site</option>
             </select>
-          </div> */}
-        {/* <div className="singleSearch">
+          </div>{" "}
+          <div className="singleSearch">
             <label htmlFor="level" className="relevanceLabel levelLabel">
               Level:
             </label>
@@ -229,9 +230,9 @@ const Jobs = () => {
               <option value="">Intern</option>
               <option value="">Intermediate</option>
             </select>
-          </div> */}
-        {/* <span className="clearSelect">Clear All</span> */}
-        {/* </div> */}
+          </div>
+          <span className="clearSelect">Clear All</span>
+        </div>
       </div>
 
       <div className="jobsContainer">
