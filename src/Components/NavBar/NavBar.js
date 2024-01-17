@@ -2,6 +2,7 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(true);
 
@@ -23,25 +24,25 @@ const NavBar = () => {
 
           {!navOpen && (
             <div id="mobileMenu">
-              <li className="menuList">Jobs</li>
-              <li className="menuList">Companies</li>
-              <li className="menuList">About</li>
-              <li className="menuList">Contact</li>
-              <li className="menuList">Blog</li>
-              <li className="menuList">Login</li>
-              <li className="menuList">Register</li>
+              <li className="menuList"><Link className='link' to='/'> Home</Link></li>
+              <li className="menuList"><Link className='link' to='/companies'>Companies</Link></li>
+              <li className="menuList"><Link className='link' to='/footer'>About</Link></li>
+              <li className="menuList"><Link className='link' to='/footer'>Contact</Link></li>
+              <li className="menuList"><Link className='link' to='/community'>Community</Link></li>
+              <li className="menuList"><Link className='link' to='/login'>Login</Link></li>
+              <li className="menuList"><Link className='link' to='Register'>Register</Link></li>
             </div>
           )}
         </div>
 
         <div className="menu">
-          <li className="menuList">Jobs</li>
-          <li className="menuList">Companies</li>
-          <li className="menuList">About</li>
-          <li className="menuList">Contact</li>
-          <li className="menuList">Blog</li>
-          <li className="menuList">Login</li>
-          <li className="menuList">Register</li>
+        <li className="menuList"><Link className='link' to='/'>Home</Link></li>
+              <li className="menuList"><Link className='link' to='/companies'>Companies</Link></li>
+              <li className="menuList"><Link className='link' to='/footer'>About</Link></li>
+              <li className="menuList"><Link className='link' to='/footer'>Contact</Link></li>
+              <li className="menuList"><Link className='link' to='/community'>Community</Link></li>
+              <li className="menuList"><Link className='link' to='/login'>Login</Link></li>
+              <li className="menuList"><Link className='link' to='Register'>Register</Link></li>  
         </div>
       </div>
     </div>

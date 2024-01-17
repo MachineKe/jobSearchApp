@@ -37,6 +37,11 @@ li:hover::before {
   bottom: -3px;
   color: #2a68ff;
 }
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
 
 .icon {
   cursor: pointer;
@@ -492,11 +497,15 @@ input[type="search"]::-webkit-search-cancel-button {
   .menuList {
     color: white;
     background-color: black;
-    opacity: 70%;
+    opacity: 80%;
     padding-left: 100px;
     width: 312px;
     height: 75px;
   }
+    .link {
+    color: white;
+  }
+
   /* search bars */
   .firstDiv {
     float: left;

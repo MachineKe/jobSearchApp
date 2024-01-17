@@ -164,9 +164,9 @@ const Jobs = () => {
             level,
           }) => {
             return (
-              <div key={id} className="singleJob">
+              <div key={id} className="singleJob" >
                 <span className="singleJobSpan">
-                  <h1 className="singleJobHead">{title}</h1>
+                  <h1 className="singleJobHead" >{title}</h1>
                   <span className="durationIcon">
                     <BiTimeFive />
                     {time}
@@ -181,7 +181,8 @@ const Jobs = () => {
                 <p className="jobInfo">{desc}</p>
                 <div className="company">
                   <img
-                    src={require(`../../Assets/${image}`)} alt={`Logo for ${title}`}
+                    src={require(`../../Assets/${image}`)}
+                    alt={`Logo for ${title}`}
                     className="companyLogo"
                   />
                   <span className="companyName">{company}</span>

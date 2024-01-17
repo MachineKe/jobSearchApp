@@ -4,18 +4,27 @@ import NavBar from "./Components/NavBar/NavBar";
 import Jobs from "./Components/JobDiv/Jobs";
 import Value from "./Components/ValueDiv/Value";
 import Footer from "./Components/FooterDiv/Footer";
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
 const App = () => {
+
   return (
+   
     <div className="App">
       <NavBar />
-
       {/* <Search /> */}
-      <Jobs />
-      <Value />
-      <Footer />
+      <Routes>
+                <Route path="/" element={<Home />} />
+
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/value" element={<Value />} />
+
+        <Route path="/footer" element={<Footer />} />
+      </Routes>
     </div>
   );
 };
+
+
 
 export default App;
