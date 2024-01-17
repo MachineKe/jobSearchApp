@@ -578,15 +578,6 @@ color: white;
     width: 340px;
     padding-bottom: 30px;
   }
-  .jobsContainer .companyName {
-    &:hover {
-      color: white;
-    }
-  }
-  .jobInfo {
-    color: rgba(0, 0, 0, 0.592);
-  }
-  /* company moto */
 
   .outerimgDiv {
     width: 500px;
