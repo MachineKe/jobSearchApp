@@ -128,18 +128,6 @@ input[type="search"]::-webkit-search-cancel-button {
   border: none;
 }
 
-.closeIcon {
-  font-size: 30px;
-  color: #afa6a6;
-  &:hover {
-    color: var(--textColor);
-  }
-
-  &:hover {
-    color: red;
-  }
-}
-
 .secDiv {
   display: flex;
   align-items: center;
@@ -195,7 +183,12 @@ input[type="search"]::-webkit-search-cancel-button {
   &:hover {
     background-color: #2a68ff;
     box-shadow: 0 10px 15px -3px #f1f4f8;
-color: white;
+    color: white;
+
+    .companyLogo {
+      border: solid white 2px;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -235,23 +228,17 @@ color: white;
   align-items: center;
   gap: 2px;
   width: 100%;
+}
+.singleJob > .companyLogo {
   &:hover {
-    color: white;
   }
 }
-
 .companyLogo {
   width: 60px;
   height: 60px;
   border: solid #2a68ff 2px;
   border-radius: 50%;
-  
-    border: solid white 2px;
-    border-radius: 50%;
-  
 }
-
-
 
 .companyName {
   font-size: 14px;
