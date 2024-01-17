@@ -167,23 +167,47 @@ const Data = [
   },
 ];
 const Jobs = () => {
+  // search
   const [searchTermTitle, setSearchTermTitle] = useState("");
   const [searchTermLocation, setSearchTermLocation] = useState("");
   const [searchTermCompany, setSearchTermCompany] = useState("");
-  const filteredData = Data.filter(({ title, location, company }) => {
-    const titleMatch = title
-      .toLowerCase()
-      .includes(searchTermTitle.toLowerCase());
-    const locationMatch = location
-      .toLowerCase()
-      .includes(searchTermLocation.toLowerCase());
-    const companyMatch = company
-      .toLowerCase()
-      .includes(searchTermCompany.toLowerCase());
-
-    return titleMatch && locationMatch && companyMatch;
-  });
-
+  const [selectedDuration, setSelectedDuration] = useState("");
+  const [selectedType, setSelectedType] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState("");
+  const filteredData = Data.filter(
+    ({ title, location, company, duration, type, level }) => {
+      const titleMatch = title
+        .toLowerCase()
+        .includes(searchTermTitle.toLowerCase());
+      const locationMatch = location
+        .toLowerCase()
+        .includes(searchTermLocation.toLowerCase());
+      const companyMatch = company
+        .toLowerCase()
+        .includes(searchTermCompany.toLowerCase());
+      const durationMatch = selectedDuration
+        ? duration === selectedDuration
+        : true;
+      const typeMatch = selectedType ? type === selectedType : true;
+      const levelMatch = selectedLevel ? level === selectedLevel : true;
+      return (
+        titleMatch &&
+        locationMatch &&
+        companyMatch &&
+        durationMatch &&
+        typeMatch &&
+        levelMatch
+      );
+    }
+  );
+  const clearAllFilters = () => {
+    setSearchTermTitle("");
+    setSearchTermLocation("");
+    setSearchTermCompany("");
+    setSelectedDuration("");
+    setSelectedType("");
+    setSelectedLevel("");
+  };
   return (
     <div>
       <div className="searchDiv">
@@ -237,34 +261,51 @@ const Jobs = () => {
               name=""
               id="relevance"
               className="selection durationSelection"
+              value={selectedDuration}
+              onChange={(e) => setSelectedDuration(e.target.value)}
             >
-              <option value="">Full-Time</option>
-              <option value="">Contract</option>
+              <option value="">All</option>
+              <option value="Full-Time">Full-Time</option>
+              <option value="Contract">Contract</option>
             </select>
           </div>
           <div className="singleSearch">
             <label htmlFor="type" className="relevanceLabel typeLabel">
               Type:
             </label>
-            <select name="" id="relevance" className="selection typeSelection">
-              {" "}
-              <option value="">Remote</option>
-              <option value="">On-Site</option>
+            <select
+              name=""
+              id="relevance"
+              className="selection typeSelection"
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+            >
+              <option value="">All</option>
+              <option value="Remote">Remote</option>
+              <option value="On-Site">On-Site</option>
             </select>
-          </div>{" "}
+          </div>
           <div className="singleSearch">
             <label htmlFor="level" className="relevanceLabel levelLabel">
               Level:
             </label>
-            <select name="" id="relevance" className="selection levelSelection">
-              {" "}
-              <option value="">Senior</option>
-              <option value="">Junior</option>
-              <option value="">Intern</option>
-              <option value="">Intermediate</option>
+            <select
+              name=""
+              id="relevance"
+              className="selection levelSelection"
+              value={selectedLevel}
+              onChange={(e) => setSelectedLevel(e.target.value)}
+            >
+              <option value="">All</option>
+              <option value="Senior">Senior</option>
+              <option value="Juniour">Junior</option>
+              <option value="Intern">Intern</option>
+              <option value="Intermediate">Intermediate</option>
             </select>
           </div>
-          <span className="clearSelect">Clear All</span>
+          <span className="clearSelect" onClick={clearAllFilters}>
+            Clear All
+          </span>
         </div>
       </div>
 
