@@ -6,15 +6,16 @@ import Value from "./Components/ValueDiv/Value";
 import Footer from "./Components/FooterDiv/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
-const App = () => {
+import Community from "./Components/community/Community";
 
+const App = () => {
   return (
-   
     <div className="App">
       <NavBar />
       {/* <Search /> */}
       <Routes>
-                <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/community" element={<Community />} />
 
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/value" element={<Value />} />
@@ -24,7 +25,5 @@ const App = () => {
     </div>
   );
 };
-
-
 
 export default App;

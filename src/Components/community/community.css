@@ -1,0 +1,30 @@
+.profilePicture {
+  border-radius: 50%;
+float: left;
+}
+.usersContainer {
+  background-color:papayawhip;
+  color: black;
+  font-weight: bold;
+  border-radius:20px;
+display: flex;
+flex-wrap: wrap;
+  border: solid 2px black;
+
+}
+
+.userList {
+border: 2px solid black;
+width: 100%;
+border-radius: 20px;
+}
+
+
+.userList p {
+width:600px;
+height:50px;
+text-align: justify;
+margin-right: 300px;
+padding: 20px;
+
+}
