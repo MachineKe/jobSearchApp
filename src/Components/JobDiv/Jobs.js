@@ -5,7 +5,15 @@ import { BsHouseDoor } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { IoBriefcaseOutline } from "react-icons/io5";
 import jobsData from "../data/jobsData.json";
-
+import { useEffect } from "react";
+//  the shuffleArray function
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 const Jobs = () => {
   // search
   const [searchTermTitle, setSearchTermTitle] = useState("");
@@ -14,7 +22,12 @@ const Jobs = () => {
   const [selectedDuration, setSelectedDuration] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedLevel, setSelectedLevel] = useState("");
-  const filteredData = jobsData.filter(
+const [shuffledData, setShuffledData] = useState([]);
+  // Shuffle the data on component mount
+  useEffect(() => {
+    setShuffledData(shuffleArray([...jobsData]));
+  }, []);
+  const filteredData = shuffledData.filter(
     ({ title, location, company, duration, type, level }) => {
       const titleMatch = title
         .toLowerCase()
@@ -164,9 +177,9 @@ const Jobs = () => {
             level,
           }) => {
             return (
-              <div key={id} className="singleJob" >
+              <div key={id} className="singleJob">
                 <span className="singleJobSpan">
-                  <h1 className="singleJobHead" >{title}</h1>
+                  <h1 className="singleJobHead">{title}</h1>
                   <span className="durationIcon">
                     <BiTimeFive />
                     {time}
