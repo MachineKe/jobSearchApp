@@ -33,10 +33,10 @@
 }
 @media only screen and (max-width: 600px) {
   .userSearchDiv {
-    margin-top: -120px;
+    margin-top: -100px;
     width: fit-content;
   }
-  
+
   .profilePicture {
     width: 300px;
     height: 300px;
