@@ -44,17 +44,17 @@ const Users = () => {
             <div className="userList" key={index}>
               <h4>Job Seeker</h4>
               <p>
-                <a
+                {/* <a
                   href={`https://xsgames.co/randomusers/assets/avatars/${userGender}/${profilePic}.jpg`}
                   target="_blank"
                   rel="noreferrer"
-                >
+                > */}
                   <img
                     src={`https://xsgames.co/randomusers/assets/avatars/${userGender}/${profilePic}.jpg`}
                     alt="profile_Picture"
                     className="profilePicture"
                   />
-                </a>
+                {/* </a> */}
               </p>
               <p>Name: {fullname}</p>
 

@@ -1,70 +1,68 @@
 .profilePicture {
   border-radius: 50%;
-float: left;
+  float: left;
 }
 .usersContainer {
-  background-color:papayawhip;
+  background-color: papayawhip;
   color: black;
   font-weight: bold;
-  border-radius:20px;
-display: flex;
-flex-wrap: wrap;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
   border: solid 2px black;
 }
 
 .userList {
-border: 2px solid black;
-width: 100%;
-border-radius: 20px;
-&:hover {
-  background-color: peachpuff;
-}
+  border: 2px solid black;
+  width: 100%;
+  border-radius: 20px;
+  cursor: pointer;
 
+  &:hover {
+    background-color: peachpuff;
+  }
 }
-
 
 .userList p {
-width:600px;
-height:50px;
-text-align: justify;
-margin-right: 300px;
-padding: 20px;
-
+  width: 600px;
+  height: 50px;
+  text-align: justify;
+  margin-right: 300px;
+  padding: 20px;
 }
 
 @media only screen and (max-width: 600px) {
-.profilePicture {
-  width:150px;
-  height:150px;
-}
-.usersContainer {
-  width:100%;
+  .profilePicture {
+    width: 150px;
+    height: 150px;
+  }
+  .usersContainer {
+    width: 100%;
     margin-top: 110px;
-}
-.userList {
-  width: 90%;
-  margin-left: 20px;
-margin-top: 10px;
-  margin-top: 60px;
-}
-.userList p {
-  width: 290px;
-  height: 80px;
-  flex-wrap: wrap;
-padding: 0;
-}
-.userListHeading {
-position: fixed;
-margin-top: -50px;
-z-index: 1;
-width:100%;
-float: left;
-}
-.activeCount {
-  font-size: 12px;
- margin-top: -29px; 
- color: green;
- margin-left: 110px;
-
-}
+  }
+  .userList {
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-top: 60px;
+  }
+  .userList p {
+    width: 290px;
+    height: 80px;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .userListHeading {
+    position: fixed;
+    margin-top: -50px;
+    z-index: 1;
+    width: 100%;
+    float: left;
+  }
+  .activeCount {
+    font-size: 12px;
+    margin-top: -29px;
+    color: green;
+    margin-left: 110px;
+  }
 }
