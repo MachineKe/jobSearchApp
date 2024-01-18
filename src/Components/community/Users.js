@@ -46,18 +46,6 @@ const Users = () => {
   const activeUserCount = shuffledUserData.reduce((count, { user_id }) => {
     return user_id ? count + 1 : count;
   }, 0);
-  const filteredData = userData.filter(({ fullname, country, job_title }) => {
-    const nameMatch = fullname
-      .toLowerCase()
-      .includes(searchTermName.toLowerCase());
-    const jobTitleMatch = job_title
-      .toLowerCase()
-      .includes(searchTermJobTitle.toLowerCase());
-    const countryMatch = country
-      .toLowerCase()
-      .includes(searchTermCountry.toLowerCase());
-    return nameMatch && jobTitleMatch && countryMatch;
-  });
   const clearAllFilters = () => {
     setSearchTermName("");
     setSearchTermJobTitle("");
@@ -66,12 +54,12 @@ const Users = () => {
 
   return (
     <div className="usersContainer">
-      <div>
+      <div className="searchDiv userSearchDiv">
         <form action="">
           <div className="firstDiv">
             <div className="byJob">
               <div className="icon">
-                <IoBriefcaseOutline />
+ <CgProfile />
                 <input
                   type="search"
                   className="input"
@@ -83,7 +71,7 @@ const Users = () => {
             </div>
             <div className="byCompany">
               <div className="icon">
-                <BsHouseDoor />
+               <IoBriefcaseOutline/>
                 <input
                   type="search"
                   className="input"
