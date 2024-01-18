@@ -36,7 +36,7 @@ const Users = () => {
       
       </div>
       {shuffledUserData.map(
-        ({ fullname, company, job_title, gender, city, country,user_id }, index) => {
+        ({ fullname, company, job_title, gender, city, country,user_id, country_code }, index) => {
           const userGender = gender.toLowerCase();
           const profilePic = Math.floor(Math.random() * 77);
           
@@ -62,7 +62,7 @@ const Users = () => {
               <p>Company: {company}</p>
               {/* <p>City: {country}</p> */}
 
-              <p>Country: {city}</p>
+              <p><img src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${country_code}.svg`} alt="country flag icon" className="countryFlag"/>{country}</p>
             </div>
           );
         }
