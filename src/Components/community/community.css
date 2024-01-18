@@ -80,6 +80,7 @@
     background-color: papayawhip;
     color: black;
     margin-top: 30px;
+    cursor: pointer;
     &:hover {
       color: white;
     }
