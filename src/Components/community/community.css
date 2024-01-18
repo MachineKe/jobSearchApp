@@ -24,11 +24,8 @@
 }
 
 .userList p {
-  width: 600px;
-  height: 50px;
-  text-align: justify;
-  margin-right: 300px;
-  padding: 20px;
+  width: 112px;
+  text-align: start;
 }
 .countryFlag {
   width: 30px;
@@ -36,24 +33,29 @@
 }
 @media only screen and (max-width: 600px) {
   .profilePicture {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
+    float: none;
   }
   .usersContainer {
     width: 100%;
     margin-top: 110px;
-  }
+border: none;
+}
   .userList {
-    width: 90%;
+    width: 91%;
     margin-left: 20px;
     margin-top: 10px;
-    margin-top: 60px;
+    margin-top: 20px;
+    height: 90vh;
   }
   .userList p {
-    width: 290px;
-    height: 80px;
+    width: 400px;
     flex-wrap: wrap;
-    padding: 0;
+    margin-left: 9px;
+    line-height: 40px;
+font-size: 14px;
+word-break: break-all;
   }
   .userListHeading {
     position: fixed;
@@ -67,5 +69,30 @@
     margin-top: -29px;
     color: green;
     margin-left: 110px;
+  }
+  .userButtons {
+    width: 47%;
+    height: 40px;
+    /* display: flex; */
+    margin-left: 6px;
+    bottom: 0;
+    font-weight: bold;
+border-radius: 10px;
+    background-color: papayawhip;
+    color: black;
+margin-top: 30px;
+    &:hover {
+      color:white;
+    }
+  }
+  .followButton {
+    &:hover {
+      background-color: rgb(25, 232, 25);
+    }
+  }
+  .messageButton {
+    &:hover {
+      background-color: rgb(0, 0, 255);
+    }
   }
 }
