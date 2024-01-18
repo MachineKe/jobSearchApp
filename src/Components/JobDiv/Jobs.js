@@ -22,13 +22,14 @@ const Jobs = () => {
   const [selectedDuration, setSelectedDuration] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedLevel, setSelectedLevel] = useState("");
-const [shuffledData, setShuffledData] = useState([]);
+  const [shuffledData, setShuffledData] = useState([]);
   // Shuffle the data on component mount
   useEffect(() => {
     setShuffledData(shuffleArray([...jobsData]));
   }, []);
+
   const filteredData = shuffledData.filter(
-    ({ title, location, company, duration, type, level }) => {
+    ({ title, location, company, duration, type, level, id }) => {
       const titleMatch = title
         .toLowerCase()
         .includes(searchTermTitle.toLowerCase());
@@ -53,6 +54,10 @@ const [shuffledData, setShuffledData] = useState([]);
       );
     }
   );
+  const openJobsCount = filteredData.reduce((count, { id }) => {
+    return id ? count + 1 : count;
+  }, 0);
+
   const clearAllFilters = () => {
     setSearchTermTitle("");
     setSearchTermLocation("");
@@ -163,21 +168,34 @@ const [shuffledData, setShuffledData] = useState([]);
       </div>
 
       <div className="jobsContainer">
+        <div className="userListHeading jobListHeading">
+          {" "}
+          <h2>
+            Jobs List{" "}
+            <p className="activeCount">
+              Open: {openJobsCount.toLocaleString()}
+            </p>
+          </h2>
+        </div>
+
         {filteredData.map(
-          ({
-            id,
-            image,
-            title,
-            time,
-            location,
-            desc,
-            company,
-            duration,
-            type,
-            level,
-          }) => {
+          (
+            {
+              id,
+              image,
+              title,
+              time,
+              location,
+              desc,
+              company,
+              duration,
+              type,
+              level,
+            },
+            index
+          ) => {
             return (
-              <div key={id} className="singleJob">
+              <div key={index} className="singleJob">
                 <span className="singleJobSpan">
                   <h1 className="singleJobHead">{title}</h1>
                   <span className="durationIcon">
