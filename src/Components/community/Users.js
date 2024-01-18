@@ -32,7 +32,7 @@ const Users = () => {
 
               <p>Work: {job_title}</p>
               <p>Company: {company}</p>
-              <p>City: {country}</p>
+              {/* <p>City: {country}</p> */}
 
               <p>Country: {city}</p>
             </div>
