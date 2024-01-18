@@ -2,19 +2,21 @@ import React from "react";
 import userData from "../data/userData.json";
 
 const Users = () => {
-  // profile pic
-
+// Count active users
+  const activeUserCount = userData.reduce((count, { user_id }) => {
+    return user_id ? count + 1 : count;
+  }, 0);
   return (
     <div className="usersContainer">
-     <div className='userListHeading'> <h2>User List <p className="activeCount">Active:</p></h2>
+     <div className='userListHeading'> <h2>User List <p className="activeCount">Active: {activeUserCount.toLocaleString()}</p></h2>
       
       </div>
       {userData.map(
-        ({ fullname, company, job_title, gender, city, country }) => {
+        ({ fullname, company, job_title, gender, city, country,user_id }, index) => {
           const userGender = gender.toLowerCase();
           const profilePic = Math.floor(Math.random() * 77);
           return (
-            <div className="userList">
+            <div className="userList" key={index}>
               <h4>Job Seeker</h4>
               <p>
                 <a
