@@ -6,8 +6,9 @@ const Users = () => {
 
   return (
     <div className="usersContainer">
-      <h1>User List</h1>
-      <p>User Count:</p>
+     <div className='userListHeading'> <h2>User List <p className="activeCount">Active:</p></h2>
+      
+      </div>
       {userData.map(
         ({ fullname, company, job_title, gender, city, country }) => {
           const userGender = gender.toLowerCase();

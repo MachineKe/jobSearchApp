@@ -28,3 +28,38 @@ margin-right: 300px;
 padding: 20px;
 
 }
+
+@media only screen and (max-width: 600px) {
+.profilePicture {
+  width:150px;
+  height:150px;
+}
+.usersContainer {
+  width:100%;
+    margin-top: 110px;
+}
+.userList {
+  width: 90%;
+  margin-left: 20px;
+margin-top: 10px;
+  margin-top: 60px;
+}
+.userList p {
+  width: 290px;
+  height: 80px;
+  flex-wrap: wrap;
+padding: 0;
+}
+.userListHeading {
+position: fixed;
+margin-top: -60px;
+z-index: 1;
+width:100%;
+float: left;
+}
+.activeCount {
+  font-size: 12px;
+ margin-top: -9px; 
+ color: green;
+}
+}

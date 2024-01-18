@@ -237,10 +237,10 @@ input[type="search"]::-webkit-search-cancel-button {
   gap: 2px;
   width: 100%;
 }
-.singleJob > .companyLogo {
+/* .singleJob > .companyLogo {
   &:hover {
   }
-}
+} */
 .companyLogo {
   width: 60px;
   height: 60px;
@@ -463,7 +463,10 @@ input[type="search"]::-webkit-search-cancel-button {
   .navBar {
     height: 1px;
     z-index: 1;
-  }
+  position: fixed;
+  background-color: white;
+  border-radius: 10px;
+}
 
   .logoDiv {
     height: inherit;
@@ -502,7 +505,7 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 312px;
     height: 75px;
   }
-    .link {
+  .link {
     color: white;
   }
 
