@@ -40,22 +40,21 @@
   .usersContainer {
     width: 100%;
     margin-top: 110px;
-border: none;
-}
+    border: none;
+  }
   .userList {
     width: 91%;
     margin-left: 20px;
     margin-top: 10px;
     margin-top: 20px;
-    height: 90vh;
+    height: fit-content;
   }
   .userList p {
-    width: 400px;
+    width: fit-content;
     flex-wrap: wrap;
     margin-left: 9px;
     line-height: 40px;
-font-size: 14px;
-word-break: break-all;
+    font-size: 14px;
   }
   .userListHeading {
     position: fixed;
@@ -77,12 +76,12 @@ word-break: break-all;
     margin-left: 6px;
     bottom: 0;
     font-weight: bold;
-border-radius: 10px;
+    border-radius: 10px;
     background-color: papayawhip;
     color: black;
-margin-top: 30px;
+    margin-top: 30px;
     &:hover {
-      color:white;
+      color: white;
     }
   }
   .followButton {
