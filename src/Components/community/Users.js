@@ -6,16 +6,16 @@ import { CgProfile } from "react-icons/cg";
 import { IoLogoBuffer } from "react-icons/io5";
 import { LiaScrewdriverSolid } from "react-icons/lia";
 import { FaBook } from "react-icons/fa";
+import { BsHouseDoor } from "react-icons/bs";
+import { CiLocationOn } from "react-icons/ci";
+
 const Users = () => {
-  // // Count active users
-  //   const activeUserCount = userData.reduce((count, { user_id }) => {
-  //     return user_id ? count + 1 : count;
-  //   }, 0);
-  // State to store shuffled user data
+  const [searchTermName, setSearchTermName] = useState("");
+  const [searchTermJobTitle, setSearchTermJobTitle] = useState("");
+  const [searchTermCountry, setSearchTermCountry] = useState("");
   const [shuffledUserData, setShuffledUserData] = useState([]);
 
   useEffect(() => {
-    // Function to shuffle the array (Fisher-Yates algorithm)
     const shuffleArray = (array) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -23,20 +23,94 @@ const Users = () => {
       }
       return array;
     };
-    // Create a copy of the original user data and shuffle it
-    const copiedUserData = [...userData];
-    const shuffledData = shuffleArray(copiedUserData);
 
-    // Update the state with the shuffled data
-    setShuffledUserData(shuffledData);
-  }, []); // Empty dependency array ensures the effect runs once on mount
+    const filteredAndShuffledData = shuffleArray(
+      userData.filter(({ fullname, country, job_title }) => {
+        const nameMatch = fullname
+          .toLowerCase()
+          .includes(searchTermName.toLowerCase());
+        const jobTitleMatch = job_title
+          .toLowerCase()
+          .includes(searchTermJobTitle.toLowerCase());
+        const countryMatch = country
+          .toLowerCase()
+          .includes(searchTermCountry.toLowerCase());
+        return nameMatch && jobTitleMatch && countryMatch;
+      })
+    );
+
+    setShuffledUserData(filteredAndShuffledData);
+  }, [searchTermName, searchTermJobTitle, searchTermCountry]);
 
   // Count active users in the shuffled data
   const activeUserCount = shuffledUserData.reduce((count, { user_id }) => {
     return user_id ? count + 1 : count;
   }, 0);
+  const filteredData = userData.filter(({ fullname, country, job_title }) => {
+    const nameMatch = fullname
+      .toLowerCase()
+      .includes(searchTermName.toLowerCase());
+    const jobTitleMatch = job_title
+      .toLowerCase()
+      .includes(searchTermJobTitle.toLowerCase());
+    const countryMatch = country
+      .toLowerCase()
+      .includes(searchTermCountry.toLowerCase());
+    return nameMatch && jobTitleMatch && countryMatch;
+  });
+  const clearAllFilters = () => {
+    setSearchTermName("");
+    setSearchTermJobTitle("");
+    setSearchTermCountry("");
+  };
+
   return (
     <div className="usersContainer">
+      <div>
+        <form action="">
+          <div className="firstDiv">
+            <div className="byJob">
+              <div className="icon">
+                <IoBriefcaseOutline />
+                <input
+                  type="search"
+                  className="input"
+                  placeholder="Search Name..."
+                  value={searchTermName}
+                  onChange={(e) => setSearchTermName(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="byCompany">
+              <div className="icon">
+                <BsHouseDoor />
+                <input
+                  type="search"
+                  className="input"
+                  placeholder="Search Job Title..."
+                  value={searchTermJobTitle}
+                  onChange={(e) => setSearchTermJobTitle(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="byLocation">
+              <div className="icon">
+                <CiLocationOn />
+                <input
+                  type="search"
+                  className="input"
+                  placeholder="Search by Country..."
+                  value={searchTermCountry}
+                  onChange={(e) => setSearchTermCountry(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+        <span className="clearSelect" onClick={clearAllFilters}>
+          Clear All
+        </span>
+      </div>
       <div className="userListHeading">
         {" "}
         <h2>
