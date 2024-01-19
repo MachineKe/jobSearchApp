@@ -29,7 +29,6 @@ const Footer = () => {
           <li>Account</li>
           <li>Support Centre</li>
           <li>Resources</li>
-          <li>Countact Us</li>
         </div>
       </div>
       <div className="footerContent">
@@ -37,7 +36,6 @@ const Footer = () => {
         <div className="footerlist">
           <li>Events</li>
           <li>Promo</li>
-          <li>Req Demo</li>
           <li>Careers</li>
         </div>
       </div>
