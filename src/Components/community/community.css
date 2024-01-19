@@ -32,10 +32,7 @@
   height: 30px;
 }
 @media only screen and (max-width: 600px) {
-  .jobListHeading {
-    padding-top: 70px;
-  }
-  .userSearchDiv {
+   .userSearchDiv {
     margin-top: -100px;
     width: fit-content;
   }
@@ -65,11 +62,11 @@
     font-size: 14px;
   }
   .userListHeading {
-    position: fixed;
     margin-top: -50px;
     z-index: 1;
     width: 100%;
     float: left;
+    position:fixed;
   }
   .activeCount {
     font-size: 12px;

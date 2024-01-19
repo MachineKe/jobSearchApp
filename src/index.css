@@ -449,6 +449,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 /* Media queries */
 @media only screen and (max-width: 600px) {
+  
   .App {
     max-width: 100%;
     display: flex;
@@ -466,7 +467,11 @@ input[type="search"]::-webkit-search-cancel-button {
   position: fixed;
   background-color: white;
   border-radius: 10px;
+  
 }
+ .jobListHeading {
+    /* padding-top: 70px; */
+  }
 
   .logoDiv {
     height: inherit;
@@ -488,7 +493,6 @@ input[type="search"]::-webkit-search-cancel-button {
     /* padding-left: 30px; */
     margin-left: 247px;
     /* margin-top: 0; */
-
     &:active {
       border: solid red 2px;
     }
