@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "image": "dvc.png",
+    "location": "Canada",
+    "discipline": "Web Development",
+    "desc": "At DVC, we are more than just a web development company; we are your digital partners in turning visions into reality. As a cutting-edge web development firm, we specialize in crafting bespoke digital solutions that propel businesses to new heights",
+    "company": "DVC Limited"
+  },
+  {
+    "id": 2,
+    "image": "anaconda_logo.png",
+    "title": "UI Designer",
+    "location": "Manchester",
+    "desc": "",
+    "company": "PyCharm",
+  "discipline": "Software Development"  },
+  {
+    "id": 3,
+    "image": "caddy.png",
+    "location": "Greece",
+    "desc": "",
+    "company": "Cadilac",
+"discipline": "Software Engineering"
+  },
+  {
+    "id": 4,
+    "image": "aws.png",
+    "time": "1 Day",
+    "location": "USA",
+    "desc": "",
+    "company": "AWS",
+"discipline":"Software Development"
+  },
+  {
+    "id": 5,
+    "image": "tabby.png",
+    "discipline": "Machine Operations",
+    "location": "Nairobi, Kenya",
+    "desc": ""
+  },
+  {
+    "id": 6,
+    "image": "huggingface.png",
+    "discipline": "Hotel Services",
+    "location": "Ngara, Nairobi, Kenya",
+    "desc": ""
+  },
+  {
+    "id": 7,
+    "image": "elasticsearch.png",
+    "title": "Research Assistant",
+    "time": "4 days",
+    "location": "Nairobi, Kenya",
+    "desc": "Are you a detail-oriented individual with a passion for contributing to meaningful research projects? Join our team at Daima Associates as a Research Assistant and play a vital role in advancing knowledge and innovation.",
+    "company": "Daima Associates",
+    "type": "On-Site",
+    "level": "Intern",
+    "duration": "Contract"
+  },
+  {
+    "id": 8,
+    "image": "docusaurus.png",
+    "title": "Mason",
+    "time": "2 days",
+    "location": "Nairobi, Kenya",
+    "desc": "Are you a skilled and experienced mason looking for a rewarding opportunity in the construction industry? Join our team at [Construction Company Name] as a Mason and play a crucial role in the creation and enhancement of structures through your expertise in masonry.",
+    "company": "Mjenzi",
+    "type": "On-Site",
+    "level": "Senior",
+    "duration": "Contract"
+  },
+  {
+    "id": 9,
+    "image": "docusaurus.png",
+    "title": "Contractor",
+    "time": "2 days",
+    "location": "Nairobi, Kenya",
+    "desc": "Are you an experienced and motivated contractor with a passion for overseeing construction projects from inception to completion? Join our team at [Your Contracting Business Name] and take a leadership role in delivering high-quality construction services to our clients.",
+    "company": "Mjenzi",
+    "type": "On-Site",
+    "level": "Senior",
+    "duration": "Contract"
+  },
+  {
+    "id": 10,
+    "image": "streamlit_dark.png",
+    "title": "Lecturer",
+    "time": "2Hrs",
+    "location": "Narok, Kenya",
+    "desc": "Are you an enthusiastic and knowledgeable individual passionate about sharing your expertise with eager minds? Consider joining Maasai Mara University as a Lecturer in the [Department Name] department and contribute to the academic growth and development of students.",
+    "company": "Maasai Mara University",
+    "type": "On-Site",
+    "level": "Senior",
+    "duration": "Contract"
+  },
+  {
+    "id": 11,
+    "image": "jax.png",
+    "title": "Neurosurgeon",
+    "time": "2Hrs",
+    "location": "Nakuru, Kenya",
+    "desc": "Are you an experienced and skilled Neurosurgeon seeking a rewarding opportunity to contribute to cutting-edge medical care? Join our team at [Hospital/Clinic Name] and play a pivotal role in providing exceptional neurosurgical services to our patients.",
+    "company": "MediHeal Hospital",
+    "type": "On-Site",
+    "level": "Intern",
+    "duration": "Contract"
+  },
+  {
+    "id": 12,
+    "image": "Notepad_plus_plus.png",
+    "title": "Teacher",
+    "time": "5Hrs",
+    "location": "Kericho City, Kenya",
+    "desc": "Are you an inspiring and dedicated educator with a passion for fostering a love of learning? Join the team at Tenwek High School as a Teacher and contribute to the academic and personal development of students in a dynamic educational environment.",
+    "company": "Tenwek High School",
+    "type": "On-Site",
+    "level": "Intermediate",
+    "duration": "Full-Time"
+  }
+]

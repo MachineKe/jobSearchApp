@@ -63,7 +63,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaGithub />{" "}
+          <FaGithub />
         </a>
       </div>
     </div>

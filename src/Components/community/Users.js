@@ -6,7 +6,6 @@ import { CgProfile } from "react-icons/cg";
 import { IoLogoBuffer } from "react-icons/io5";
 import { LiaScrewdriverSolid } from "react-icons/lia";
 import { FaBook } from "react-icons/fa";
-import { BsHouseDoor } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 
 const Users = () => {

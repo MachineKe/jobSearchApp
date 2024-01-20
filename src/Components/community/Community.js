@@ -1,7 +1,7 @@
 import React from 'react'
 import Users from './Users'
 
-const Community = (props: Props) => {
+const Community = () => {
   return (
     <Users />
   )
