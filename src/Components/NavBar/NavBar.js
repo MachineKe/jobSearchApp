@@ -28,12 +28,17 @@ const NavBar = () => {
               <li className="menuList">
                 <Link className="link" to="/">
                   {" "}
-                  Home
+                 Home 
                 </Link>
               </li>
               <li className="menuList">
                 <Link className="link" to="/companies">
                   Companies
+                </Link>
+              </li>
+              <li className="menuList">
+                <Link className="link" to="/about">
+                  About
                 </Link>
               </li>
               {/* <li className="menuList">
@@ -46,12 +51,6 @@ const NavBar = () => {
                   Community
                 </Link>
               </li>
-              <li className="menuList">
-                <Link className="link" to="/about">
-                  About
-                </Link>
-              </li>
-
               <li className="menuList">
                 <Link className="link" to="/login">
                   Login
@@ -87,13 +86,6 @@ const NavBar = () => {
               Community
             </Link>
           </li>
-
-          <li className="menuList">
-            <Link className="link" to="/about">
-              About
-            </Link>
-          </li>
-
           <li className="menuList">
             <Link className="link" to="/login">
               Login
