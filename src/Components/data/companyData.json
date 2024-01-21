@@ -11,7 +11,7 @@
     "id": 2,
     "image": "anaconda_logo.png",
     "location": "Manchester",
-    "desc": "",
+    "desc": "PyCharm is a leading software development company that specializes in creating innovative tools and solutions to empower developers worldwide. With a focus on delivering cutting-edge products, PyCharm is renowned for its flagship integrated development environment (IDE) that enhances the efficiency and productivity of software developers across various domains.",
     "company": "PyCharm",
     "discipline": "Software Development"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "image": "caddy.png",
     "location": "Greece",
-    "desc": "",
+    "desc": "Welcome to Cadilac, a leading software engineering company dedicated to delivering cutting-edge solutions and innovative software development services. At Cadilac, we leverage our expertise, creativity, and technology to drive digital transformation and address the unique challenges faced by businesses in today's dynamic landscape.",
     "company": "Cadilac",
     "discipline": "Software Engineering"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "image": "aws.png",
     "location": "USA",
-    "desc": "",
+    "desc": "Welcome to AWS, a distinguished software development company committed to driving innovation and empowering businesses through cutting-edge technology solutions. At AWS, we harness the power of software engineering to create scalable, secure, and transformative applications that elevate the digital experiences of our clients.",
     "company": "AWS",
     "discipline": "Software Development"
   },
@@ -36,7 +36,7 @@
     "image": "tabby.png",
     "discipline": "Machine Operations",
     "location": "Nairobi, Kenya",
-    "desc": "",
+    "desc": "At Machine Operators, we are committed to delivering excellence in machine operation services. Our dedicated team of professionals is well-versed in the operation of a diverse range of machinery and equipment, ensuring precision and efficiency in every task.",
     "company": "Machine Operators"
   },
   {
@@ -44,7 +44,7 @@
     "image": "huggingface.png",
     "discipline": "Hotel Services",
     "location": "Ngara, Nairobi, Kenya",
-    "desc": "",
+    "desc": "Welcome to The Hennesis Hotel, where luxury meets hospitality in a setting designed to exceed your expectations. As a premier destination for travelers seeking sophistication and comfort, The Hennesis Hotel offers an unparalleled experience marked by exquisite accommodations, world-class amenities, and personalized service.",
     "company": "The Hennesis Hotel"
   },
   {
@@ -52,7 +52,7 @@
     "image": "elasticsearch.png",
     "discipline": "Research",
     "location": "Nairobi, Kenya",
-    "desc": "",
+    "desc": "Welcome to Daima Associates, a distinguished research firm committed to providing cutting-edge insights and solutions that drive informed decision-making across various industries. At Daima Associates, we leverage our expertise in research methodologies, data analysis, and industry knowledge to deliver comprehensive and actionable research services tailored to the unique needs of our clients.",
     "company": "Daima Associates"
   },
 
@@ -69,7 +69,7 @@
     "image": "streamlit_dark.png",
     "discipline": "Higher Education",
     "location": "Narok, Kenya",
-    "desc": "",
+    "desc": "Maasai Mara University is a prominent institution of higher learning located in Narok, Kenya. Established with a commitment to academic excellence and community development, the university offers a diverse range of undergraduate and postgraduate programs across various disciplines. Known for its dedication to research, innovation, and community engagement, Maasai Mara University provides students with a vibrant and conducive learning environment. ",
     "company": "Maasai Mara University"
   },
   {
@@ -77,7 +77,7 @@
     "image": "jax.png",
     "discipline": "Health and Medication",
     "location": "Nakuru, Kenya",
-    "desc": "",
+    "desc": "Welcome to Mediheal Hospital, where compassionate care meets medical excellence. At Mediheal, we are dedicated to providing top-tier healthcare services with a focus on patient well-being and personalized treatment. Our state-of-the-art facilities, experienced medical professionals, and commitment to innovation make us a trusted healthcare destination.",
     "company": "MediHeal Hospital"
   },
   {

@@ -107,7 +107,9 @@ const Companies = () => {
         {" "}
         <h2>
           Company List
-          <p className="activeCount companyCount">Online: {companyCount.toLocaleString()}</p>
+          <p className="activeCount companyCount">
+            Online: {companyCount.toLocaleString()}
+          </p>
         </h2>
       </div>
 
@@ -121,10 +123,12 @@ const Companies = () => {
                   alt={`Logo for ${company}`}
                   className="companyLogo"
                 />
+
                 <p className="companyName">{company}</p>
-                <p className="jobInfo">{desc}</p>
                 <p>{location}</p>
                 <p>{discipline}</p>
+
+                <p className="jobInfo">{desc}</p>
               </div>
             );
           }

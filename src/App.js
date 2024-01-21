@@ -22,8 +22,8 @@ const App = () => {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/value" element={<Value />} />
 
-        <Route path="/footer" element={<Footer />} />
-      </Routes>
+       </Routes>
+      <Footer/>
     </div>
   );
 };
