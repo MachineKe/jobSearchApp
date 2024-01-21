@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+margin-top: 100px;
+}
+
+h2,
+h3 {
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+  color: #555;
+}
+
+ol,
+ul {
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.unique-features,
+.key-features,
+.our-commitment,
+.join-us {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 10px;
+  }
+}

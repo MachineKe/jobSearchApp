@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Community from "./Components/community/Community";
 import Companies from "./Components/community/Companies";
+import About from "./Components/About/About";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
         <Route path="/companies" element={<Companies />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/value" element={<Value />} />
