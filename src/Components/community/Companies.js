@@ -77,7 +77,7 @@ const Companies = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Job Title..."
+                  placeholder="Search by field..."
                   value={searchTermCompanyDiscipline}
                   onChange={(e) =>
                     setSearchTermCompanyDiscipline(e.target.value)
@@ -91,7 +91,7 @@ const Companies = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search by Country..."
+                  placeholder="Search location..."
                   value={searchTermCompanyLocation}
                   onChange={(e) => setSearchTermCompanyLocation(e.target.value)}
                 />
@@ -107,7 +107,7 @@ const Companies = () => {
         {" "}
         <h2>
           Company List
-          <p className="activeCount">Online: {companyCount.toLocaleString()}</p>
+          <p className="activeCount companyCount">Online: {companyCount.toLocaleString()}</p>
         </h2>
       </div>
 
