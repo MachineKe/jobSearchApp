@@ -35,7 +35,9 @@ const About = () => {
           We strive to be the go-to destination for professionals seeking not just jobs but a community that fosters growth and collaboration.
         </p>
       </div>
-
+<div className="developmentTeam">
+  {/* <p>Meet the team behind beyond:</p> */}
+</div>
       <div className="join-us">
         <h3>Join Us Today:</h3>
         <p>

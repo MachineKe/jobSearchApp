@@ -41,7 +41,11 @@ li {
 .join-us {
   margin-bottom: 30px;
 }
-
+.developmentTeam {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
 @media (max-width: 600px) {
   .about-container {
     padding: 10px;
