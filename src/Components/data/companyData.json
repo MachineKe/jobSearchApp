@@ -10,7 +10,6 @@
   {
     "id": 2,
     "image": "anaconda_logo.png",
-    "title": "UI Designer",
     "location": "Manchester",
     "desc": "",
     "company": "PyCharm",
@@ -27,7 +26,6 @@
   {
     "id": 4,
     "image": "aws.png",
-    "time": "1 Day",
     "location": "USA",
     "desc": "",
     "company": "AWS",
@@ -38,14 +36,16 @@
     "image": "tabby.png",
     "discipline": "Machine Operations",
     "location": "Nairobi, Kenya",
-    "desc": ""
+    "desc": "",
+    "company": "Machine Operators"
   },
   {
     "id": 6,
     "image": "huggingface.png",
     "discipline": "Hotel Services",
     "location": "Ngara, Nairobi, Kenya",
-    "desc": ""
+    "desc": "",
+    "company": "The Hennesis Hotel"
   },
   {
     "id": 7,
@@ -55,6 +55,7 @@
     "desc": "",
     "company": "Daima Associates"
   },
+
   {
     "id": 8,
     "image": "docusaurus.png",
@@ -65,23 +66,14 @@
   },
   {
     "id": 9,
-    "image": "docusaurus.png",
-    "discipline": "Construction",
-    "location": "Nairobi, Kenya",
-    "desc": "",
-    "company": "Mjenzi"
-  },
-  {
-    "id": 10,
     "image": "streamlit_dark.png",
     "discipline": "Higher Education",
-    "time": "2Hrs",
     "location": "Narok, Kenya",
     "desc": "",
     "company": "Maasai Mara University"
   },
   {
-    "id": 11,
+    "id": 10,
     "image": "jax.png",
     "discipline": "Health and Medication",
     "location": "Nakuru, Kenya",
@@ -89,10 +81,11 @@
     "company": "MediHeal Hospital"
   },
   {
-    "id": 12,
+    "id": 11,
     "image": "Notepad_plus_plus.png",
     "discipline": "Secondary Education",
     "location": "Kericho City, Kenya",
-    "desc": ""
+    "desc": "",
+    "company": "Tenwek High School"
   }
 ]
