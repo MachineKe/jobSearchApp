@@ -20,7 +20,7 @@ const Footer = () => {
         <span className="titleDiv">Company</span>
         <div className="footerlist">
           <li>
-            <Link to="/about"> About Us</Link>
+            <Link to="/about" className="link">About Us</Link>
           </li>
           {/* <li>Features</li> */}
           <li>News</li>
