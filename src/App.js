@@ -24,7 +24,6 @@ const App = () => {
 
         <Route path="/footer" element={<Footer />} />
       </Routes>
-      <Footer />
     </div>
   );
 };
