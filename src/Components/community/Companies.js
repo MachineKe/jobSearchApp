@@ -100,7 +100,7 @@ const Companies = () => {
           </div>
         </form>
         <span className="clearSelect" onClick={clearAllFilters}>
-          {/* Clear All */}
+          Clear All
         </span>
       </div>
       <div className="userListHeading">
