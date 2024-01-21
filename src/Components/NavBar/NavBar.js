@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(true);
 
@@ -35,21 +36,22 @@ const NavBar = () => {
                   Companies
                 </Link>
               </li>
-              <li className="menuList">
-                <Link className="link" to="/about">
-                  About
-                </Link>
-              </li>
-              <li className="menuList">
+              {/* <li className="menuList">
                 <Link className="link" to="/footer">
                   Contact
                 </Link>
-              </li>
+              </li> */}
               <li className="menuList">
                 <Link className="link" to="/community">
                   Community
                 </Link>
               </li>
+              <li className="menuList">
+                <Link className="link" to="/about">
+                  About
+                </Link>
+              </li>
+
               <li className="menuList">
                 <Link className="link" to="/login">
                   Login
@@ -75,21 +77,23 @@ const NavBar = () => {
               Companies
             </Link>
           </li>
-          <li className="menuList">
-            <Link className="link" to="/about">
-              About
-            </Link>
-          </li>
-          <li className="menuList">
+          {/* <li className="menuList">
             <Link className="link" to="/footer">
               Contact
             </Link>
-          </li>
+          </li> */}
           <li className="menuList">
             <Link className="link" to="/community">
               Community
             </Link>
           </li>
+
+          <li className="menuList">
+            <Link className="link" to="/about">
+              About
+            </Link>
+          </li>
+
           <li className="menuList">
             <Link className="link" to="/login">
               Login
