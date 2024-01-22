@@ -23,9 +23,8 @@ const App = () => {
 
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/value" element={<Value />} />
-
-       </Routes>
-      <Footer/>
+      </Routes>
+      <Footer />
     </div>
   );
 };
