@@ -86,6 +86,12 @@ const NavBar = () => {
               Community
             </Link>
           </li>
+                       <li className="menuList">
+                <Link className="link" to="/about">
+                  About
+                </Link>
+              </li>
+
           <li className="menuList">
             <Link className="link" to="/login">
               Login
