@@ -514,7 +514,8 @@ input[type="search"]::-webkit-search-cancel-button {
     padding-bottom: 100%;
 padding-right: 100%;
 padding-left: 100%;
-  }
+margin-left: -100%;  
+}
 
   /* search bars */
   .firstDiv {
