@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">jobsearchapp</string>
-    <string name="title_activity_main">jobsearchapp</string>
-    <string name="package_name">com.example.app</string>
-    <string name="custom_url_scheme">com.example.app</string>
+    <string name="app_name">jobSearchApp</string>
+    <string name="title_activity_main">jobSearchApp</string>
+    <string name="package_name">com.beyond.app</string>
+    <string name="custom_url_scheme">com.beyond.app</string>
 </resources>
