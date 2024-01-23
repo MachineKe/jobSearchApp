@@ -2,6 +2,8 @@ import React from "react";
 import { MdOutgoingMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footerDiv">
@@ -17,8 +19,10 @@ const Footer = () => {
       <div className="footerContent">
         <span className="titleDiv">Company</span>
         <div className="footerlist">
-          <li>About Us</li>
-          <li>Features</li>
+          <li>
+            <Link to="/about" className="link">About Us</Link>
+          </li>
+          {/* <li>Features</li> */}
           <li>News</li>
           <li>FAQ</li>
         </div>
@@ -63,7 +67,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaGithub />{" "}
+          <FaGithub />
         </a>
       </div>
     </div>
