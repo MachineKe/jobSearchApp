@@ -23,7 +23,7 @@ const NavBar = () => {
           </button>
 
           {!navOpen && (
-            <div id="mobileMenu">
+            <div className="mobileMenu2" id="mobileMenu">
               <li className="menuList"><Link className='link' to='/'> Home</Link></li>
               <li className="menuList"><Link className='link' to='/companies'>Companies</Link></li>
               <li className="menuList"><Link className='link' to='/footer'>About</Link></li>
@@ -36,7 +36,7 @@ const NavBar = () => {
         </div>
 
         <div className="menu">
-        <li className="menuList"><Link className='link' to='/'>Home</Link></li>
+              <li className="menuList active"><Link className='link' to='/'>Home</Link></li>
               <li className="menuList"><Link className='link' to='/companies'>Companies</Link></li>
               <li className="menuList"><Link className='link' to='/footer'>About</Link></li>
               <li className="menuList"><Link className='link' to='/footer'>Contact</Link></li>

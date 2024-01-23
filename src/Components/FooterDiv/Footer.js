@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="contactInfo">
-        <span className="titleDiv">Contact Info</span>
+
         <a
           href="mailto:markarapsoi72@gmail.com"
           className="contactIcon"
