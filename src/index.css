@@ -546,9 +546,9 @@ input[type="search"]::-webkit-search-cancel-button {
 padding-right: 100%;
 padding-left: 100%;
 margin-left: -100%;  
- main
+ 
 }
-
+}
 /* media queries - bigger */
 @media only screen and (700px < width <= 1000px) {
   .menuBtn {
