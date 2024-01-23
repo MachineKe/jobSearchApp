@@ -52,8 +52,9 @@ const Users = () => {
   };
 
   return (
+    // body
     <div className="usersContainer">
-      <div className="searchDiv userSearchDiv">
+      <div className="grid-row-span-2 searchDiv userSearchDiv">
         <form action="">
           <div className="firstDiv">
             <div className="byJob">
@@ -97,7 +98,7 @@ const Users = () => {
         <span className="clearSelect" onClick={clearAllFilters}>
           Clear All
         </span>
-      </div>
+        </div>
       <div className="userListHeading">
         {" "}
         <h2>
@@ -126,44 +127,40 @@ const Users = () => {
         ) => {
           const userGender = gender.toLowerCase();
           const profilePic = Math.floor(Math.random() * 77);
-
+    
           return (
+            // cards
             <div className="userList" key={index}>
-              <p>
-                {/* <a
-                  href={`https://xsgames.co/randomusers/assets/avatars/${userGender}/${profilePic}.jpg`}
-                  target="_blank"
-                  rel="noreferrer"
-                > */}
+              <p className="imgDiv">
+                
                 <img
                   src={`https://xsgames.co/randomusers/assets/avatars/${userGender}/${profilePic}.jpg`}
                   alt="profile_Picture"
                   className="profilePicture"
                 />
-                {/* </a> */}
               </p>
-              <p>
+              <p className="info">
                 {" "}
                 <CgProfile /> {fullname}
               </p>
 
-              <p>
+              <p className="info">
                 <IoBriefcaseOutline /> {job_title}
               </p>
-              <p>
+              <p className="info">
                 {" "}
                 <LiaScrewdriverSolid /> {skills}
               </p>
-              <p>
+              <p className="info">
                 <IoLogoBuffer /> {company}
               </p>
               {/* <p>City: {country}</p> */}
 
-              <p>
+              <p className="info">
                 <FaBook />
                 {education}
               </p>
-              <p>
+              <p className="country">
                 <img
                   src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${country_code}.svg`}
                   alt="country flag icon"
@@ -171,8 +168,10 @@ const Users = () => {
                 />
                 {country}
               </p>
+              <div className="buttonDiv">
               <button className="followButton userButtons">Follow</button>
               <button className="messageButton userButtons">Message</button>
+              </div>
             </div>
           );
         }

@@ -1,103 +1,170 @@
-.profilePicture {
-  border-radius: 50%;
-  float: left;
-}
-.usersContainer {
-  background-color: papayawhip;
+/* body */
+.usersContainer{
+  display: grid;
+  place-items: center;
+  padding-top: 1.5rem;
+  gap: 1.5rem;
+  width: 100%;
+  background-color: white;
   color: black;
   font-weight: bold;
-  border-radius: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  border: solid 2px black;
+  border: none;
 }
-
-.userList {
-  border: 2px solid black;
+.grid-row-span-2{
   width: 100%;
+}
+.userListHeading {
+  display: none;
+}
+/* user card */
+.userList {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding: 2rem;
+  gap: 1.5rem;
   border-radius: 20px;
-  cursor: pointer;
+  box-shadow: 0 10px 15px -3px #0bbbc1;
+  border: dotted 2px #2a68ff;
+  transition: all ease-in-out 1s;
 
   &:hover {
-    background-color: peachpuff;
+    background-color: #2a68ff;
+    color: white;
+
+    .userButtons{
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      &:active{
+        background-color: #0ee2e9;
+      }
+    }
   }
 }
-
-.userList p {
-  width: 112px;
-  text-align: start;
+/* image */
+.imgDiv {
+  display: flex;
+  justify-content: center;
+}
+.profilePicture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+/* users info */
+.userList .info,
+.country {
+  display: flex;
+  align-items: center;
+}
+.userList .info {
+  gap: 1.5rem;
+}
+.country {
+  gap: 1rem;
 }
 .countryFlag {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
-@media only screen and (max-width: 600px) {
-   .userSearchDiv {
-    margin-top: -100px;
-    width: fit-content;
-  }
+/* buttons */
+.buttonDiv {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+}
+.userButtons {
+  padding: 0.5rem 2.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(231, 230, 230);
+  transition: hover ease-in-out 1s;
+}
+.followButton {
+  color: #2a68ff;
+}
+.messageButton {
+  color: rgb(7, 173, 7);
+}
 
-  .profilePicture {
-    width: 300px;
-    height: 300px;
-    float: none;
+/* media queries - universal */
+@media only screen and ( width > 600px){
+  .usersContainer{
+    padding-inline: .5rem;
   }
-  .usersContainer {
-    width: 100%;
-    margin-top: 110px;
-    border: none;
+  .profilePicture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
   .userList {
-    width: 91%;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-top: 20px;
-    height: fit-content;
-  }
-  .userList p {
-    width: fit-content;
-    flex-wrap: wrap;
-    margin-left: 9px;
-    line-height: 40px;
-    font-size: 14px;
-  }
-  .userListHeading {
-    margin-top: -50px;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    float: left;
-    position:fixed;
+    padding: 1rem;
+    gap: .5rem;
   }
-  .activeCount {
-    font-size: 12px;
-    margin-top: -29px;
-    color: green;
-    margin-left: 110px;
+  .info{
+    font-size: .8rem;
+  }
+  .userList .info {
+    gap: 1rem;
+  }
+  .country {
+    gap: .5rem;
+  }
+  .buttonDiv {
+    gap: .5rem;
   }
   .userButtons {
-    width: 47%;
-    height: 40px;
-    /* display: flex; */
-    margin-left: 6px;
-    bottom: 0;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: papayawhip;
-    color: black;
-    margin-top: 30px;
-    cursor: pointer;
-    &:hover {
-      color: white;
-    }
+    padding: 0.5rem 1rem;
   }
-  .followButton {
-    &:hover {
-      background-color: rgb(25, 232, 25);
-    }
+}
+
+/* media queries - slightly bigger */
+@media only screen and (600px < width) and (width <= 700px) {
+  .usersContainer{
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: .5rem;
+    gap: 1rem;
   }
-  .messageButton {
-    &:hover {
-      background-color: rgb(0, 0, 255);
-    }
+  .grid-row-span-2{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .userList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    gap: .5rem;
+  }
+}
+
+/* media queries -  bigger */
+@media only screen and (700px < width) and (width <= 1000px) {
+  .usersContainer{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-row-span-2{
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .info{
+    font-size: .4rem;
+  }
+}
+
+/* media queries - biggest */
+@media only screen and ( width > 1000px){
+  .usersContainer{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-row-span-2{
+    grid-column-start: 1;
+    grid-column-end: 5;
   }
 }

@@ -68,6 +68,7 @@ const Jobs = () => {
   };
   return (
     <div>
+      {/* search */}
       <div className="searchDiv">
         <form action="">
           <div className="firstDiv">
@@ -162,17 +163,17 @@ const Jobs = () => {
             </select>
           </div>
           <span className="clearSelect" onClick={clearAllFilters}>
-            Clear All
+            Clear
           </span>
         </div>
       </div>
-
+      {/* cards mother div */}
       <div className="jobsContainer">
-        <div className="userListHeading jobListHeading">
+        <div className="userListHeading jobListHeading header">
           {" "}
-          <h2>
+          <h2 className="head">
             Jobs List{" "}
-            <p className="activeCount">
+            <p className="activeCount head2">
               Open: {openJobsCount.toLocaleString()}
             </p>
           </h2>
@@ -195,6 +196,7 @@ const Jobs = () => {
             index
           ) => {
             return (
+              // card
               <div key={index} className="singleJob">
                 <span className="singleJobSpan">
                   <h1 className="singleJobHead">{title}</h1>
