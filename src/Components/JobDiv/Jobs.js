@@ -78,7 +78,8 @@ const Jobs = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Job Title..."
+                  placeholder=" Job "
+                  title="Please input Job"
                   value={searchTermTitle}
                   onChange={(e) => setSearchTermTitle(e.target.value)}
                 />
@@ -90,7 +91,8 @@ const Jobs = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Job Company..."
+                  placeholder=" Company "
+                  title="Please input Company"
                   value={searchTermCompany}
                   onChange={(e) => setSearchTermCompany(e.target.value)}
                 />
@@ -102,7 +104,8 @@ const Jobs = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Job Location..."
+                  placeholder=" Location "
+                  title="Please input Location"
                   value={searchTermLocation}
                   onChange={(e) => setSearchTermLocation(e.target.value)}
                 />
@@ -206,7 +209,7 @@ const Jobs = () => {
                   </span>
                 </span>
                 <h6 className="locationName">{location}</h6>
-                <div durationTypeLevel>
+                <div className="durationTypeLevel">
                   <h4 className="durationText">{duration}</h4>
                   <h5 className="typeText">{type}</h5>
                   <h6 className="levelText">{level}</h6>

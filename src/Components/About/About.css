@@ -7,45 +7,120 @@
 body {
   font-size: 16px;
   font-family: "Arial", sans-serif;
+  line-height: 2rem;
 }
 
 .about-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-top: 100px;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: hsl(211, 90%, 92%);
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+  grid-auto-columns: 1fr;
 }
-
-.about-container > h2 > h3 {
-  color: #333;
-  line-height: 1.6;
+/* general styles */
+.about-container div {
+  padding: 1rem;
 }
-
-.about-container p {
-  color: #555;
-}
-
-.about-container ol > ul {
-  margin-bottom: 20px;
+.about-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .about-container li {
-  margin-bottom: 8px;
+  list-style: none;
+  margin-block: 0.5rem;
+}
+/* individual styles */
+.about-container .unique-features {
+  grid-area: one;
+  background-color: hsl(263, 66%, 33%);
+  border-radius: 10px 10px 0 0;
+}
+.about-container .about {
+  grid-area: two;
+  background-color: hsl(217, 19%, 35%);
+}
+.about-container .join-us {
+  grid-area: three;
+}
+.about-container .our-commitment {
+  grid-area: four;
+  background-color: hsl(219, 29%, 14%);
+}
+.about-container .key-features {
+  grid-area: five;
+  border-radius: 0 0 10px 10px;
+}
+.unique-features,
+.about,
+.our-commitment {
+  color: hsl(0, 0%, 100%);
+}
+.join-us,
+.key-features {
+  background: white;
+  color: hsl(217, 22%, 19%);
+}
+/* media queries */
+@media only screen and (600px < width) {
+  .about-container {
+    grid-template-areas:
+      "one one "
+      "two five"
+      "three five"
+      "four four";
+  }
+  .our-commitment {
+    border-radius: 0 0 10px 10px;
+  }
+  .about-container .key-features {
+    border-radius: 0 0 0 0 !important;
+  }
 }
 
-.unique-features,
-.key-features,
-.our-commitment,
-.join-us {
-  margin-bottom: 30px;
-}
-.developmentTeam {
-  font-size: 20px;
-  color: black;
-  font-weight: bold;
-}
-@media (max-width: 600px) {
+@media only screen and (800px < width) and (width < 900px) {
   .about-container {
-    padding: 10px;
+    padding: 2rem;
+  }
+}
+@media only screen and (900px < width) and (width <= 1200px) {
+  .about-container {
+    padding-inline: 3rem;
+    grid-template-areas:
+      "one one "
+      "two five"
+      "three four";
+  }
+}
+@media only screen and (width > 1200px) {
+  .about-container {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
+  .about-container .key-features {
+    grid-row: span 2;
+  }
+  .unique-features li,
+  .key-features li {
+    margin-block: 2rem;
+  }
+  .unique-features {
+    border-radius: 20px 0 0 0 !important;
+  }
+  .join-us {
+    border-radius: 0 0 0 20px;
+  }
+  .about-container .key-features {
+    border-radius: 0 20px 20px 0 !important;
+  }
+  .our-commitment{
+    border-radius: 0 0 0 0 !important;
   }
 }
