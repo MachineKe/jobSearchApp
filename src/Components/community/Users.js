@@ -63,7 +63,8 @@ const Users = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Name..."
+                  placeholder=" Name "
+                  title="Please input name"
                   value={searchTermName}
                   onChange={(e) => setSearchTermName(e.target.value)}
                 />
@@ -75,7 +76,8 @@ const Users = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Job Title..."
+                  placeholder="Job"
+                  title="Please input job"
                   value={searchTermJobTitle}
                   onChange={(e) => setSearchTermJobTitle(e.target.value)}
                 />
@@ -87,7 +89,8 @@ const Users = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search by Country..."
+                  placeholder="Country"
+                  title="Please input Country"
                   value={searchTermCountry}
                   onChange={(e) => setSearchTermCountry(e.target.value)}
                 />
@@ -156,7 +159,7 @@ const Users = () => {
               </p>
               {/* <p>City: {country}</p> */}
 
-              <p className="info">
+              <p className="info education">
                 <FaBook />
                 {education}
               </p>

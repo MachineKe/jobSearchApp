@@ -55,8 +55,8 @@ const Companies = () => {
   };
 
   return (
-    <div className="usersContainer">
-      <div className="searchDiv userSearchDiv">
+    <div className="companiesContainer">
+      <div className="grid-row-span-2 searchDiv userSearchDiv">
         <form action="">
           <div className="firstDiv">
             <div className="byJob">
@@ -65,7 +65,8 @@ const Companies = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search Name..."
+                  placeholder="Name"
+                  title="Please input Name"
                   value={searchTermName}
                   onChange={(e) => setSearchTermName(e.target.value)}
                 />
@@ -77,7 +78,8 @@ const Companies = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search by field..."
+                  placeholder=" Field"
+                  title="Please input Company"
                   value={searchTermCompanyDiscipline}
                   onChange={(e) =>
                     setSearchTermCompanyDiscipline(e.target.value)
@@ -91,7 +93,8 @@ const Companies = () => {
                 <input
                   type="search"
                   className="input"
-                  placeholder="Search location..."
+                  placeholder=" Location "
+                  title="Please input Name"
                   value={searchTermCompanyLocation}
                   onChange={(e) => setSearchTermCompanyLocation(e.target.value)}
                 />
