@@ -1,11 +1,27 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(true);
+
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setNavOpen(true);
+        console.log(menuRef.current);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   return (
     <div className="navBar">
@@ -14,7 +30,7 @@ const NavBar = () => {
           <strong>Job</strong> Search App
         </p1>
 
-        <div className="mobileMenu">
+        <div className="mobileMenu" ref={menuRef}>
           <button
             className="menuBtn"
             id="openMenuBtn"
@@ -28,12 +44,12 @@ const NavBar = () => {
               <li className="menuList">
                 <Link className="link" to="/">
                   {" "}
-                 <div className="mobileMenu3"> Home</div>
+                  <div className="mobileMenu3"> Home</div>
                 </Link>
               </li>
               <li className="menuList">
                 <Link className="link" to="/companies">
-                 <div className="mobileMenu3"> Companies</div>
+                  <div className="mobileMenu3"> Companies</div>
                 </Link>
               </li>
               {/* <li className="menuList">
@@ -43,23 +59,23 @@ const NavBar = () => {
               </li> */}
               <li className="menuList">
                 <Link className="link" to="/community">
-                 <div className="mobileMenu3"> Community</div>
+                  <div className="mobileMenu3"> Community</div>
                 </Link>
               </li>
               <li className="menuList">
                 <Link className="link" to="/about">
-                 <div className="mobileMenu3"> About</div>
+                  <div className="mobileMenu3"> About</div>
                 </Link>
               </li>
 
               <li className="menuList">
                 <Link className="link" to="/login">
-                 <div className="mobileMenu3"> Login</div>
+                  <div className="mobileMenu3"> Login</div>
                 </Link>
               </li>
               <li className="menuList">
                 <Link className="link" to="Register">
-                 <div className="mobileMenu3"> Register</div>
+                  <div className="mobileMenu3"> Register</div>
                 </Link>
               </li>
             </div>
