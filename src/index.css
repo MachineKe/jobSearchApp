@@ -23,7 +23,6 @@ body {
 .App {
   max-width: 2000px;
   width: 100%;
-  margin: auto;
   background-color: #ffffff;
   place-content: center;
 }
@@ -32,15 +31,13 @@ body {
 .navBar {
   background-color: white;
   position: sticky;
-  top: 0px;
+  top: 0;
   z-index: 10000;
 }
 .logoDiv {
   display: flex;
   justify-content: space-between;
   padding-inline: 0.5rem;
-  position: sticky;
-  top: 0px;
 }
 .mobileMenu {
   font-size: 1rem;
@@ -131,10 +128,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-items: center;
   background-color: #126ce2;
   border: rounded 10px;
-  padding-block: 2rem;
+  padding-block: 2rem 1rem;
 }
 
 .firstDiv {
@@ -173,30 +169,39 @@ input[type="search"]::-webkit-search-cancel-button {
   border: rgb(22, 188, 200);
   box-shadow: 0.5px 0.5px 2px 1px rgb(13, 159, 213);
 }
-
+.one{
+  width: 100%;
+}
 .secDiv {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .singleSearch {
-  display: flex;
-  align-items: center;
-  gap: 0.1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 .relevanceLabel{
-  font-size: 0.7rem;
+  font-size: .7rem;
   color: white;
   font-weight: 600;
+}
+.durationLabel{
+  padding-right: .2rem;
+}
+.typeLabel{
+  padding-right: 1.5rem;
+}
+.levelLabel{
+  padding-right: 1.4rem;
 }
 .clearSelect{
   cursor: pointer;
   font-size: .8rem;
   font-weight: 600;
   border: none;
-  padding: 0 1rem;
+  align-self: center;
+  margin-top: 1rem;
+  padding-inline: 1rem 1rem;
   border-radius: 10px;
   color: white;
 }
@@ -391,7 +396,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 /* card  */
 .card {
-  padding: 5rem;
+  padding: 2rem 1rem;
   background-color: #3b82f6;
   border-radius: 10px;
 }
@@ -401,18 +406,18 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .cardText {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 .morecardText {
   color: var(--textColor);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 .cardBtn {
   border: none;
   border-radius: 10px;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #2a68ff;
@@ -482,6 +487,74 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* media queries - universal */
+@media only screen and ( min-width: 400px){
+  /* search - secDiv fix */
+.secDiv {
+  padding-right: 3rem;
+}
+
+.relevanceLabel{
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+.durationLabel{
+  margin-left: 1rem;
+}
+.typeLabel{
+  margin-left: 5rem;
+}
+.levelLabel{
+  margin-left: 7rem;
+}
+.clearSelect{
+  align-self: end;
+}
+/* card  */
+.card {
+  padding: 5rem;
+}
+.cardText,
+.morecardText {
+  margin-bottom: 1rem;
+}
+.cardText {
+  font-size: 2rem;
+}
+.morecardText {
+  font-size: 1.2rem;
+}
+.cardBtn {
+  padding: 1rem 4rem;
+  font-size: 1rem; 
+}
+}
+@media only screen and ( min-width: 600px){  
+  .one{
+    display: flex;
+    padding-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .relevanceLabel{
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+  }
+  .durationLabel{
+    margin-left: 0;
+  }
+  .typeLabel{
+    margin-left: 0;
+  }
+  .levelLabel{
+    margin-left: 0;
+  }
+  .clearSelect{
+    align-self: center;
+  }
+  
+}
 @media only screen and (550px < width < 600px){
   .singleJob{
     width: 90%;
