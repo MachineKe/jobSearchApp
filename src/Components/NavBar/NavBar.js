@@ -13,7 +13,6 @@ const NavBar = () => {
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
         setNavOpen(true);
-        console.log(menuRef.current);
       }
     };
     document.addEventListener("mousedown", handler);
