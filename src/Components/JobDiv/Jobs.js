@@ -115,6 +115,7 @@ const Jobs = () => {
         </form>
 
         <div className="secDiv">
+          <div className="one">
           <div className="singleSearch">
             <label htmlFor="relevance" className="relevanceLabel durationLabel">
               Duration:
@@ -165,9 +166,10 @@ const Jobs = () => {
               <option value="Intermediate">Intermediate</option>
             </select>
           </div>
-          <span className="clearSelect" onClick={clearAllFilters}>
+          </div>
+          <div className="clearSelect" onClick={clearAllFilters}>
             Clear
-          </span>
+          </div>
         </div>
       </div>
       {/* cards mother div */}
