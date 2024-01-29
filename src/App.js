@@ -15,6 +15,7 @@ import ResetPassword from "./Components/Account/ResetPass";
 import NoNav from "./Components/Account/noNav";
 import AccountDetails from "./Components/Account/AccountDetails";
 import Camera from "./Components/Camera/Camera";
+import ImgUpload from "./Components/ImgUploader/ImgUpload";
 const App = () => {
   return (
     <div className="App">
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/reset" element={<ResetPassword />} />
               <Route path="/completeProfile" element={<AccountDetails />} />
               <Route path="/camera" element={<Camera />} />
+              <Route path="/uploadImg" element={<ImgUpload />} />
 
       
       </Routes>

@@ -8,7 +8,7 @@ const NoNav = ({ children }) => {
     if (
       location.pathname === "/login" ||
       location.pathname === "/reset" ||
-      location.pathname === "/register" || location.pathname === '/completeProfile' || location.pathname === '/camera'
+      location.pathname === "/register" || location.pathname === '/completeProfile' || location.pathname === '/camera' || location.pathname === '/uploadImg'
     ) {
       setShowNav(false);
     } else {

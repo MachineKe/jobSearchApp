@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ImgUpload from "../ImgUploader/ImgUpload";
 
 const AccountDetails = () => {
   return (
     <div className="">
       <form action="">
-       <label>Profile Picture:</label>
-       <button>Upload image</button>
-       <button><Link to='/camera' className="link">Take Photo</Link></button>
+        <label>Profile Picture:</label>
+        <button>
+          <Link to="/camera" className="link">
+            Take Photo
+          </Link>
+        </button>
+
+        <ImgUpload />
         <label htmlFor="">Name:</label>
         <input placeholder="full name"></input>
         <label htmlFor="">Username:</label>
@@ -19,7 +25,7 @@ const AccountDetails = () => {
         <input placeholder="Kirinyaga"></input>
         <label>Country:</label>
         <input placeholder="Kenya"></input>
- {/* <label>Level of Education:</label>
+        {/* <label>Level of Education:</label>
         <input placeholder="Education"></input>
          <label>Employment status:</label>
         <input placeholder="Kenya"></input> */}
