@@ -23,7 +23,7 @@ const Camera = () => {
 
   const takePhoto = () => {
     const width = 414;
-    const height = width / (16 / 9);
+    const height = width / (4 / 3);
     let video = videoRef.current;
     let photo = photoRef.current;
     photo.width = width;
