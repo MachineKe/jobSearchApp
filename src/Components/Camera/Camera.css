@@ -27,22 +27,6 @@
   transition: 0.4s;
   
 }
-@media only screen and (width > 1000px) {
-.result {
-  height: 50%;
-  width:50%;
-}
-
-.camera {
-  width: 50%;
-  max-width: 50%;
-  height: 50%;
-}
-.result.hasPhoto {
-  margin-top: 33px;
-}
-
-}
 .result.hasPhoto {
   left: 0;
 }
@@ -78,4 +62,35 @@ video {
 canvas {
   width: 100%;
   height: auto;
+}
+
+
+@media only screen and (width < 600px) {
+.result {
+  height: 500px;
+  width:100%;
+}
+
+.result.hasPhoto {
+  margin-top: 33px;
+}
+
+}
+
+
+@media only screen and (width > 1000px) {
+.result {
+  height: 50%;
+  width:50%;
+}
+
+.camera {
+  width: 50%;
+  max-width: 50%;
+  height: 50%;
+}
+.result.hasPhoto {
+  margin-top: 33px;
+}
+
 }
