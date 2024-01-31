@@ -6,8 +6,14 @@ import Chat from './Chat'
 const ChatsContainer = () => {
   return (
     <div className='chatsContainer'>
-      <ChatSideBar/>
-      <Chat/>
+      <div className="innerChatsContainer">
+     <div className="chatSideBarContainer">
+      <ChatSideBar />
+      </div>
+      <div className="individualChatContainer">
+      <Chat />
+      </div>
+      </div>
     </div>
   )
 }
