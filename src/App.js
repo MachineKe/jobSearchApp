@@ -16,6 +16,9 @@ import NoNav from "./Components/Account/noNav";
 import AccountDetails from "./Components/Account/AccountDetails";
 import Camera from "./Components/Camera/Camera";
 import ImgUpload from "./Components/ImgUploader/ImgUpload";
+import Register2 from "./Components/Account/Register2";
+import Login2 from "./Components/Account/Login2";
+import ChatsContainer from "./Components/Chat/ChatsContainer";
 const App = () => {
   return (
     <div className="App">
@@ -34,15 +37,17 @@ const App = () => {
         <Route path="/value" element={<Value />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/reset" element={<ResetPassword />} />
-              <Route path="/completeProfile" element={<AccountDetails />} />
-              <Route path="/camera" element={<Camera />} />
-              <Route path="/uploadImg" element={<ImgUpload />} />
+        <Route path="/register2" element={<Register2 />} />
+        <Route path="/login2" element={<Login2 />} />
 
-      
+        <Route path="/reset" element={<ResetPassword />} />
+        <Route path="/completeProfile" element={<AccountDetails />} />
+        <Route path="/camera" element={<Camera />} />
+        <Route path="/uploadImg" element={<ImgUpload />} />
+        <Route path="/chatscontainer" element={<ChatsContainer />} />
       </Routes>
       <NoNav>
-      <Footer />
+        <Footer />
       </NoNav>
     </div>
   );
