@@ -3,18 +3,21 @@ import { initializeApp } from "firebase/app";
 
 import { getAuth } from "firebase/auth";
 
-import { getAnalytics } from "firebase/analytics";
+import { getStorage } from "firebase/storage";
+
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyArzRoas_CIw3zPdC3jT9vJr5ud7TwuhPs",
-  authDomain: "beyondjobs-c5be1.firebaseapp.com",
-  projectId: "beyondjobs-c5be1",
-  storageBucket: "beyondjobs-c5be1.appspot.com",
-  messagingSenderId: "65625377036",
-  appId: "1:65625377036:web:e0149baba8bb5a69306129",
-  measurementId: "G-E72R0TSY8D",
+  apiKey: "AIzaSyDgSDaO-tApF0OzJ2UcmOhgM4GJIY3eNHk",
+  authDomain: "beyondjobs1-7e54e.firebaseapp.com",
+  projectId: "beyondjobs1-7e54e",
+  storageBucket: "beyondjobs1-7e54e.appspot.com",
+  messagingSenderId: "840822369792",
+  appId: "1:840822369792:web:d45c0ed62a21e727f332e5",
+  measurementId: "G-GFY70T0KZC",
 };
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
-const analytics = getAnalytics(app);
+export const storage = getStorage();
+export const db = getFirestore(app);
