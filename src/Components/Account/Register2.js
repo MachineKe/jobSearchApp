@@ -5,7 +5,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
 import { BiSolidImageAdd } from "react-icons/bi";
-
+const cors = require('cors')({ origin: true });
 const Register2 = () => {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
