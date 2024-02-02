@@ -80,7 +80,7 @@ const NavBar = () => {
                 </Link>
               </li>
               <li className="menuList">
-                <Link className="link" to="/register2">
+                <Link className="link" to="/register">
                   <div className="mobileMenu3"> Register</div>
                 </Link>
               </li>
@@ -127,7 +127,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="menuList">
-            <Link className="link" to="/register2">
+            <Link className="link" to="/register">
               Register
             </Link>
           </li>
