@@ -1,0 +1,70 @@
+.accountSetFormContainer {
+  background-color: #2a68ff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.logo.RegisterLogo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.logo.title {
+  font-size: 17px;
+}
+
+.formWrapper {
+  background-color: #fff;
+  padding: 20px 60px;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+}
+
+.formWrapper form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.formWrapper input {
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid #2a68ff;
+  &::placeholder {
+    color: rgb(175,175,175);
+  }
+  
+}
+
+.formWrapper button {
+  background-color: #2a68ff;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.formWrapper p {
+  color: #2a68ff;
+  font-size: 12px;
+  mask-type: 10px;
+}
+
+.formWrapper label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color:#2a68ff;
+  cursor: pointer;
+}
+
+.addAvatarIcon {
+  font-size: 32px;
+}

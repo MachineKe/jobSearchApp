@@ -61,6 +61,13 @@ const NavBar = () => {
                   <div className="mobileMenu3"> Community</div>
                 </Link>
               </li>
+
+              <li className="menuList">
+                <Link className="link" to="/chatalt1">
+                  <div className="mobileMenu3"> Chat</div>
+                </Link>
+              </li>
+
               <li className="menuList">
                 <Link className="link" to="/about">
                   <div className="mobileMenu3"> About</div>
@@ -102,6 +109,12 @@ const NavBar = () => {
               Community
             </Link>
           </li>
+          <li className="menuList">
+            <Link className="link" to="/chatalt1">
+              Chat
+            </Link>
+          </li>
+
           <li className="menuList">
             <Link className="link" to="/about">
               About

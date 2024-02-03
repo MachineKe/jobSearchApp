@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
+  let auth = getAuth();
+  const [data, setData] = useState({});
+
+  const handleInput = (event) => {
+    let newInput = { [event.target.name]: event.target.value };
+    setData({ ...data, ...newInput });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then((response) => {
+        console.log(response.user);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
   return (
+
     <div className="loginContainer">
       <div className="loginChild">
       <h1>REGISTERATION PAGE</h1>
@@ -25,7 +46,7 @@ const Register = () => {
         </div>
         <div className="end">
         <p className="confirm">Have an account?</p>
-        
+
           <Link to="/login" className="link">
             Back To Login
           </Link>
