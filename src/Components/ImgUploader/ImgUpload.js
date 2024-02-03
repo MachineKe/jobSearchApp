@@ -13,9 +13,9 @@ const ImgUpload = () => {
     });
   };
   return (
-    <div>
+    <div className="sendCode">
       <input type="file" name="file" onChange={handleImg} />
-      <button nClick={handleApi}>Submit</button>
+      <button nClick={handleApi} className="sendCodeButton">Submit</button>
     </div>
   );
 };

@@ -5,6 +5,11 @@ import "./Components/community/community.css";
 import "./Components/community/companies.css";
 import "./Components/About/About.css";
 import "./Components/Camera/Camera.css";
+import "./Components/Account/login.css";
+import "./Components/Account/register.css";
+import "./Components/Account/ResetPass.css";
+import "./Components/Account/Account.css";
+
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
