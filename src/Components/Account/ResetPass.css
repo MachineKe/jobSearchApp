@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.sendCode{
+    display: flex;
+    flex-direction: column;
+}
+.sendCodeButton{
+    margin-top: 4px;
+    align-self: end;
+    padding: .5rem;
+    font-weight: 600;
+    background-color: #05d0f3;
+    border-radius: 10px;
+    border: solid #05d0f3;
+    cursor: pointer;
+    color: white;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        background-color: white;
+        color: black;
+
+        .link{
+            color: black;
+        }
+    }
+}
+.back{
+    font-size: 1rem;
+    display: flex;
+    justify-content: end;
+}
+.backToLogin{
+    text-decoration: none;
+    color: rgb(13, 174, 214);
+
+    &:hover{
+        text-decoration: underline solid;
+    }
+}

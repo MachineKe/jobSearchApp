@@ -3,31 +3,42 @@ import { Link } from "react-router-dom";
 
 const ResetPassword = () => {
   return (
-    
-    <div className="jobsContainer">
-                  <h1>RESET PASSWORD</h1>
-
-            <form action="" className="">
-        <label htmlFor="">username</label>
-        <input placeholder="email or phone"></input>
-        <button>Send code</button>
-        <label htmlFor="">Input code</label>
-        <input placeholder="auth code"></input>
-        <label>New Password</label>
-        <input placeholder="Input new password" type="password"></input>
-         <label>Repeat New Password</label>
-        <input placeholder="Re input new password" type="password"></input>
-        <button>
-          <Link to="" className="link">
-            Submit
-          </Link>
-        </button>
-        <button>
-          <Link to="/login" className="link">
+    <div className="loginContainer">
+      <div className="loginChild">
+        <h1>RESET PASSWORD</h1>
+        <hr />
+        <form action="" className="">
+          <div className="usernameDiv sendCode">
+            <label htmlFor="">Username</label>
+            <input placeholder="Email or Phone"></input>
+            <button className="sendCodeButton">Send code</button>
+          </div>
+          <div className="codeDiv">
+            <label htmlFor="">Input code</label>
+            <input placeholder="Authentication Code"></input>
+          </div>
+          <div className="passwordDiv">
+            <label>New Password</label>
+            <input placeholder=" New password" type="password"></input>
+          </div>
+          <div className="passwordDiv">
+            <label>Confirm New Password</label>
+            <input placeholder="Confirm Password" type="password"></input>
+          </div>
+          <div className="loginDiv">
+            <button className="login">
+              <Link to="" className="link">
+                Submit
+              </Link>
+            </button>
+          </div>
+          <div className="back">
+          <Link to="/login" className="backToLogin">
             Back To Login
           </Link>
-        </button>
-      </form>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -23,33 +23,36 @@ const Register = () => {
   };
 
   return (
-    <div className="jobsContainer">
-      <h1>REGISTERATION PAGE </h1>
+
+    <div className="loginContainer">
+      <div className="loginChild">
+      <h1>REGISTERATION PAGE</h1>
+      <hr />
       <form action="">
-        <label htmlFor="">username</label>
-        <input
-          name="email"
-          placeholder="email"
-          onChange={(event) => handleInput(event)}
-        ></input>
+        <div className="usernameDiv">
+        <label htmlFor="">Username</label>
+        <input placeholder="Email or Phone" required></input>
+        </div>
+        <div className="passwordDiv">
         <label>Password</label>
-        <input
-          name="password"
-          placeholder="password"
-          onChange={(event) => handleInput(event)}
-          type="password"
-        ></input>
-        <button onClick={handleSubmit}>
-          <Link to="" className="link">
+        <input placeholder="Password" type="password" required></input>
+        </div>
+        <div className="loginDiv">
+        <button className="login">
+          <Link to="/completeProfile" className="link">
             Register
           </Link>
         </button>
-        <button >
+        </div>
+        <div className="end">
+        <p className="confirm">Have an account?</p>
+
           <Link to="/login" className="link">
             Back To Login
           </Link>
-        </button>
+        </div>
       </form>
+      </div>
     </div>
   );
 };
