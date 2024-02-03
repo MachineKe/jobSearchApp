@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
-import { app } from "../../Backend/firebaseConfig";
+import { app } from "../../firebase/firebaseConfig"
 import { useState } from "react";
 
 const Login = () => {
