@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <div className="footerDiv">
       <div className="logoDiv">
-        <p1 className="footerText">
+        <p className="footerText">
           <strong>Job</strong> Search App
-        </p1>
+        </p>
       </div>
       <p className="morefooterText">
         Where Talent Meets Opportunity - Fueling Your Career Aspirations with

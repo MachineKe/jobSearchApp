@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
-  let auth = getAuth();
+  // let auth = getAuth();
   const [data, setData] = useState({});
 
   const handleInput = (event) => {
@@ -13,13 +13,13 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((response) => {
-        console.log(response.user);
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+    // createUserWithEmailAndPassword(auth, data.email, data.password)
+    //   .then((response) => {
+    //     console.log(response.user);
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
   };
 
   return (

@@ -25,9 +25,9 @@ const NavBar = () => {
   return (
     <div className="navBar">
       <div className="logoDiv">
-        <p1 className="logo">
+        <p className="logo">
           <strong>Job</strong> Search App
-        </p1>
+        </p>
 
         <div className="mobileMenu" ref={menuRef}>
           <button

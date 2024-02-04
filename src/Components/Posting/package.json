@@ -14,6 +14,7 @@
     "@apollo/server": "^4.10.0",
     "@axelspringer/graphql-google-pubsub": "^2.1.0",
     "apollo-server": "^3.13.0",
+    "apollo-server-express": "^3.13.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",

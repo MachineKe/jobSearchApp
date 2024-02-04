@@ -22,6 +22,7 @@ import ChatsContainer from "./Components/Chat/ChatsContainer";
 import ChatAlt1 from "./Components/ChatAlt1/ChatAlt1";
 import NoFooter from "./Components/ChatAlt1/noFooter";
 import AuthPage from "./Components/ChatAlt1/AuthPage";
+import ApolloProvider from "./Components/Posting/Client/ApolloProvider";
 const App = () => {
   return (
     <div className="App">
@@ -53,7 +54,13 @@ const App = () => {
         <Route path="/chatalt1" element={<ChatAlt1 />} />
 
         <Route path="/chatalt1auth" element={<AuthPage />} />
+                <Route path="/apolloProvider" element={<ApolloProvider />} />
+
       </Routes>
+
+
+
+      
       <NoNav>
         <NoFooter>
           <Footer />

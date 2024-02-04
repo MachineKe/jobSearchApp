@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
-import { app } from "../../firebase/firebaseConfig"
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+// import { GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
+// import { app } from "../../firebase/firebaseConfig"
 import { useState } from "react";
 
 const Login = () => {
-  let auth = getAuth();
-  let googleProvider = new GoogleAuthProvider();
+  // let auth = getAuth();
+  // let googleProvider = new GoogleAuthProvider();
   const [data, setData] = useState({});
 
   const handleInput = (event) => {
@@ -18,23 +18,23 @@ const Login = () => {
   const handleSubmit = (event) => {
          event.preventDefault();
 
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((response) => {
-        console.log(response.user);
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+    // signInWithEmailAndPassword(auth, data.email, data.password)
+    //   .then((response) => {
+    //     console.log(response.user);
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
   };
   const signInWithGoogle = (event) => {
      event.preventDefault();
-    signInWithPopup(auth, googleProvider)
-      .then((response) => {
-        console.log(response.user);
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+    // signInWithPopup(auth, googleProvider)
+    //   .then((response) => {
+    //     console.log(response.user);
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
   };
 
   return (
