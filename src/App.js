@@ -23,6 +23,7 @@ import ChatAlt1 from "./Components/ChatAlt1/ChatAlt1";
 import NoFooter from "./Components/ChatAlt1/noFooter";
 import AuthPage from "./Components/ChatAlt1/AuthPage";
 import ApolloProvider from "./Components/Posting/Client/ApolloProvider";
+import PostRegister from "./Components/Posting/Client/PostRegister";
 const App = () => {
   return (
     <div className="App">

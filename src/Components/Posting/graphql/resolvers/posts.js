@@ -1,3 +1,4 @@
+const { now } = require("mongoose");
 const Post = require("../../models/Post");
 const checkAuth = require("../../util/check-auth");
 const { AuthenticationError, UserInputError } = require("apollo-server");
@@ -37,7 +38,7 @@ module.exports = {
         body,
         user: user.id,
         username: user.username,
-        createdAt: new Date().toISOString(),
+        createdAt: new Date(now).toISOString(),
       });
       const post = await newPost.save();
       return post;
