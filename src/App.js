@@ -29,6 +29,7 @@ import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "@apollo/react-hooks/index";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import PostLogin from "./Components/Posting/Client/PostLogin";
+import PostsHome from "./Components/Posting/Client/PostsHome";
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
@@ -75,6 +76,7 @@ const App = () => {
           <Route path="/apolloProvider" element={<ApolloProvider />} />
           <Route path="/register" element={<PostRegister />} />
                     <Route path="/login" element={<PostLogin />} />
+                    <Route path="/posts" element={<PostsHome />} />
 
         </Routes>
 

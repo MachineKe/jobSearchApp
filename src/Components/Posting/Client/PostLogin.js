@@ -1,25 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { useState } from "react";
+// import { useState } from "react";
 
 const PostLogin = () => {
   
  
 
-  const handleInput = (event) => {
+  // const handleInput = (event) => {
    
-  };
+  // };
 
-  const handleSubmit = (event) => {
-         event.preventDefault();
+  // const handleSubmit = (event) => {
+  //        event.preventDefault();
 
     
-  };
-  const signInWithGoogle = (event) => {
-     event.preventDefault();
+  // };
+     
    
-  };
+
 
   return (
 
@@ -48,7 +47,7 @@ const PostLogin = () => {
           </div>
           <div className="end">
             <p className="confirm">Dont have an account?</p>
-            <Link to="/postregister" className="link register">
+            <Link to="/register" className="link register">
               Register
             </Link>
           </div>

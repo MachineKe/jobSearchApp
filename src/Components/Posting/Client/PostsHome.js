@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks/index";
+import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import PostCard from "./PostCard";
 

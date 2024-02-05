@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
-// import 
-
-import  {useMutation}  from "@apollo/react-hooks/index";
+import { Link, useNavigate,redirect } from "react-router-dom";
+import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
-import { ApolloProvider } from "@apollo/react-hooks/index";
 
-
-
-const PostRegister = () => {
+const PostRegister = (props) => {
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -20,12 +16,23 @@ const PostRegister = () => {
   const onChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
+
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, result) {
       console.log(result);
+      // navigate("/posts");
     },
+    onError(error) {
+      // console.log(error.graphQLErrors[0].extensions.errors);
+      // setErrors(error.graphQLErrors[0].extensions.errors);
+    },
+
     variables: values,
   });
+  if (loading) {
+    navigate("/login");
+    return <h1>Loading ...</h1>;
+  }
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -33,7 +40,6 @@ const PostRegister = () => {
   };
 
   return (
-    <ApolloProvider>
     <div className="loginContainer">
       <div className="loginChild">
         <h1>REGISTERATION PAGE</h1>
@@ -43,9 +49,11 @@ const PostRegister = () => {
             <label htmlFor="">Username</label>
             <input
               placeholder="Username"
+              type="text"
               required
               name="username"
               value={values.username}
+              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
@@ -53,13 +61,14 @@ const PostRegister = () => {
             <label htmlFor="">Email</label>
             <input
               placeholder="Email or Phone"
+              type="email"
               required
               name="email"
               value={values.email}
+              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
-
           <div className="passwordDiv">
             <label>Password</label>
             <input
@@ -68,6 +77,7 @@ const PostRegister = () => {
               required
               name="password"
               value={values.password}
+              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
@@ -78,8 +88,9 @@ const PostRegister = () => {
               placeholder="Confirm Password"
               type="password"
               required
-              name="password"
-              value={values.password}
+              name="confirmPassword"
+              value={values.confirmPassword}
+              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
@@ -94,14 +105,23 @@ const PostRegister = () => {
           <div className="end">
             <p className="confirm">Have an account?</p>
 
-            <Link to="/postlogin" className="link">
+            <Link to="/login" className="link">
               Back To Login
             </Link>
           </div>
         </form>
+        {/* {Object.keys(errors).length > 0 && (
+          <div>
+            {Object.values(errors).map((value) => (
+              <ul>
+                {" "}
+                <li key={value}>{value}</li>
+              </ul>
+            ))}
+          </div>
+        )} */}
       </div>
     </div>
-    </ApolloProvider>
   );
 };
 
