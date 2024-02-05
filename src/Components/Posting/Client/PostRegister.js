@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 
 import  {useMutation}  from "@apollo/react-hooks/index";
 import gql from "graphql-tag";
+import { ApolloProvider } from "@apollo/react-hooks/index";
+
+
+
 const PostRegister = () => {
   const [values, setValues] = useState({
     username: "",
@@ -29,6 +33,7 @@ const PostRegister = () => {
   };
 
   return (
+    <ApolloProvider>
     <div className="loginContainer">
       <div className="loginChild">
         <h1>REGISTERATION PAGE</h1>
@@ -96,6 +101,7 @@ const PostRegister = () => {
         </form>
       </div>
     </div>
+    </ApolloProvider>
   );
 };
 

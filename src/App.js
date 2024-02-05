@@ -22,51 +22,68 @@ import ChatsContainer from "./Components/Chat/ChatsContainer";
 import ChatAlt1 from "./Components/ChatAlt1/ChatAlt1";
 import NoFooter from "./Components/ChatAlt1/noFooter";
 import AuthPage from "./Components/ChatAlt1/AuthPage";
-import ApolloProvider from "./Components/Posting/Client/ApolloProvider";
 import PostRegister from "./Components/Posting/Client/PostRegister";
+import { ApolloClient } from "@apollo/client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { createHttpLink } from "apollo-link-http";
+import { ApolloProvider } from "@apollo/react-hooks/index";
+import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
+import PostLogin from "./Components/Posting/Client/PostLogin";
+loadDevMessages();
+loadErrorMessages();
 const App = () => {
+  const httpLink = createHttpLink({
+    uri: "http://localhost:5000",
+  });
+
+  const client = new ApolloClient({
+    link: httpLink,
+    cache: new InMemoryCache(),
+  });
+
   return (
     <div className="App">
-      <NoNav>
-        {" "}
-        <NavBar />
-      </NoNav>
-      {/* <Search /> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/companies" element={<Companies />} />
-        <Route path="/about" element={<About />} />
+      <ApolloProvider client={client}>
+        <NoNav>
+          {" "}
+          <NavBar />
+        </NoNav>
+        {/* <Search /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/companies" element={<Companies />} />
+          <Route path="/about" element={<About />} />
 
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/value" element={<Value />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/register2" element={<Register2 />} />
-        <Route path="/login2" element={<Login2 />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/value" element={<Value />} />
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/register2" element={<Register2 />} />
+          <Route path="/login2" element={<Login2 />} />
 
-        <Route path="/reset" element={<ResetPassword />} />
-        <Route path="/completeProfile" element={<AccountDetails />} />
-        <Route path="/camera" element={<Camera />} />
-        <Route path="/uploadImg" element={<ImgUpload />} />
-        <Route path="/chatscontainer" element={<ChatsContainer />} />
+          <Route path="/reset" element={<ResetPassword />} />
+          <Route path="/completeProfile" element={<AccountDetails />} />
+          <Route path="/camera" element={<Camera />} />
+          <Route path="/uploadImg" element={<ImgUpload />} />
+          <Route path="/chatscontainer" element={<ChatsContainer />} />
 
-        {/* alternative chat components alt1 */}
-        <Route path="/chatalt1" element={<ChatAlt1 />} />
+          {/* alternative chat components alt1 */}
+          <Route path="/chatalt1" element={<ChatAlt1 />} />
 
-        <Route path="/chatalt1auth" element={<AuthPage />} />
-                <Route path="/apolloProvider" element={<ApolloProvider />} />
+          <Route path="/chatalt1auth" element={<AuthPage />} />
+          <Route path="/apolloProvider" element={<ApolloProvider />} />
+          <Route path="/register" element={<PostRegister />} />
+                    <Route path="/login" element={<PostLogin />} />
 
-      </Routes>
+        </Routes>
 
-
-
-      
-      <NoNav>
-        <NoFooter>
-          <Footer />
-        </NoFooter>
-      </NoNav>
+        <NoNav>
+          <NoFooter>
+            <Footer />
+          </NoFooter>
+        </NoNav>
+      </ApolloProvider>
     </div>
   );
 };

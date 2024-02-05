@@ -8,7 +8,7 @@ import PostsHome from "./PostsHome";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import PostLogin from "./PostLogin";
 import PostRegister from "./PostRegister";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 loadDevMessages();
 loadErrorMessages();
@@ -27,15 +27,8 @@ const ApolloProviderFile = () => {
     <div className="ApolloProvider">
       <ApolloProvider client={client}>
      
-        <PostingApp />
-          <PostsHome/>
 <PostLogin/>
-        <Routes>
 
-          <Route path="/postregister" element={<PostRegister />} />
-
-          {/* <PostRegister/> */}
-        </Routes>
       </ApolloProvider>
 
     </div>
