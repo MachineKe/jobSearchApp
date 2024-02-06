@@ -24,7 +24,7 @@ import NoFooter from "./Components/ChatAlt1/noFooter";
 import AuthPage from "./Components/ChatAlt1/AuthPage";
 import PostRegister from "./Components/Posting/Client/PostRegister";
 import { ApolloClient } from "@apollo/client";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { InMemoryCache } from "@apollo/client";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "@apollo/react-hooks/index";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";

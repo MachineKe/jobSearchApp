@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate,redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
-const PostRegister = (props) => {
+const PostRegister = () => {
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
@@ -20,17 +20,16 @@ const PostRegister = (props) => {
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, result) {
       console.log(result);
-      // navigate("/posts");
+      navigate("/posts");
     },
     onError(error) {
-      // console.log(error.graphQLErrors[0].extensions.errors);
-      // setErrors(error.graphQLErrors[0].extensions.errors);
+      console.log(error);
+      setErrors(error.graphQLErrors[0].extensions.errors);
     },
-
     variables: values,
   });
+
   if (loading) {
-    navigate("/login");
     return <h1>Loading ...</h1>;
   }
 
@@ -42,7 +41,7 @@ const PostRegister = (props) => {
   return (
     <div className="loginContainer">
       <div className="loginChild">
-        <h1>REGISTERATION PAGE</h1>
+        <h1>REGISTRATION PAGE</h1>
         <hr />
         <form action="" onSubmit={onSubmit}>
           <div className="usernameDiv">
@@ -53,7 +52,6 @@ const PostRegister = (props) => {
               required
               name="username"
               value={values.username}
-              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
@@ -65,7 +63,6 @@ const PostRegister = (props) => {
               required
               name="email"
               value={values.email}
-              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
@@ -77,11 +74,9 @@ const PostRegister = (props) => {
               required
               name="password"
               value={values.password}
-              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
-
           <div className="passwordDiv">
             <label>Confirm Password</label>
             <input
@@ -90,11 +85,9 @@ const PostRegister = (props) => {
               required
               name="confirmPassword"
               value={values.confirmPassword}
-              // error={errors ? true : false}
               onChange={onChange}
             ></input>
           </div>
-
           <div className="loginDiv">
             <button className="login">
               <Link to="" className="link">
@@ -104,22 +97,20 @@ const PostRegister = (props) => {
           </div>
           <div className="end">
             <p className="confirm">Have an account?</p>
-
             <Link to="/login" className="link">
               Back To Login
             </Link>
           </div>
         </form>
-        {/* {Object.keys(errors).length > 0 && (
+        {Object.keys(errors).length > 0 && (
           <div>
-            {Object.values(errors).map((value) => (
-              <ul>
-                {" "}
-                <li key={value}>{value}</li>
+            {Object.values(errors).map((value, index) => (
+              <ul key={index}>
+                <li>{value}</li>
               </ul>
             ))}
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );
