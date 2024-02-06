@@ -30,6 +30,7 @@ import { ApolloProvider } from "@apollo/react-hooks/index";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import PostLogin from "./Components/Posting/Client/PostLogin";
 import PostsHome from "./Components/Posting/Client/PostsHome";
+import { AuthProvider } from "./Components/Posting/Client/Context/auth";
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
@@ -45,7 +46,8 @@ const App = () => {
   return (
     <div className="App">
       <ApolloProvider client={client}>
-        <NoNav>
+        <AuthProvider>
+           <NoNav>
           {" "}
           <NavBar />
         </NoNav>
@@ -85,7 +87,9 @@ const App = () => {
             <Footer />
           </NoFooter>
         </NoNav>
-      </ApolloProvider>
+
+        </AuthProvider>
+             </ApolloProvider>
     </div>
   );
 };

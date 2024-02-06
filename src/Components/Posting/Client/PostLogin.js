@@ -1,61 +1,106 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState,useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+import { useForm } from "./util/Hooks";
+import { AuthContext } from "./Context/auth";
 
-// import { useState } from "react";
+const PostLogin = (props) => {
+  const context = useContext(AuthContext)
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+  const { onChange, onSubmit, values } = useForm(loginUserCallBack, {
+    username: "",
+    password: "",
+  });
 
-const PostLogin = () => {
-  
- 
+  const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+    update(_, {data: {login: userData}}) {
+    context.login(userData)
+      navigate("/posts");
+    },
+    onError(error) {
+      setErrors(error.graphQLErrors[0].extensions.errors);
+    },
+    variables: values,
+  });
 
-  // const handleInput = (event) => {
-   
-  // };
+  if (loading) {
+    return <h1>Loading ...</h1>;
+  }
 
-  // const handleSubmit = (event) => {
-  //        event.preventDefault();
-
-    
-  // };
-     
-   
-
+  function loginUserCallBack() {
+    loginUser();
+  }
 
   return (
-
     <div className="loginContainer">
       <div className="loginChild">
-        <h1>Login Page</h1>
+        <h1>LOGIN PAGE</h1>
         <hr />
-        <form action="">
+        <form action="" onSubmit={onSubmit}>
           <div className="usernameDiv">
             <label htmlFor="">Username</label>
-            <input placeholder="Email or Phone" required></input>
+            <input
+              placeholder="Username"
+              type="text"
+              required
+              name="username"
+              value={values.username}
+              onChange={onChange}
+            ></input>
           </div>
+
           <div className="passwordDiv">
             <label>Password</label>
-            <input placeholder="Password" type="password" required></input>
+            <input
+              placeholder="Password"
+              type="password"
+              required
+              name="password"
+              value={values.password}
+              onChange={onChange}
+            ></input>
           </div>
+
           <div className="loginDiv">
             <button className="login">
               <Link to="" className="link">
                 Login
               </Link>
             </button>
-            <Link to="" className="link forgot">
-              Forgot Password
-            </Link>
           </div>
           <div className="end">
-            <p className="confirm">Dont have an account?</p>
-            <Link to="/register" className="link register">
+            <p className="confirm">Don't Have an account?</p>
+            <Link to="/register" className="link">
               Register
             </Link>
           </div>
         </form>
+        {Object.keys(errors).length > 0 && (
+          <div>
+            {Object.values(errors).map((value, index) => (
+              <ul key={index}>
+                <li>{value}</li>
+              </ul>
+            ))}
+          </div>
+        )}
       </div>
-      </div>
-
+    </div>
   );
 };
+
+const LOGIN_USER = gql`
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      id
+      email
+      username
+      createdAt
+      token
+    }
+  }
+`;
 
 export default PostLogin;

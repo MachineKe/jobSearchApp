@@ -1,29 +1,32 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import {useForm} from './util/Hooks'
 
+import { AuthContext } from "./Context/auth";
 const PostRegister = () => {
+
+const context = useContext(AuthContext)
+
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  const [values, setValues] = useState({
-    username: "",
+
+
+const {onChange, onSubmit, values} = useForm(registerUser, {
+ username: "",
     email: "",
     password: "",
     confirmPassword: "",
-  });
+})
 
-  const onChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
 
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
-    update(proxy, result) {
-      console.log(result);
+    update(_, {data: {register: userData}}) {
+      context.login(userData)
       navigate("/posts");
     },
     onError(error) {
-      console.log(error);
       setErrors(error.graphQLErrors[0].extensions.errors);
     },
     variables: values,
@@ -33,11 +36,9 @@ const PostRegister = () => {
     return <h1>Loading ...</h1>;
   }
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    addUser();
-  };
-
+function registerUser() {
+addUser()
+}
   return (
     <div className="loginContainer">
       <div className="loginChild">
@@ -98,7 +99,7 @@ const PostRegister = () => {
           <div className="end">
             <p className="confirm">Have an account?</p>
             <Link to="/login" className="link">
-              Back To Login
+              Login
             </Link>
           </div>
         </form>
