@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavBar from "./Components/NavBar/NavBar";
 // import Search from "./Components/SearchDiv/Search";
 import Jobs from "./Components/JobDiv/Jobs";
 import Value from "./Components/ValueDiv/Value";
 import Footer from "./Components/FooterDiv/Footer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, redirect as Redirect } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Community from "./Components/community/Community";
 import Companies from "./Components/community/Companies";
@@ -31,9 +31,12 @@ import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import PostLogin from "./Components/Posting/Client/PostLogin";
 import PostsHome from "./Components/Posting/Client/PostsHome";
 import { AuthProvider } from "./Components/Posting/Client/Context/auth";
+import { AuthContext } from "./Components/Posting/Client/Context/auth";
+
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
+  const { user, logout } = useContext(AuthContext);
   const httpLink = createHttpLink({
     uri: "http://localhost:5000",
   });
@@ -47,49 +50,50 @@ const App = () => {
     <div className="App">
       <ApolloProvider client={client}>
         <AuthProvider>
-           <NoNav>
-          {" "}
-          <NavBar />
-        </NoNav>
-        {/* <Search /> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/companies" element={<Companies />} />
-          <Route path="/about" element={<About />} />
+          <NoNav>
+            {" "}
+            <NavBar />
+          </NoNav>
+          {/* <Search /> */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/companies" element={<Companies />} />
+            <Route path="/about" element={<About />} />
 
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/value" element={<Value />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/register" element={<Register />} /> */}
-          <Route path="/register2" element={<Register2 />} />
-          <Route path="/login2" element={<Login2 />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/value" element={<Value />} />
+            {/* <Route path="/login" element={<Login />} /> */}
+            {/* <Route path="/register" element={<Register />} /> */}
+            <Route path="/register2" element={<Register2 />} />
+            <Route path="/login2" element={<Login2 />} />
 
-          <Route path="/reset" element={<ResetPassword />} />
-          <Route path="/completeProfile" element={<AccountDetails />} />
-          <Route path="/camera" element={<Camera />} />
-          <Route path="/uploadImg" element={<ImgUpload />} />
-          <Route path="/chatscontainer" element={<ChatsContainer />} />
+            <Route path="/reset" element={<ResetPassword />} />
+            <Route path="/completeProfile" element={<AccountDetails />} />
+            <Route path="/camera" element={<Camera />} />
+            <Route path="/uploadImg" element={<ImgUpload />} />
+            <Route path="/chatscontainer" element={<ChatsContainer />} />
 
-          {/* alternative chat components alt1 */}
-          <Route path="/chatalt1" element={<ChatAlt1 />} />
+            {/* alternative chat components alt1 */}
+            <Route path="/chatalt1" element={<ChatAlt1 />} />
 
-          <Route path="/chatalt1auth" element={<AuthPage />} />
-          <Route path="/apolloProvider" element={<ApolloProvider />} />
-          <Route path="/register" element={<PostRegister />} />
-                    <Route path="/login" element={<PostLogin />} />
-                    <Route path="/posts" element={<PostsHome />} />
+            <Route path="/chatalt1auth" element={<AuthPage />} />
+            <Route path="/apolloProvider" element={<ApolloProvider />} />
+            <Route path="/register" element={<PostRegister />} />
+            <Route
+              path="/login"
+              element={<PostLogin />}
+            />
+            <Route path="/posts" element={<PostsHome />} />
+          </Routes>
 
-        </Routes>
-
-        <NoNav>
-          <NoFooter>
-            <Footer />
-          </NoFooter>
-        </NoNav>
-
+          <NoNav>
+            <NoFooter>
+              <Footer />
+            </NoFooter>
+          </NoNav>
         </AuthProvider>
-             </ApolloProvider>
+      </ApolloProvider>
     </div>
   );
 };
