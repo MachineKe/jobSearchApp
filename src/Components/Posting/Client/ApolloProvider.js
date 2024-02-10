@@ -9,7 +9,6 @@ import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import PostLogin from "./PostLogin";
 import PostRegister from "./PostRegister";
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 loadDevMessages();
 loadErrorMessages();
 

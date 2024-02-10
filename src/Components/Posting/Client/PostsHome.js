@@ -1,31 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
 import PostCard from "./PostCard";
+import { AuthContext } from "./Context/auth";
+import PostForm from "./PostForm";
+import { FETCH_POSTS_QUERY } from "./util/Grapgql";
 
 const PostsHome = () => {
-  const FETCH_POSTS_QUERY = gql`
-    query {
-      getPosts {
-        id
-        body
-        createdAt
-        username
-        likeCount
-        likes {
-          username
-        }
-        commentCount
-        comments {
-          id
-          username
-          createdAt
-          body
-        }
-      }
-    }
-  `;
-
+  const { user } = useContext(AuthContext);
   const { loading, error, data } = useQuery(FETCH_POSTS_QUERY);
 
   if (loading) {
@@ -40,6 +21,9 @@ const PostsHome = () => {
 
   return (
     <div>
+      <div>{user && <PostForm />}</div>
+      <h1>Recent posts</h1>
+
       {posts.map((post) => (
         <div key={post.id}>
           <PostCard post={post} />

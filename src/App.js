@@ -32,6 +32,9 @@ import PostLogin from "./Components/Posting/Client/PostLogin";
 import PostsHome from "./Components/Posting/Client/PostsHome";
 import { AuthProvider } from "./Components/Posting/Client/Context/auth";
 import { AuthContext } from "./Components/Posting/Client/Context/auth";
+import {setContext} from 'apollo-link-context'
+
+import SinglePost from "./Components/Posting/Client/SinglePost";
 
 loadDevMessages();
 loadErrorMessages();
@@ -41,10 +44,22 @@ const App = () => {
     uri: "http://localhost:5000",
   });
 
+
+const authLink = setContext(()=>{
+  const token = localStorage.getItem('jwtToken')
+  return {
+    headers: {
+      Authorization: token ? `Bearer ${token}` : ''
+    }
+  }
+})
+
+
   const client = new ApolloClient({
-    link: httpLink,
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
+
 
   return (
     <div className="App">
@@ -85,6 +100,9 @@ const App = () => {
               element={<PostLogin />}
             />
             <Route path="/posts" element={<PostsHome />} />
+
+ <Route path="/posts/:postId" element={<SinglePost />} />
+
           </Routes>
 
           <NoNav>
