@@ -35,7 +35,7 @@ import { AuthContext } from "./Components/Posting/Client/Context/auth";
 import {setContext} from 'apollo-link-context'
 
 import SinglePost from "./Components/Posting/Client/SinglePost";
-
+import ErrorBoundary from "./Components/Posting/Client/ErrorBoundary";
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
@@ -70,6 +70,7 @@ const authLink = setContext(()=>{
             <NavBar />
           </NoNav>
           {/* <Search /> */}
+<ErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/community" element={<Community />} />
@@ -104,7 +105,7 @@ const authLink = setContext(()=>{
  <Route path="/posts/:postId" element={<SinglePost />} />
 
           </Routes>
-
+</ErrorBoundary>
           <NoNav>
             <NoFooter>
               <Footer />

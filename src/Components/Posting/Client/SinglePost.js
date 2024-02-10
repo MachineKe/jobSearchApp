@@ -1,25 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import gql from "graphql-tag";
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import dayjs from "dayjs";
 import LikeButton from "./LikeButton";
 import { AuthContext } from "./Context/auth";
 import { FaRegCommentDots } from "react-icons/fa";
 import DeleteButton from "./DeleteButton";
-import { useParams } from "react-router-dom"; // Import useParams
+import { useParams, useNavigate } from "react-router-dom"; // Import useParams
 
 const SinglePost = () => {
   // Destructure the postId from the object returned by useParams
   const { postId } = useParams();
-  console.log(postId);
   const { user } = useContext(AuthContext);
-
+  const commentInputRef = useRef(null)
+  const navigate = useNavigate();
+  const [comment, setComment] = useState("");
   const {
     loading,
     error,
     data: { getPost } = {},
   } = useQuery(FETCH_POST_QUERY, {
     variables: { postId }, // Pass postId as an object with its appropriate key
+  });
+
+  const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
+    update() {
+
+      setComment("");
+
+      commentInputRef.current.blur()
+    },
+    variables: {
+      postId,
+      body: comment,
+    },
   });
 
   let postMarkup;
@@ -37,6 +51,9 @@ const SinglePost = () => {
       commentCount,
     } = getPost;
 
+    // Check if the current user is the owner of the post
+    const isPostOwner = user && user.username === username;
+
     postMarkup = (
       <div>
         <img
@@ -53,13 +70,67 @@ const SinglePost = () => {
           <FaRegCommentDots />
         </button>
         {commentCount}
-        {user && user.username === username && <DeleteButton postId={id} />}
+        {/* Render delete button only if the current user is the post owner */}
+        {isPostOwner && (
+          <button>
+            <DeleteButton postId={id} username={username} />
+          </button>
+        )}
+        <h2>Comments</h2>
+        {user && (
+          <div>
+            <p>Post a comment</p>
+            <form action="">
+              <input
+                type="text"
+                placeholder="Comment..."
+                name="comment"
+                value={comment}
+                onChange={(event) => setComment(event.target.value)}
+                // ref={commentInputRef}
+              />
+              <button
+                type="Submit"
+                disabled={comment.trim() === ""}
+                onClick={submitComment}
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        )}
+        {comments.map((comment) => (
+          <div key={comment.id}>
+            {user && user.username === comment.username && (
+              <DeleteButton postId={id} commentId={comment.id} />
+            )}
+
+            <h3>{comment.username}</h3>
+            <p>{dayjs(comment.createdAt).fromNow()}</p>
+            <p>{comment.body}</p>
+          </div>
+        ))}
       </div>
     );
   }
 
   return postMarkup;
 };
+
+const SUBMIT_COMMENT_MUTATION = gql`
+  mutation ($postId: String!, $body: String!) {
+    createComment(postId: $postId, body: $body) {
+      id
+      comments {
+        id
+        body
+        createdAt
+        username
+      }
+      commentCount
+    }
+  }
+`;
 
 const FETCH_POST_QUERY = gql`
   query ($postId: ID!) {
