@@ -41,7 +41,7 @@ loadErrorMessages();
 const App = () => {
   const { user, logout } = useContext(AuthContext);
   const httpLink = createHttpLink({
-    uri: "http://localhost:5000",
+    uri: "",
   });
 
 
