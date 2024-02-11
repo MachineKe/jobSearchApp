@@ -38,10 +38,10 @@ const PostCard = ({
           {dayjs(createdAt).fromNow(true)}
         </Link>
       </p>
-      <p>{body}</p>
+      <Link to={`/posts/${id}`} className="link"><p>{body}</p></Link>
       <LikeButton user={user} post={{ id, likes, likeCount }} />
       <button onClick={commentOnPost}>
-        <FaRegCommentDots />
+       <Link to={`/posts/${id}`} className=""> <FaRegCommentDots /></Link>
       </button>
       {commentCount}
     </div>
