@@ -41,7 +41,7 @@ loadErrorMessages();
 const App = () => {
   const { user, logout } = useContext(AuthContext);
   const httpLink = createHttpLink({
-    uri: "",
+    uri: "https://beyondjobsuserpostsbackend.onrender.com/",
   });
 
 

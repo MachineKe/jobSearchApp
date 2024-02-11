@@ -63,7 +63,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "",
+  "proxy": "https://beyondjobsuserpostsbackend.onrender.com/",
   "devDependencies": {
     "@capacitor/cli": "^5.6.0"
   },
