@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import "./ChatAlt1.css"
 import AuthPage from "./AuthPage";
 import ChatsPage from "./ChatsPage";
-
+import { AuthContext } from "./Context/auth";
+import PostLogin from '../Posting/Client/PostLogin'
 function ChatAlt1() {
-  const [user, setUser] = useState(undefined);
+const user = useContext(AuthContext)
+
+  // const [user, setUser] = useState(undefined);
 
   if (!user) {
-    return <AuthPage onAuth={(user) => setUser(user)} />;
+    return <PostLogin/>;
   } else {
     return <ChatsPage user={user} />;
   }
