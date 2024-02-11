@@ -58,8 +58,8 @@ const menuBar = user ? (
                 </Link>
               </li> */}
               <li className="menuList">
-                <Link className="link" to="/community">
-                  <div className="mobileMenu3"> Community</div>
+                <Link className="link" to="/posts">
+                  <div className="mobileMenu3">Posts</div>
                 </Link>
               </li>
 
@@ -100,8 +100,8 @@ const menuBar = user ? (
             </Link>
           </li> */}
           <li className="menuList">
-            <Link className="link" to="/community">
-              Community
+            <Link className="link" to="/posts">
+              Posts
             </Link>
           </li>
           <li className="menuList">
@@ -168,8 +168,8 @@ const menuBar = user ? (
                 </Link>
               </li> */}
               <li className="menuList">
-                <Link className="link" to="/community">
-                  <div className="mobileMenu3"> Community</div>
+                <Link className="link" to="/posts">
+                  <div className="mobileMenu3">Posts</div>
                 </Link>
               </li>
 
@@ -216,8 +216,8 @@ const menuBar = user ? (
             </Link>
           </li> */}
           <li className="menuList">
-            <Link className="link" to="/community">
-              Community
+            <Link className="link" to="/posts">
+              Posts
             </Link>
           </li>
           <li className="menuList">
