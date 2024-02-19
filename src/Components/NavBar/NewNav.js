@@ -11,31 +11,31 @@ const NewNav = () => {
  
   return (
     <div className="newNav">
-       <li className="menuList">
+       <li className="">
                 <Link className="link" to="/">
                   
                   <div className=""><MdOutlineHome /></div>
                 </Link>
       </li>
-      <li className="menuList">
+      <li className="">
                 <Link className="link" to="/companies">
                   
                   <div className=""><GoOrganization /></div>
                 </Link>
       </li>
-       <li className="menuList">
+       <li className="">
                 <Link className="link" to="/posts">
                   
                   <div className=""><MdDynamicFeed /></div>
                 </Link>
       </li>
-       <li className="menuList">
+       <li className="">
                 <Link className="link" to="/chatalt1">
                   
                   <div className=""><IoChatboxEllipsesOutline /></div>
                 </Link>
       </li>
-      <li className="menuList">
+      <li className="">
                 <Link className="link" to="/login">
                   
                   <div className=""><CgProfile /></div>
