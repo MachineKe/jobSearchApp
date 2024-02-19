@@ -71,9 +71,9 @@ const authLink = setContext(()=>{
             {" "}
             {/* <NavBar /> */}
                       <Header/>
+          <NewNav/>
 
           </NoNav>
-          <NewNav/>
           {/* <Search /> */}
 <ErrorBoundary>
           <Routes>
