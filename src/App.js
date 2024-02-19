@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import NavBar from "./Components/NavBar/NavBar";
+import NewNav from "./Components/NavBar/NewNav";
 // import Search from "./Components/SearchDiv/Search";
 import Jobs from "./Components/JobDiv/Jobs";
 import Value from "./Components/ValueDiv/Value";
@@ -36,6 +37,7 @@ import {setContext} from 'apollo-link-context'
 
 import SinglePost from "./Components/Posting/Client/SinglePost";
 import ErrorBoundary from "./Components/Posting/Client/ErrorBoundary";
+import Header from "./Components/Header/Header";
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
@@ -67,8 +69,11 @@ const authLink = setContext(()=>{
         <AuthProvider>
           <NoNav>
             {" "}
-            <NavBar />
+            {/* <NavBar /> */}
+                      <Header/>
+
           </NoNav>
+          <NewNav/>
           {/* <Search /> */}
 <ErrorBoundary>
           <Routes>
