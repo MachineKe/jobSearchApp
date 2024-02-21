@@ -7,9 +7,14 @@ import { GoOrganization } from "react-icons/go";
 import { MdDynamicFeed } from "react-icons/md";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
+import Header from '../Header/Header';
 const NewNav = () => {
   return (
     <div className="newNav">
+     <div className='headerInNav'>
+        <Header/>
+      </div>
+
       <li className="homeLogo newNavLogo">
         <Link className="link" to="/">
           <div className="logo2">
@@ -17,6 +22,7 @@ const NewNav = () => {
             <p className="nameLogo">Home</p>
           </div>
         </Link>
+
       </li>
       <li className="companiesLogo newNavLogo">
         <Link className="link" to="/companies">
