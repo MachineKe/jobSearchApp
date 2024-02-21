@@ -11,7 +11,7 @@ const SearchBar = ({ searchTerm, setSearchTerm, onSearch, placeholder }) => {
         <div className="byJob">
           <div className="icon">
             <IoBriefcaseOutline />
-            
+
             <input
               type="search"
               className="input"
