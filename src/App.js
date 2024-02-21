@@ -33,7 +33,7 @@ import PostLogin from "./Components/Posting/Client/PostLogin";
 import PostsHome from "./Components/Posting/Client/PostsHome";
 import { AuthProvider } from "./Components/Posting/Client/Context/auth";
 import { AuthContext } from "./Components/Posting/Client/Context/auth";
-import {setContext} from 'apollo-link-context'
+import { setContext } from "apollo-link-context";
 
 import SinglePost from "./Components/Posting/Client/SinglePost";
 import ErrorBoundary from "./Components/Posting/Client/ErrorBoundary";
@@ -46,22 +46,19 @@ const App = () => {
     uri: "https://beyondjobsuserpostsbackend.onrender.com/",
   });
 
-
-const authLink = setContext(()=>{
-  const token = localStorage.getItem('jwtToken')
-  return {
-    headers: {
-      Authorization: token ? `Bearer ${token}` : ''
-    }
-  }
-})
-
+  const authLink = setContext(() => {
+    const token = localStorage.getItem("jwtToken");
+    return {
+      headers: {
+        Authorization: token ? `Bearer ${token}` : "",
+      },
+    };
+  });
 
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
-
 
   return (
     <div className="App">
@@ -70,50 +67,45 @@ const authLink = setContext(()=>{
           <NoNav>
             {" "}
             {/* <NavBar /> */}
-                      <Header/>
-          <NewNav/>
-
+            <Header />
+            <NewNav />
           </NoNav>
           {/* <Search /> */}
-<ErrorBoundary>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/companies" element={<Companies />} />
-            <Route path="/about" element={<About />} />
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/companies" element={<Companies />} />
+              <Route path="/about" element={<About />} />
 
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/value" element={<Value />} />
-            {/* <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/register" element={<Register />} /> */}
-            <Route path="/register2" element={<Register2 />} />
-            <Route path="/login2" element={<Login2 />} />
+              <Route path="/jobs" element={<Jobs />} />
+              <Route path="/value" element={<Value />} />
+              {/* <Route path="/login" element={<Login />} /> */}
+              {/* <Route path="/register" element={<Register />} /> */}
+              <Route path="/register2" element={<Register2 />} />
+              <Route path="/login2" element={<Login2 />} />
 
-            <Route path="/reset" element={<ResetPassword />} />
-            <Route path="/completeProfile" element={<AccountDetails />} />
-            <Route path="/camera" element={<Camera />} />
-            <Route path="/uploadImg" element={<ImgUpload />} />
-            <Route path="/chatscontainer" element={<ChatsContainer />} />
+              <Route path="/reset" element={<ResetPassword />} />
+              <Route path="/completeProfile" element={<AccountDetails />} />
+              <Route path="/camera" element={<Camera />} />
+              <Route path="/uploadImg" element={<ImgUpload />} />
+              <Route path="/chatscontainer" element={<ChatsContainer />} />
 
-            {/* alternative chat components alt1 */}
-            <Route path="/chatalt1" element={<ChatAlt1 />} />
+              {/* alternative chat components alt1 */}
+              <Route path="/chatalt1" element={<ChatAlt1 />} />
 
-            <Route path="/chatalt1auth" element={<AuthPage />} />
-            <Route path="/apolloProvider" element={<ApolloProvider />} />
-            <Route path="/register" element={<PostRegister />} />
-            <Route
-              path="/login"
-              element={<PostLogin />}
-            />
-            <Route path="/posts" element={<PostsHome />} />
+              <Route path="/chatalt1auth" element={<AuthPage />} />
+              <Route path="/apolloProvider" element={<ApolloProvider />} />
+              <Route path="/register" element={<PostRegister />} />
+              <Route path="/login" element={<PostLogin />} />
+              <Route path="/posts" element={<PostsHome />} />
 
- <Route path="/posts/:postId" element={<SinglePost />} />
-
-          </Routes>
-</ErrorBoundary>
+              <Route path="/posts/:postId" element={<SinglePost />} />
+            </Routes>
+          </ErrorBoundary>
           <NoNav>
             <NoFooter>
-              <Footer />
+              {/* <Footer /> */}
             </NoFooter>
           </NoNav>
         </AuthProvider>

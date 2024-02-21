@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useContext, useRef, useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Posting/Client/Context/auth";
@@ -8,43 +8,50 @@ import { MdDynamicFeed } from "react-icons/md";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 const NewNav = () => {
- 
   return (
     <div className="newNav">
-       <li className="">
-                <Link className="link" to="/">
-                  
-                  <div className=""><MdOutlineHome /></div>
-                </Link>
+      <li className="homeLogo newNavLogo">
+        <Link className="link" to="/">
+          <div className="logo2">
+            <MdOutlineHome />
+            <p className="nameLogo">Home</p>
+          </div>
+        </Link>
       </li>
-      <li className="">
-                <Link className="link" to="/companies">
-                  
-                  <div className=""><GoOrganization /></div>
-                </Link>
+      <li className="companiesLogo newNavLogo">
+        <Link className="link" to="/companies">
+          <div className="logo2">
+            <GoOrganization />
+            <p className="nameLogo">Companies</p>
+          </div>
+        </Link>
       </li>
-       <li className="">
-                <Link className="link" to="/posts">
-                  
-                  <div className=""><MdDynamicFeed /></div>
-                </Link>
+      <li className="postLogo newNavLogo">
+        <Link className="link" to="/posts">
+          <div className="logo2">
+            <MdDynamicFeed />
+            <p className="nameLogo">Post</p>
+          </div>
+        </Link>
       </li>
-       <li className="">
-                <Link className="link" to="/chatalt1">
-                  
-                  <div className=""><IoChatboxEllipsesOutline /></div>
-                </Link>
+      <li className="chatLogo newNavLogo">
+        <Link className="link" to="/chatalt1">
+          <div className="logo2">
+            <IoChatboxEllipsesOutline />
+            <p className="nameLogo">Chat</p>
+          </div>
+        </Link>
       </li>
-      <li className="">
-                <Link className="link" to="/login">
-                  
-                  <div className=""><CgProfile /></div>
-                </Link>
+      <li className="loginLogo newNavLogo">
+        <Link className="link" to="/login">
+          <div className="logo2">
+            <CgProfile />
+            <p className="nameLogo">Login</p>
+          </div>
+        </Link>
       </li>
-   </div> 
-
-  )
+    </div>
+  );
 };
 
 export default NewNav;
-
