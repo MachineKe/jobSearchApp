@@ -12,7 +12,7 @@ const NewNav = () => {
  
   return (
     <div className="newNav">
-      <div className=''>
+      <div className='headerInNav'>
         <Header/>
       </div>
        <li className="">
