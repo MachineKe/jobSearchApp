@@ -38,14 +38,21 @@ import {setContext} from 'apollo-link-context'
 import SinglePost from "./Components/Posting/Client/SinglePost";
 import ErrorBoundary from "./Components/Posting/Client/ErrorBoundary";
 import Header from "./Components/Header/Header";
+import { concat } from '@apollo/client/link/core';
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
   const { user, logout } = useContext(AuthContext);
-  const httpLink = createHttpLink({
-    uri: "https://beyondjobsuserpostsbackend.onrender.com/",
-  });
+  // const httpLink = createHttpLink({
+  //   uri: "https://beyondjobsuserpostsbackend.onrender.com/",
+  // });
+const httpLink1 = createHttpLink({
+  uri: 'https://beyondjobsuserpostsbackend.onrender.com/graphql',
+});
 
+const httpLink2 = createHttpLink({
+  uri: 'http://localhost:4000',
+});
 
 const authLink = setContext(()=>{
   const token = localStorage.getItem('jwtToken')
@@ -57,12 +64,15 @@ const authLink = setContext(()=>{
 })
 
 
-  const client = new ApolloClient({
-    link: authLink.concat(httpLink),
+  // const client = new ApolloClient({
+  //   link: authLink.concat(httpLink),
+  //   cache: new InMemoryCache(),
+  // });
+
+const client = new ApolloClient({
+    link: authLink.concat(httpLink1, httpLink2),
     cache: new InMemoryCache(),
   });
-
-
   return (
     <div className="App">
       <ApolloProvider client={client}>

@@ -7,10 +7,14 @@ import { GoOrganization } from "react-icons/go";
 import { MdDynamicFeed } from "react-icons/md";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
+import Header from '../Header/Header';
 const NewNav = () => {
  
   return (
     <div className="newNav">
+      <div className=''>
+        <Header/>
+      </div>
        <li className="">
                 <Link className="link" to="/">
                   
