@@ -27,109 +27,18 @@ body {
   background-color: #ffffff;
   place-content: center;
 }
-
-/* Nav Bar */
-/* .navBar {
-  background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000000000;
-}
-.logoDiv {
-  display: flex;
-  justify-content: space-between;
-  padding-inline: 0.5rem;
-}
-.mobileMenu {
-  font-size: 1rem;
-}
-.mobileMenu3{
-  width: 130px;
-  text-align: center;
-  padding: .5rem;
-}
-.mobileMenu2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 45px;
-  right: 1px;
-  width: 130px;
-  padding: .5rem 0;
-  list-style: none;
-  border-radius: 10px;
-  background-color: rgb(0, 0, 0);
-  opacity: 0.9;
-}
-.mobileMenu2 .menuList:active {
-  color: white;
-}
-.menuBtn {
-  cursor: pointer;
-  font-size: 2rem;
-  color: #05d0f3;
-  border-color: transparent;
-  background-color: transparent;
-}
-
-.menu {
-  display: none;
-  gap: 1rem;
-}
-.menu li {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-  transition: all ease-in-out 2s;
-}
-
-.menu li::before {
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 100%;
-  background-color: transparent;
-  right: 0;
-  bottom: -3px;
-  color: #2a68ff;
-  transition: all ease-in-out 0.5s; /* Add transition property here */
-/* } */
-
-/* .menu li:hover::before {
-  height: 4px; /* Adjust the properties you want to transition here */
-  /* bottom: -2px; Adjust the properties you want to transition here */
-  /* background-color: #2a68ff;
-} */
-/* .link {
-  text-decoration: none;
-  color: rgb(0, 149, 255);
-  font-weight: bold;
-}
-
-.icon {
-  cursor: pointer;
-  display: flex;
-  gap: 2px;
-  align-items: center;
-  font-size: 30px;
-  background-color: transparent;
-  color: #3b82f6;
-  width: 100%;
-}
-
+/* header */
 .logo {
   color: #2a68ff;
   font-size: 1.5rem;
-} */ 
-
+}
 /* Search Bar */
 .searchDiv {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color: #126ce2;
+  background-color: #126ce9;
   border: rounded 10px;
   padding-block: 2rem 1rem;
 }
@@ -142,9 +51,12 @@ body {
   gap: 1.5rem;
   background-color: #fff;
 }
-.icon{
+.icon {
   display: flex;
   align-items: center;
+}
+.searchIcon {
+  font-size: 1.5rem;
 }
 .input {
   background-color: transparent;
@@ -153,7 +65,7 @@ body {
   height: 100%;
   border: rgb(19, 28, 181) 2px dotted;
   border-radius: 10px;
-  padding: 0.5rem 0 .5rem .5rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
   margin-left: 1rem;
   font-size: 1rem;
 }
@@ -173,7 +85,7 @@ input[type="search"]::-webkit-search-cancel-button {
   border: rgb(22, 188, 200);
   box-shadow: 0.5px 0.5px 2px 1px rgb(13, 159, 213);
 }
-.one{
+.one {
   width: 100%;
 }
 .secDiv {
@@ -184,23 +96,23 @@ input[type="search"]::-webkit-search-cancel-button {
 .singleSearch {
   padding: 1rem 1rem 0 1rem;
 }
-.relevanceLabel{
-  font-size: .7rem;
+.relevanceLabel {
+  font-size: 0.7rem;
   color: white;
   font-weight: 600;
 }
-.durationLabel{
-  padding-right: .2rem;
+.durationLabel {
+  padding-right: 0.2rem;
 }
-.typeLabel{
+.typeLabel {
   padding-right: 1.5rem;
 }
-.levelLabel{
+.levelLabel {
   padding-right: 1.4rem;
 }
-.clearSelect{
+.clearSelect {
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 600;
   border: none;
   align-self: center;
@@ -209,13 +121,13 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 10px;
   color: white;
 }
-.clearSelect:hover{
+.clearSelect:hover {
   background-color: white;
   color: black;
 }
 
-.clearSelect:active{
- opacity: .7;
+.clearSelect:active {
+  opacity: 0.7;
 }
 .selection {
   background-color: #fff;
@@ -234,10 +146,11 @@ input[type="search"]::-webkit-search-cancel-button {
 .jobsContainer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 3rem;
   place-items: center;
   background-color: whitesmoke;
   padding-block: 0.5rem;
+  width: 100%;
 }
 
 /* head showing open jobs */
@@ -248,7 +161,8 @@ input[type="search"]::-webkit-search-cancel-button {
   grid-column: span 3;
 }
 /* individual containers */
- .singleJob {
+.singleJob {
+  max-width: 500px;
   width: 95%;
   padding: 1rem;
   background-color: #fff;
@@ -271,7 +185,8 @@ input[type="search"]::-webkit-search-cancel-button {
     .companyName,
     .durationIcon,
     .jobInfo,
-    .locationName {
+    .locationName,
+    .singleJobHead {
       color: white;
     }
   }
@@ -316,7 +231,7 @@ input[type="search"]::-webkit-search-cancel-button {
   padding-block: 1rem;
   gap: 1rem;
   width: 100%;
-} 
+}
 
 .companyLogo {
   width: 70px;
@@ -403,7 +318,6 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 2rem 1rem;
   background-color: #3b82f6;
   border-radius: 10px;
-  
 }
 .cardText,
 .morecardText {
@@ -492,97 +406,77 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* media queries - universal */
-@media only screen and ( min-width: 400px){
+@media only screen and (min-width: 400px) {
   /* search - secDiv fix */
-.secDiv {
-  padding-right: 3rem;
-}
+  .secDiv {
+    padding-right: 3rem;
+  }
 
-.relevanceLabel{
-  font-size: 1rem;
-  color: white;
-  font-weight: 600;
+  .relevanceLabel {
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+  }
+  .durationLabel {
+    margin-left: 1rem;
+  }
+  .typeLabel {
+    margin-left: 5rem;
+  }
+  .levelLabel {
+    margin-left: 7rem;
+  }
+  .clearSelect {
+    align-self: end;
+  }
+  /* card  */
+  .card {
+    padding: 5rem;
+  }
+  .cardText,
+  .morecardText {
+    margin-bottom: 1rem;
+  }
+  .cardText {
+    font-size: 2rem;
+  }
+  .morecardText {
+    font-size: 1.2rem;
+  }
+  .cardBtn {
+    padding: 1rem 4rem;
+    font-size: 1rem;
+  }
 }
-.durationLabel{
-  margin-left: 1rem;
-}
-.typeLabel{
-  margin-left: 5rem;
-}
-.levelLabel{
-  margin-left: 7rem;
-}
-.clearSelect{
-  align-self: end;
-}
-/* card  */
-.card {
-  padding: 5rem;
-}
-.cardText,
-.morecardText {
-  margin-bottom: 1rem;
-}
-.cardText {
-  font-size: 2rem;
-}
-.morecardText {
-  font-size: 1.2rem;
-}
-.cardBtn {
-  padding: 1rem 4rem;
-  font-size: 1rem; 
-}
-}
-@media only screen and ( min-width: 600px){  
-  .one{
+@media only screen and (min-width: 600px) {
+  .one {
     display: flex;
     padding-bottom: 2rem;
     align-items: center;
     justify-content: center;
   }
-  .relevanceLabel{
+  .relevanceLabel {
     font-size: 1rem;
     color: white;
     font-weight: 600;
   }
-  .durationLabel{
+  .durationLabel {
     margin-left: 0;
   }
-  .typeLabel{
+  .typeLabel {
     margin-left: 0;
   }
-  .levelLabel{
+  .levelLabel {
     margin-left: 0;
   }
-  .clearSelect{
+  .clearSelect {
     align-self: center;
   }
-  
 }
-@media only screen and (550px < width < 600px){
-  .singleJob{
-    width: 90%;
-  }
-}
-@media only screen and (600px < width < 700px){
-  .singleJob{
-    width: 80%;
-  }
-}
+
 @media only screen and (width > 700px) {
-  .menuBtn {
-    display: none;
-  }
-  .mobileMenu{
-    display: none;
-  }
-  .logo {
-    color: #2a68ff;
-    font-size: 2rem;
-  }
   .link {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   .menu {
     display: flex;
@@ -604,8 +498,8 @@ input[type="search"]::-webkit-search-cancel-button {
   .clearSelect {
     font-size: 0.8rem;
   }
-  .clearSelect{
-    font-size: .8rem;
+  .clearSelect {
+    font-size: 0.8rem;
     font-weight: 600;
     border: solid 1px white;
     padding: 0 1.5rem;
@@ -617,7 +511,7 @@ input[type="search"]::-webkit-search-cancel-button {
     margin-inline: 0.5rem;
   }
   .jobsContainer {
-    padding-block: 1.5rem;
+    padding-block: 3rem;
   }
   .singleJob {
     width: 100%;
@@ -641,12 +535,15 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size: 0.8rem;
   }
 }
-
+@media only screen and (max-width: 800px) {
+  .logo {
+    margin-left: 0.5rem;
+  }
+}
 /* media queries - slightly bigger */
 @media only screen and (700px < width <= 800px) {
   .jobsContainer {
     padding-inline: 0.5rem;
-    grid-template-columns: repeat(2, 1fr);
   }
   .typeText {
     font-size: 0.7rem;
@@ -669,16 +566,18 @@ input[type="search"]::-webkit-search-cancel-button {
   }
 }
 /* media queries - bigger */
-@media only screen and (width > 800px){
+@media only screen and (width > 800px) {
   .App {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 1fr;
+    gap: 2rem;
   }
-} 
-@media only screen and (800px < width <= 1000px) {
+  /* header */
   .logo {
-    color: #2a68ff;
-    font-size: 1rem;
+    display: none;
   }
+}
+@media only screen and (800px < width <= 1000px) {
   .menu {
     display: flex;
     margin-bottom: 0.5rem;
@@ -695,8 +594,6 @@ input[type="search"]::-webkit-search-cancel-button {
   }
   .jobsContainer {
     padding-inline: 0.5rem;
-    gap: 0.7rem;
-    grid-template-columns: repeat(3, 1fr);
   }
   .jobInfo {
     padding-top: 0.3rem;
@@ -714,17 +611,12 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /* media queries - biggest */
 @media only screen and (width > 1000px) {
-  .logo,
   .link {
     font-size: 1rem;
   }
-  .navBar {
-    padding-inline: 0.5rem;
-  }
   .jobsContainer {
-    padding-inline: 0.5rem;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    padding-inline: 0.3rem;
+    grid-template-columns: repeat(2, 1fr);
   }
   .jobInfo {
     padding-top: 0.2rem;

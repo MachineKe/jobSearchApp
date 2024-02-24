@@ -74,7 +74,10 @@ const Jobs = () => {
           <div className="firstDiv">
             <div className="byJob">
               <div className="icon">
-                <IoBriefcaseOutline />
+                <span className="searchIcon">
+                  <IoBriefcaseOutline />
+                </span>
+
                 <input
                   type="search"
                   className="input"
@@ -87,7 +90,10 @@ const Jobs = () => {
             </div>
             <div className="byCompany">
               <div className="icon">
-                <BsHouseDoor />
+                <span className="searchIcon">
+                  <BsHouseDoor />
+                </span>
+
                 <input
                   type="search"
                   className="input"
@@ -100,7 +106,10 @@ const Jobs = () => {
             </div>
             <div className="byLocation">
               <div className="icon">
-                <CiLocationOn />
+                <span className="searchIcon">
+                  <CiLocationOn />
+                </span>
+
                 <input
                   type="search"
                   className="input"
@@ -116,56 +125,59 @@ const Jobs = () => {
 
         <div className="secDiv">
           <div className="one">
-          <div className="singleSearch">
-            <label htmlFor="relevance" className="relevanceLabel durationLabel">
-              Duration:
-            </label>
-            <select
-              name=""
-              id="relevance"
-              className="selection durationSelection"
-              value={selectedDuration}
-              onChange={(e) => setSelectedDuration(e.target.value)}
-            >
-              <option value="">All</option>
-              <option value="Full-Time">Full-Time</option>
-              <option value="Contract">Contract</option>
-            </select>
-          </div>
-          <div className="singleSearch">
-            <label htmlFor="type" className="relevanceLabel typeLabel">
-              Type:
-            </label>
-            <select
-              name=""
-              id="relevance"
-              className="selection typeSelection"
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value)}
-            >
-              <option value="">All</option>
-              <option value="Remote">Remote</option>
-              <option value="On-Site">On-Site</option>
-            </select>
-          </div>
-          <div className="singleSearch">
-            <label htmlFor="level" className="relevanceLabel levelLabel">
-              Level:
-            </label>
-            <select
-              name=""
-              id="relevance"
-              className="selection levelSelection"
-              value={selectedLevel}
-              onChange={(e) => setSelectedLevel(e.target.value)}
-            >
-              <option value="">All</option>
-              <option value="Senior">Senior</option>
-              <option value="Juniour">Junior</option>
-              <option value="Intern">Intern</option>
-              <option value="Intermediate">Intermediate</option>
-            </select>
-          </div>
+            <div className="singleSearch">
+              <label
+                htmlFor="relevance"
+                className="relevanceLabel durationLabel"
+              >
+                Duration:
+              </label>
+              <select
+                name=""
+                id="relevance"
+                className="selection durationSelection"
+                value={selectedDuration}
+                onChange={(e) => setSelectedDuration(e.target.value)}
+              >
+                <option value="">All</option>
+                <option value="Full-Time">Full-Time</option>
+                <option value="Contract">Contract</option>
+              </select>
+            </div>
+            <div className="singleSearch">
+              <label htmlFor="type" className="relevanceLabel typeLabel">
+                Type:
+              </label>
+              <select
+                name=""
+                id="relevance"
+                className="selection typeSelection"
+                value={selectedType}
+                onChange={(e) => setSelectedType(e.target.value)}
+              >
+                <option value="">All</option>
+                <option value="Remote">Remote</option>
+                <option value="On-Site">On-Site</option>
+              </select>
+            </div>
+            <div className="singleSearch">
+              <label htmlFor="level" className="relevanceLabel levelLabel">
+                Level:
+              </label>
+              <select
+                name=""
+                id="relevance"
+                className="selection levelSelection"
+                value={selectedLevel}
+                onChange={(e) => setSelectedLevel(e.target.value)}
+              >
+                <option value="">All</option>
+                <option value="Senior">Senior</option>
+                <option value="Juniour">Junior</option>
+                <option value="Intern">Intern</option>
+                <option value="Intermediate">Intermediate</option>
+              </select>
+            </div>
           </div>
           <div className="clearSelect" onClick={clearAllFilters}>
             Clear

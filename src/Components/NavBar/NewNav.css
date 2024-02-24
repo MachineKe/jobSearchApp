@@ -1,34 +1,87 @@
-.newNav{
-    list-style-type: none;
-    background-color: white;
+/* small screens */
+.newNav {
+  position: fixed;
+  list-style-type: none;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  z-index: 1000;
+  padding-top: 0.5rem;
+  bottom: 0;
+  width: 100%;
+}
+.nameLogo,
+.headerInNav {
+  display: none;
+}
+.nameLogo,
+.logo2 {
+  transition: all ease-in-out 0.5s;
+}
+.logo2 {
+  font-size: 2rem;
+  color: #2a68ff;
+
+  &:hover{
+    color: black;
+  }
+}
+
+/* large screens */
+@media only screen and (min-width: 800px) {
+  .newNav {
+    position: static;
     display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-    z-index: 1000;
-    padding-top: .5rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-.nameLogo{
-    display: none;
-}
-.logo2{
-    font-size: 2rem;
+    flex-direction: column;
+    width: 50px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    border-right: solid 1px black;
+  }
+  .headerInNav {
+    font-size: 1.5rem;
     color: #2a68ff;
-}
-@media only screen and (min-width: 800px){
-    .newNav{
-        list-style-type: none;
-        background-color: white;
-        display: flex;
-        justify-content: space-around;
-        gap: 1rem;
-        z-index: 1000;
-        padding-top: .5rem;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    
+    align-self: center;
+  }
+  .nameLogo {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .logo2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    padding-block: 0.5rem;
+    border-radius: 14px;
+    background-color: white;
+    width: 80%;
+
+    &:hover {
+      background-color: #2a68ff;
+      width: 100%;
+      color: white;
+
+      .nameLogo{
+        transform: scale(1.1);
+        color: white;
+      }
     }
+  }
+  .link {
+    text-decoration: none;
+  }
 }
+@media only screen and (min-width: 1000px) {
+  .newNav {
+    width: 200px;
+   
+  }
+  .nameLogo,
+  .headerInNav {
+    display: block;
+  }
+}
+
