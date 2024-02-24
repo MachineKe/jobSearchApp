@@ -89,7 +89,8 @@ const client = new ApolloClient({
           {/* <Search /> */}
           <ErrorBoundary>
             <Routes>
-              <Route path="/" element={<Home />} />
+              {/* <Route path="/" element={<Home />} /> */}
+              <Route path="/" element={<PostsHome />} />
               <Route path="/community" element={<Community />} />
               <Route path="/companies" element={<Companies />} />
               <Route path="/about" element={<About />} />
