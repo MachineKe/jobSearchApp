@@ -27,12 +27,14 @@ const SearchBar = ({ searchTerm, setSearchTerm, onSearch, placeholder }) => {
         <div className="byCompany">
           <div className="icon">
             <BsHouseDoor />
+
             {/* Similar structure for other search types */}
           </div>
         </div>
         <div className="byLocation">
           <div className="icon">
             <CiLocationOn />
+
             {/* Similar structure for other search types */}
           </div>
         </div>

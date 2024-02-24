@@ -27,7 +27,7 @@ const menuBar = user ? (
     <div className="navBar">
       <div className="logoDiv">
         <p className="logo">
-          <strong>Job</strong> Search App
+          
         </p>
 <p>{user.username}</p>
         <div className="mobileMenu" ref={menuRef}>

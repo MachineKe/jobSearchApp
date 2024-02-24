@@ -28,7 +28,9 @@ h1{
     margin-bottom: .5rem;
 }
 h1,
-label{
+label,
+.link,
+.forgot{
     color: rgb(13, 174, 214);
     font-weight: 600;
 }
@@ -70,6 +72,10 @@ input{
 button .link{
     font-size: 1rem;
     color: white;
+    font-weight: 600;
+}
+.link{
+    text-decoration: none;
 }
 .login{
     width: 100%;
@@ -112,7 +118,6 @@ button .link{
         font-size: 1.5rem;
     }
     .confirm{
-        color: red;
         font-size: 1rem;
     }
 }
