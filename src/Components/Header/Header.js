@@ -6,8 +6,8 @@ const Header = () => {
   const topBar = user ? (
     <div className="navBar">
       <div className="logoDiv">
-        <p className="logo">CareerQuest</p>
-        <p>{user.username}</p>
+        <p className="headerInNav">CareerQuest</p>
+        {/* <p>{user.username}</p> */}
       </div>
     </div>
   ) : (

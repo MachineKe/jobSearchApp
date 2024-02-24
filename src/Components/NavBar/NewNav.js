@@ -8,6 +8,10 @@ import { MdDynamicFeed } from "react-icons/md";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import Header from '../Header/Header';
+import { MdOutlineSearch } from "react-icons/md";
+import { MdOutlineShoppingCart } from "react-icons/md"
+import { RxHamburgerMenu } from "react-icons/rx";
+import {MdNotificationsNone} from "react-icons/md";
 const NewNav = () => {
   return (
     <div className="newNav">
@@ -22,16 +26,25 @@ const NewNav = () => {
             <p className="nameLogo">Home</p>
           </div>
         </Link>
-
       </li>
-      <li className="companiesLogo newNavLogo">
+
+   <li className="homeLogo newNavLogo">
+        <Link className="link" to="/">
+          <div className="logo2">
+           <MdOutlineSearch />
+            <p className="nameLogo">Search</p>
+          </div>
+        </Link>
+      </li>
+
+      {/* <li className="companiesLogo newNavLogo">
         <Link className="link" to="/companies">
           <div className="logo2">
             <GoOrganization />
             <p className="nameLogo">Companies</p>
           </div>
         </Link>
-      </li>
+      </li> */}
       <li className="postLogo newNavLogo">
         <Link className="link" to="/posts">
           <div className="logo2">
@@ -51,11 +64,43 @@ const NewNav = () => {
       <li className="loginLogo newNavLogo">
         <Link className="link" to="/login">
           <div className="logo2">
+          <MdNotificationsNone />
+            <p className="nameLogo">Notification</p>
+          </div>
+        </Link>
+      </li>
+      <li className="loginLogo newNavLogo">
+        <Link className="link" to="/login">
+          <div className="logo2">
             <CgProfile />
             <p className="nameLogo">Login</p>
           </div>
         </Link>
       </li>
+
+      
+      <li className="loginLogo newNavLogo">
+        <Link className="link" to="/login">
+          <div className="logo2">
+          <MdOutlineShoppingCart />
+            <p className="nameLogo">Marketplace</p>
+          </div>
+        </Link>
+      </li>
+      <li className="loginLogo newNavLogo">
+        <Link className="link" to="/login">
+          <div className="logo2">
+          <RxHamburgerMenu />
+            <p className="nameLogo">More</p>
+          </div>
+        </Link>
+      </li>
+      
+      
+      
+
+
+
     </div>
   );
 };
