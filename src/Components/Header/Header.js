@@ -14,7 +14,7 @@ const Header = () => {
   ) : (
     <div className="navBar">
       <div className="logoDiv">
-        <img src="Header/logo.png" alt="logo"/>
+        <img src="./logo.png" alt="logo"/>
         <p className="logo">CareerQuest</p>
       </div>
     </div>
