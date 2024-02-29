@@ -6,6 +6,7 @@ const Header = () => {
   const topBar = user ? (
     <div className="navBar">
       <div className="logoDiv">
+        <img src="Header/logo.png" alt="logo"/>
         <p className="headerInNav">CareerQuest</p>
         {/* <p>{user.username}</p> */}
       </div>
@@ -13,6 +14,7 @@ const Header = () => {
   ) : (
     <div className="navBar">
       <div className="logoDiv">
+        <img src="Header/logo.png" alt="logo"/>
         <p className="logo">CareerQuest</p>
       </div>
     </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import gql from "graphql-tag";
-import { CiHeart } from "react-icons/ci"; // assuming CiHeart is an icon component you're using
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa"; // assuming CiHeart is an icon component you're using
 
 const LikeButton = ({ post: { id, likeCount, likes }, user }) => {
   const [liked, setLiked] = useState(false);
@@ -26,17 +27,17 @@ const LikeButton = ({ post: { id, likeCount, likes }, user }) => {
   const likeButton = user ? (
     liked ? (
       <button className="likedButton" onClick={likePost}>
-        <CiHeart />
+        <FaHeart />
       </button>
     ) : (
       <button className="unlikedButton" onClick={likePost}>
-        <CiHeart />
+        <FaRegHeart />
       </button>
     )
   ) : (
     <button className="unlikedButton">
       <Link to="/login">
-        <CiHeart />
+      <FaRegHeart />
       </Link>
     </button>
   );
@@ -44,7 +45,7 @@ const LikeButton = ({ post: { id, likeCount, likes }, user }) => {
   return (
     <>
       {likeButton}
-      <span>{likeCount}</span>
+      <span className="likeCount">{likeCount}</span>
     </>
   );
 };

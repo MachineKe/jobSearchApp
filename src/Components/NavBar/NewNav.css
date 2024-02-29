@@ -4,10 +4,8 @@
   list-style-type: none;
   background-color: white;
   display: flex;
-  justify-content: space-around;
-  gap: 1rem;
   z-index: 1000;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   bottom: 0;
   width: 100%;
 }
@@ -19,11 +17,19 @@
 .logo2 {
   transition: all ease-in-out 0.5s;
 }
+.newNav1{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.newNav2 {
+  display: none;
+}
 .logo2 {
   font-size: 2rem;
   color: #2a68ff;
 
-  &:hover{
+  &:hover {
     color: black;
   }
 }
@@ -34,41 +40,35 @@
     position: static;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 50px;
     height: 100vh;
     position: sticky;
     top: 0;
-    border-right: solid 1px black;
+    border-right: solid 1px rgba(0, 0, 0, 0.2);
+    padding-left: 0.5rem;
   }
-  .headerInNav {
-    font-size: 1.5rem;
-    color: #2a68ff;
-    align-self: center;
+  .newNav1,
+  .newNav2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .newNav1 {
+    gap: 2rem;
+  }
+  .newNav2 {
+    gap: 0.5rem;
   }
   .nameLogo {
     font-size: 1rem;
-    font-weight: 600;
   }
   .logo2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding-left: 0.5rem;
-    padding-block: 0.5rem;
     border-radius: 14px;
     background-color: white;
-    width: 80%;
-
-    &:hover {
-      background-color: #2a68ff;
-      width: 90%;
-      color: white;
-
-      .nameLogo{
-        transform: scale(1.1);
-        color: white;
-      }
-    }
+    padding: .5rem 0 0.5rem .5rem;
   }
   .link {
     text-decoration: none;
@@ -77,11 +77,24 @@
 @media only screen and (min-width: 1000px) {
   .newNav {
     width: 200px;
-   
   }
   .nameLogo,
   .headerInNav {
     display: block;
   }
-}
+  .headerInNav {
+    font-size: 1.5rem;
+    color: #2a68ff;
+    align-self: center;
+  }
+  .logo2:hover {
+    background-color: #2a68ff;
+    color: white;
 
+    .nameLogo {
+      transform: scale(1.1);
+      color: white;
+      font-weight: 600;
+    }
+  }
+}

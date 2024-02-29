@@ -9,6 +9,7 @@ import "./Components/Account/login.css";
 import "./Components/Account/register.css";
 import "./Components/Account/ResetPass.css";
 import "./Components/Account/Account.css";
+import "./Components/Posting/Client/PostCard.css";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
