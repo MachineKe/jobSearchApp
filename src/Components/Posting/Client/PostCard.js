@@ -25,25 +25,37 @@ const PostCard = ({
   };
 
   return (
-    <div>
-      <img
-        src="https://xsgames.co/randomusers/avatar.php?g=female"
-        alt=""
-        className=""
-      />
-      <p>{username}</p>
-      <p>
-        {" "}
-        <Link to={`/posts/${id}`} className="link">
-          {dayjs(createdAt).fromNow(true)}
+    <div className="postContainer">
+      <div className="postDiv">
+        <div className="postHeader">
+          <p className="username">{username}</p>
+          <p className="dot">•</p>
+          <Link to={`/posts/${id}`} className="timePosted">
+            {dayjs(createdAt).fromNow(true)}
+          </Link>
+        </div>
+        <img
+          src="https://xsgames.co/randomusers/avatar.php?g=female"
+          alt=""
+          className="post"
+        />
+        <div className="postIcons">
+          <LikeButton
+            user={user}
+            post={{ id, likes, likeCount}}
+          />
+          <button className="commentIconButton" onClick={commentOnPost}>
+            <Link to={`/posts/${id}`} className="commentIcon">
+              {" "}
+              <FaRegCommentDots />
+            </Link>
+            {commentCount}
+          </button>
+        </div>
+        <Link to={`/posts/${id}`} className="commentsPreview">
+          <p>{body}</p>
         </Link>
-      </p>
-      <Link to={`/posts/${id}`} className="link"><p>{body}</p></Link>
-      <LikeButton user={user} post={{ id, likes, likeCount }} />
-      <button onClick={commentOnPost}>
-       <Link to={`/posts/${id}`} className=""> <FaRegCommentDots /></Link>
-      </button>
-      {commentCount}
+      </div>
     </div>
   );
 };
