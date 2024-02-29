@@ -1,28 +1,41 @@
+import React, { useContext, useState,useRef } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Context/auth";
-
-import React, { useContext } from "react";
+import { useMutation, useQuery } from "@apollo/client";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { FaTrashAlt } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
 import { FaRegCommentDots } from "react-icons/fa";
 import LikeButton from "./LikeButton";
-import DeleteButton from "./DeleteButton";
+import { useParams, useNavigate } from "react-router-dom"; // Import useParams
+import gql from "graphql-tag";
+
 dayjs.extend(relativeTime);
+
 const PostCard = ({
   post: { body, createdAt, id, username, likeCount, commentCount, likes },
 }) => {
-  const likePost = () => {
-    console.log("like post");
-  };
-
   const { user } = useContext(AuthContext);
-
   const commentOnPost = () => {
     console.log("comment on post");
-  };
+  }
+  const [comment, setComment] = useState("");
+  const { postId } = useParams();
+  const commentInputRef = useRef(null)
+
+   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
+    update() {
+
+      setComment("");
+
+      commentInputRef.current.blur()
+    },
+    variables: {
+      postId,
+      body: comment,
+    },
+  });
+
 
   return (
     <div className="postContainer">
@@ -40,10 +53,7 @@ const PostCard = ({
           className="profilePicture"
         />
         <div className="postIcons">
-          <LikeButton
-            user={user}
-            post={{ id, likes, likeCount}}
-          />
+          <LikeButton user={user} post={{ id, likes, likeCount }} />
           <button className="commentIconButton" onClick={commentOnPost}>
             <Link to={`/posts/${id}`} className="commentIcon">
               {" "}
@@ -56,8 +66,43 @@ const PostCard = ({
           <p className="info">{body}</p>
         </Link>
       </div>
+      {/* Comments section */}
+      {user && (
+        <div>
+          <form>
+            <input
+              type="text"
+              placeholder="Comment..."
+              name="comment"
+              value={comment}
+              onChange={(event) => setComment(event.target.value)}
+            />
+            <button
+              type="submit"
+              disabled={comment.trim() === ""}
+              onClick={submitComment}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
-
+const SUBMIT_COMMENT_MUTATION = gql`
+  mutation ($postId: String!, $body: String!) {
+    createComment(postId: $postId, body: $body) {
+      id
+      comments {
+        id
+        body
+        createdAt
+        username
+      }
+      commentCount
+    }
+  }
+`;
 export default PostCard;
+
