@@ -59,11 +59,11 @@ const SinglePost = () => {
         <img
           src="https://xsgames.co/randomusers/avatar.php?g=female"
           alt=""
-          className=""
+          className="profilePicture"
         />
-        <h2>{username}</h2>
+        <h2 className="info">{username}</h2>
         <p>{dayjs(createdAt).fromNow(true)}</p>
-        <p>{body}</p>
+        <p className="info">{body}</p>
         <hr />
         <LikeButton user={user} post={{ id, likeCount, likes }} />
         <button onClick={() => console.log("Comment on post")}>
@@ -107,7 +107,7 @@ const SinglePost = () => {
 
             <h3>{comment.username}</h3>
             <p>{dayjs(comment.createdAt).fromNow()}</p>
-            <p>{comment.body}</p>
+            <p className="info">{comment.body}</p>
           </div>
         ))}
       </div>
