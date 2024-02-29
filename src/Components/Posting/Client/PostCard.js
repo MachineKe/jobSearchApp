@@ -65,7 +65,6 @@ const PostCard = ({
         <Link to={`/posts/${id}`} className="commentsPreview">
           <p className="info">{body}</p>
         </Link>
-      </div>
       {/* Comments section */}
       {user && (
         <div>
@@ -87,6 +86,7 @@ const PostCard = ({
           </form>
         </div>
       )}
+    </div>
     </div>
   );
 };
