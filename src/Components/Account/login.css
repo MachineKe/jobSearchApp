@@ -1,6 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    --color-one: #2A68ff;
+    --color-two: #015366;
+    --color-three: #63898c;
+    --color-four: #a7d1d2;
+    --color-five: #fff;
 }
 
 .loginContainer{
@@ -9,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background-image: linear-gradient(to bottom right, white,  rgb(13, 174, 214));
+    background-image: linear-gradient(to bottom right, white, rgba(4, 202, 252, 0.7));
 }
 .loginChild{
     display: flex;
@@ -31,11 +36,11 @@ h1,
 label,
 .link,
 .forgot{
-    color: rgb(13, 174, 214);
+    color: var(--color-one);
     font-weight: 600;
 }
 hr{
-    border: .1px solid #05d0f3;
+    border: .1px solid var(--color-one);
     align-self: center;
     width: 90%;
 }
@@ -44,11 +49,11 @@ hr{
 .passwordDiv{
     margin-block:1.5rem  2rem;
 }
-input{
+.loginInput{
     border: none;
     border-bottom-right-radius: 10px;
-    border-right: .7px solid  #05d0f3;
-    border-bottom: 2px solid  #05d0f3;
+    border-right: .7px solid  var(--color-one);
+    border-bottom: 2px solid  var(--color-one);
     width: 100%;
     padding: 1rem;
     display: flex;
@@ -58,8 +63,8 @@ input{
     &:focus{
         outline: none;
         border-radius: 10px;
-        border: 2px solid #05d0f3;
-        box-shadow: 0 0 5px #05d0f3;
+        border: 2px solid var(--color-one);
+        box-shadow: 0 0 5px var(--color-one);
     }
 }
 
@@ -81,8 +86,8 @@ button .link{
     width: 100%;
     padding: 1rem 4rem;
     border-radius: 10px;
-    background-color: #05d0f3;
-    border: solid #05d0f3;
+    background-color: var(--color-one);
+    border: solid var(--color-one);
     cursor: pointer;
     transition: all .3s ease-in-out;
 

@@ -31,11 +31,11 @@ const Register = () => {
       <form action="">
         <div className="usernameDiv">
         <label htmlFor="">Username</label>
-        <input placeholder="Email or Phone" required></input>
+        <input  className="loginInput" placeholder="Email or Phone" required></input>
         </div>
         <div className="passwordDiv">
         <label>Password</label>
-        <input placeholder="Password" type="password" required></input>
+        <input className="loginInput" placeholder="Password" type="password" required></input>
         </div>
         <div className="loginDiv">
         <button className="login">

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // import { app } from "../../firebase/firebaseConfig"
 import { useState } from "react";
 
-const Login = () => {
+const Login = () => { 
   // let auth = getAuth();
   // let googleProvider = new GoogleAuthProvider();
   const [data, setData] = useState({});
@@ -46,11 +46,11 @@ const Login = () => {
         <form action="">
           <div className="usernameDiv">
             <label htmlFor="">Username</label>
-            <input placeholder="Email or Phone" required></input>
+            <input className="loginInput" placeholder="Email or Phone" required></input>
           </div>
           <div className="passwordDiv">
             <label>Password</label>
-            <input placeholder="Password" type="password" required></input>
+            <input className="loginInput" placeholder="Password" type="password" required></input>
           </div>
           <div className="loginDiv">
             <button className="login">

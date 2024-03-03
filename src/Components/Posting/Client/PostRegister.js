@@ -48,6 +48,7 @@ addUser()
           <div className="usernameDiv">
             <label htmlFor="">Username</label>
             <input
+            className="loginInput"
               placeholder="Username"
               type="text"
               required
@@ -59,6 +60,7 @@ addUser()
           <div className="usernameDiv">
             <label htmlFor="">Email</label>
             <input
+            className="loginInput"
               placeholder="Email or Phone"
               type="email"
               required
@@ -70,6 +72,7 @@ addUser()
           <div className="passwordDiv">
             <label>Password</label>
             <input
+            className="loginInput"
               placeholder="Password"
               type="password"
               required
@@ -81,6 +84,7 @@ addUser()
           <div className="passwordDiv">
             <label>Confirm Password</label>
             <input
+            className="loginInput"
               placeholder="Confirm Password"
               type="password"
               required

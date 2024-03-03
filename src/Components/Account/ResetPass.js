@@ -10,20 +10,20 @@ const ResetPassword = () => {
         <form action="" className="">
           <div className="usernameDiv sendCode">
             <label htmlFor="">Username</label>
-            <input placeholder="Email or Phone"></input>
+            <input placeholder="Email or Phone" className="loginInput"></input>
             <button className="sendCodeButton">Send code</button>
           </div>
           <div className="codeDiv">
             <label htmlFor="">Input code</label>
-            <input placeholder="Authentication Code"></input>
+            <input placeholder="Authentication Code" className="loginInput"></input>
           </div>
           <div className="passwordDiv">
             <label>New Password</label>
-            <input placeholder=" New password" type="password"></input>
+            <input placeholder=" New password" type="password" className="loginInput"></input>
           </div>
           <div className="passwordDiv">
             <label>Confirm New Password</label>
-            <input placeholder="Confirm Password" type="password"></input>
+            <input placeholder="Confirm Password" type="password" className="loginInput"></input>
           </div>
           <div className="loginDiv">
             <button className="login">

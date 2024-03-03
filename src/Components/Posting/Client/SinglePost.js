@@ -12,7 +12,7 @@ const SinglePost = () => {
   // Destructure the postId from the object returned by useParams
   const { postId } = useParams();
   const { user } = useContext(AuthContext);
-  const commentInputRef = useRef(null)
+  const commentInputRef = useRef(null);
   const navigate = useNavigate();
   const [comment, setComment] = useState("");
   const {
@@ -25,10 +25,9 @@ const SinglePost = () => {
 
   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
     update() {
-
       setComment("");
 
-      commentInputRef.current.blur()
+      commentInputRef.current.blur();
     },
     variables: {
       postId,
@@ -55,61 +54,90 @@ const SinglePost = () => {
     const isPostOwner = user && user.username === username;
 
     postMarkup = (
-      <div>
-        <img
-          src="https://xsgames.co/randomusers/avatar.php?g=female"
-          alt=""
-          className="profilePicture"
-        />
-        <h2 className="info">{username}</h2>
-        <p>{dayjs(createdAt).fromNow(true)}</p>
-        <p className="info">{body}</p>
-        <hr />
-        <LikeButton user={user} post={{ id, likeCount, likes }} />
-        <button onClick={() => console.log("Comment on post")}>
-          <FaRegCommentDots />
-        </button>
-        {commentCount}
-        {/* Render delete button only if the current user is the post owner */}
-        {isPostOwner && (
-          <button>
-            <DeleteButton postId={id} username={username} />
-          </button>
-        )}
-        <h2>Comments</h2>
-        {user && (
-          <div>
-            <p>Post a comment</p>
-            <form action="">
-              <input
-                type="text"
-                placeholder="Comment..."
-                name="comment"
-                value={comment}
-                onChange={(event) => setComment(event.target.value)}
-                // ref={commentInputRef}
+      <div className="commentPage">
+        <div className="commentContainer">
+          <div className="postHeader">
+            <span className="postHeader1">
+              <img
+                src="https://xsgames.co/randomusers/avatar.php?g=female"
+                alt=""
+                className="postProfilePicture"
               />
-              <button
-                type="Submit"
-                disabled={comment.trim() === ""}
-                onClick={submitComment}
-              >
-                Submit
-              </button>
-            </form>
+              <h2 className="username">{username}</h2>
+            </span>
+            <span className="postHeader1">
+              <p className="timePosted">{dayjs(createdAt).fromNow(true)}</p>
+            </span>
           </div>
-        )}
-        {comments.map((comment) => (
-          <div key={comment.id}>
-            {user && user.username === comment.username && (
-              <DeleteButton postId={id} commentId={comment.id} />
-            )}
+          <span className="post">
+            <p className="info">{body}</p>
+          </span>
 
-            <h3>{comment.username}</h3>
-            <p>{dayjs(comment.createdAt).fromNow()}</p>
-            <p className="info">{comment.body}</p>
+          <div className="postIcons">
+            <LikeButton user={user} post={{ id, likeCount, likes }} />
+            <button
+              className="commentIconButton comment-commentPageIcon"
+              onClick={() => console.log("Comment on post")}
+            >
+              <div className="commentIcon ">
+                <FaRegCommentDots />
+              </div>
+              {commentCount}
+            </button>
+
+            {/* Render delete button only if the current user is the post owner */}
+            {isPostOwner && (
+              <button className="deleteIconButton">
+                <DeleteButton postId={id} username={username} />
+              </button>
+            )}
           </div>
-        ))}
+          <div className="commentPageComment">
+            <h2>Comments</h2>
+            {user && (
+              <div>
+                <p>Post a comment</p>
+                <form className="createPostForm" action="">
+                  <input
+                    className="createPostInput"
+                    type="text"
+                    placeholder="Comment..."
+                    name="comment"
+                    value={comment}
+                    onChange={(event) => setComment(event.target.value)}
+                    // ref={commentInputRef}
+                  />
+                  <button
+                    className="createPostButton"
+                    type="Submit"
+                    disabled={comment.trim() === ""}
+                    onClick={submitComment}
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            )}
+            {comments.map((comment) => (
+              <div key={comment.id}>
+                <div className="postHeader">
+                  <h3>{comment.username}</h3>
+                  <p className="timePosted">
+                    {dayjs(comment.createdAt).fromNow()}
+                  </p>
+                </div>
+                <div className="myComment">
+                  <p className="myComment1">{comment.body}</p>
+                  <button className="deleteIconButton deleteButton2">
+                    {user && user.username === comment.username && (
+                      <DeleteButton postId={id} commentId={comment.id} />
+                    )}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     );
   }

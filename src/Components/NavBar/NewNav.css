@@ -1,3 +1,15 @@
+*{
+  --color-one: #2A68ff;
+  --color-two: #015366;
+  --color-three: #63898c;
+  --color-four: #a7d1d2;
+  --color-five: #fff;
+  --blueColor: #2a68ff;
+  --greyish: #f1f4f8;
+  --cardShadow: #f7f8f9;
+  --textColor: #252b36;
+  --border-color: #a3a3a3;
+}
 /* small screens */
 .newNav {
   position: fixed;
@@ -5,13 +17,15 @@
   background-color: white;
   display: flex;
   z-index: 1000;
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  padding: 0.2rem 0.5rem 0 0.5rem;
   bottom: 0;
   width: 100%;
+  border-top: solid 1px var(--border-color);
 }
 .nameLogo,
 .headerInNav {
   display: none;
+  cursor: pointer;
 }
 .nameLogo,
 .logo2 {
@@ -27,10 +41,10 @@
 }
 .logo2 {
   font-size: 2rem;
-  color: #2a68ff;
+  color: var(--color-one);
 
   &:hover {
-    color: black;
+    color: var(--color-two);
   }
 }
 
@@ -41,12 +55,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 50px;
+    width: 70px;
     height: 100vh;
     position: sticky;
     top: 0;
-    border-right: solid 1px rgba(0, 0, 0, 0.2);
+    border-right: solid 1px var(--border-color);
     padding-left: 0.5rem;
+  }
+  .headerInNav {
+    display: block;
+    padding-left: .5rem 0 0 .5rem;
+  }
+  .headerName{
+    display: none;
+  }
+  .appLogo{
+    display: block;
+    margin: 0 0 0 .5rem;
   }
   .newNav1,
   .newNav2 {
@@ -54,7 +79,7 @@
     flex-direction: column;
   }
   .newNav1 {
-    gap: 2rem;
+    gap: 1rem;
   }
   .newNav2 {
     gap: 0.5rem;
@@ -79,18 +104,22 @@
     width: 200px;
   }
   .nameLogo,
-  .headerInNav {
+  .headerInNav,
+  .headerName {
     display: block;
   }
-  .headerInNav {
+  .appLogo{
+    display: none;
+  }
+  .headerName {
     font-size: 1.5rem;
-    color: #2a68ff;
-    align-self: center;
+    color: var(--color-one);
+    margin-left: .5rem;
   }
   .logo2:hover {
-    background-color: #2a68ff;
+    background-color: var(--color-one);
     color: white;
-
+  
     .nameLogo {
       transform: scale(1.1);
       color: white;

@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
@@ -6,7 +6,7 @@ import { useForm } from "./util/Hooks";
 import { AuthContext } from "./Context/auth";
 
 const PostLogin = (props) => {
-  const context = useContext(AuthContext)
+  const context = useContext(AuthContext);
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const { onChange, onSubmit, values } = useForm(loginUserCallBack, {
@@ -15,8 +15,8 @@ const PostLogin = (props) => {
   });
 
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
-    update(_, {data: {login: userData}}) {
-    context.login(userData)
+    update(_, { data: { login: userData } }) {
+      context.login(userData);
       navigate("/posts");
     },
     onError(error) {
@@ -42,6 +42,7 @@ const PostLogin = (props) => {
           <div className="usernameDiv">
             <label htmlFor="">Username</label>
             <input
+              className="loginInput"
               placeholder="Username"
               type="text"
               required
@@ -54,6 +55,7 @@ const PostLogin = (props) => {
           <div className="passwordDiv">
             <label>Password</label>
             <input
+              className="loginInput"
               placeholder="Password"
               type="password"
               required

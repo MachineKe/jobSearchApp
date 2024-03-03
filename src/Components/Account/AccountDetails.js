@@ -18,16 +18,16 @@ const AccountDetails = () => {
 
           <ImgUpload />
           <label htmlFor="">Name:</label>
-          <input placeholder="Full Name"></input>
+          <input className="loginInput" placeholder="Full Name"></input>
           <label htmlFor="">Username:</label>
-          <input placeholder="Nick Name"></input>
+          <input className="loginInput" placeholder="Nick Name"></input>
 
           <label>Phone:</label>
-          <input placeholder="Phone Number"></input>
+          <input className="loginInput" placeholder="Phone Number"></input>
           <label>City:</label>
-          <input placeholder="Nakuru"></input>
+          <input className="loginInput" placeholder="Nakuru"></input>
           <label>Country:</label>
-          <input placeholder="Kenya"></input>
+          <input className="loginInput" placeholder="Kenya"></input>
           {/* <label>Level of Education:</label>
         <input placeholder="Education"></input>
          <label>Employment status:</label>

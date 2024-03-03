@@ -1,16 +1,35 @@
-.postContainer{
+* {
+  --color-one: #2A68ff;
+  --color-two: #015366;
+  --border-color: #a3a3a3;
+  --color-four: #f1f4f8;
+  --color-five: #fff;
+}
+.postContainer {
+  background-color: white;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem .5rem;
+  max-width: 700px;
+  margin-block: 1rem;
 }
+
 .postDiv {
+  padding: 1rem;
   width: 100%;
   max-width: 500px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
 }
 .postHeader {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.postHeader span {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 .username {
@@ -18,50 +37,172 @@
 }
 .dot,
 .timePosted {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--color-one);
   text-decoration: none;
 }
+.postProfilePicture {
+  max-width: 50px;
+  border-radius: 50%;
+}
 .post {
-  width: 100%;
+  padding-block: .5rem;
+  color: black;
+  text-decoration: none;
 }
 .postIcons {
   display: flex;
+  gap: .5rem;
 }
 .postIcons button {
   border: none;
   cursor: pointer;
 }
-.commentIcon{
-  margin-left: .5rem;
+.commentIcon {
+  margin-left: 0.5rem;
 }
 .commentIconButton,
 .unlikedButton,
-.likedButton{
+.likedButton {
   background-color: transparent;
   text-decoration: none;
 }
 .commentIcon,
 .unlikedButton,
-.likedButton{
+.likedButton {
   font-size: 1.5rem;
 }
 .commentIcon,
-.unlikedButton{
+.unlikedButton {
   color: black;
 }
-.likedButton{
-  color: #FE251B;
+.likedButton {
+  color: #fe251b;
 }
-.likeCount{
+.likeCount {
   margin-left: -2px;
   margin-top: 10px;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
-.commentsPreview {
+
+/* comment page */
+.createPost {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  padding: 0.5rem;
+  gap: .5rem;
+}
+.createPostForm{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.createPostInput {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--color-one);
+}
+.createPostInput{
+  padding: 1rem;
+}
+.createPostButton {
+  padding: 0.5rem;
+  font-weight: 600;
+  background-color: var(--color-one);
+  border-radius: 10px;
+  border: solid var(--color-one);
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+.commentPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+.commentContainer {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+.commentPageComment{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.commentIconButton,
+.unlikedButton,
+.likedButton,
+.deleteIconButton{
+  background-color: beige;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+}
+.comment-commentPageIcon,
+.deleteIconButton,
+.deleteIcon {
+  cursor: pointer;
+  border: none;
+}
+.comment-commentPageIcon{
+  display: flex;
+}
+.myComment{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--border-color);
+  padding-bottom: 1rem;
+}
+.deleteButton2{
+  align-self: end;
+  margin-right: 1rem;
+}
+.deleteMe{
+  position: relative;
+}
+.deleteIcon{
+  font-size: 1.5rem;
+}
+.deleteNote{
+  position: absolute;
+  bottom: 0.5rem;
+  left: -7rem;
+  width: 150px;
+  height: 100px;
+  padding-top: .5rem;
+  border-radius: 10px;
+  background-color: var(--color-one);
+  color: white;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+.deleteNote p{
+  padding-bottom: .5rem;
+}
+.deleteNote button{
+  padding-block: 0.5rem;
+  width: 50px;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
   color: black;
-  text-decoration: none;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow:scroll;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+.no{
+  margin-left: .5rem;
 }

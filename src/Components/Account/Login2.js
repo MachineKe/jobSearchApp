@@ -8,8 +8,8 @@ const Login2 = () => {
         <span className="logo registerLogo">BeyondJobs</span>
         <span className="logo title">Login</span>
         <form action="">
-          <input type="email" placeholder="email" />
-          <input type="text" placeholder="password" />
+          <input className="loginInput" type="email" placeholder="email" />
+          <input className="loginInput" type="text" placeholder="password" />
           <button>Sign in</button>
         </form>
         <p>Don't have an account? Register</p>

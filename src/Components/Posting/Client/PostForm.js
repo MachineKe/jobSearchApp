@@ -35,17 +35,18 @@ const PostForm = () => {
   }
 
   return (
-    <div>
-      <form action="" onSubmit={onSubmit}>
+    <div className="createPost">
         <h2>Create a post</h2>
+        <form className="createPostForm" action="" onSubmit={onSubmit}>
         <input
+          className="createPostInput"
           type="text"
           placeholder="Write post info here..."
           name="body"
           onChange={onChange}
           value={values.body}
         />
-        <button type="Submit">Submit</button>
+        <button className="createPostButton" type="Submit">Submit</button>
       </form>
    {Object.keys(errors).length > 0 && (
           <div>

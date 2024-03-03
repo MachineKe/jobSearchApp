@@ -52,15 +52,15 @@ const DeleteButton = ({ postId, callback, commentId }) => {
   };
 
   return (
-    <div>
+    <div className="deleteMe">
       {confirmOpen ? (
-        <div>
-          <p>Are you sure you want to delete this post?</p>
-          <button onClick={handleConfirmDelete}>Yes</button>
-          <button onClick={handleCancelDelete}>No</button>
+        <div className="deleteNote">
+          <p>Wanna delete me 😥?</p>
+          <button className="deleteNoteButton yes" onClick={handleConfirmDelete}>Yes</button>
+          <button className="deleteNoteButton no" onClick={handleCancelDelete}>No</button>
         </div>
       ) : (
-        <button onClick={handleDelete}>
+        <button className="deleteIcon" onClick={handleDelete}>
           <FaTrashAlt />
         </button>
       )}
