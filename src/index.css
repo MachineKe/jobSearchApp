@@ -458,6 +458,18 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size: 1rem;
   }
 }
+@media only screen and (min-width: 500px) {
+  .App {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr;
+    gap: .5rem;
+    padding-right: .5rem;
+  }
+  /* header */
+  .logo {
+    display: none;
+  }
+}
 @media only screen and (min-width: 600px) {
   .one {
     display: flex;
@@ -550,6 +562,16 @@ input[type="search"]::-webkit-search-cancel-button {
     margin-left: 0.5rem;
   }
 }
+@media only screen and (width > 800px) {
+  .App {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 1.5fr;
+  }
+  /* header */
+  .logo {
+    display: none;
+  }
+}
 /* media queries - slightly bigger */
 @media only screen and (700px < width <= 800px) {
   .jobsContainer {
@@ -576,17 +598,7 @@ input[type="search"]::-webkit-search-cancel-button {
   }
 }
 /* media queries - bigger */
-@media only screen and (width > 800px) {
-  .App {
-    display: grid;
-    grid-template-columns: 0.5fr 2.5fr 1fr;
-    gap: 2rem;
-  }
-  /* header */
-  .logo {
-    display: none;
-  }
-}
+
 @media only screen and (800px < width <= 1000px) {
   .menu {
     display: flex;

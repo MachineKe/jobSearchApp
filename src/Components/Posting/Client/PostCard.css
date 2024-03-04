@@ -19,8 +19,8 @@
   padding: 1rem;
   width: 100%;
   max-width: 500px;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 .postHeader {
   display: flex;
@@ -69,7 +69,7 @@
 .commentIcon,
 .unlikedButton,
 .likedButton {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .commentIcon,
 .unlikedButton {
@@ -131,8 +131,8 @@
   width: 100%;
   max-width: 500px;
   padding: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 .commentPageComment{
   display: flex;
@@ -144,7 +144,7 @@
 .likedButton,
 .deleteIconButton{
   background-color: beige;
-  padding: .5rem 1rem;
+  padding: .5rem .5rem;
   border-radius: 10px;
 }
 .comment-commentPageIcon,
@@ -171,7 +171,7 @@
   position: relative;
 }
 .deleteIcon{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .deleteNote{
   position: absolute;
@@ -205,4 +205,14 @@
 }
 .no{
   margin-left: .5rem;
+}
+@media only screen and (min-width: 500px){
+  .postDiv {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+  }
+  .commentContainer {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+  }
 }

@@ -27,6 +27,11 @@
   display: none;
   cursor: pointer;
 }
+.appLogo{
+  width: 65px;
+  border-radius: 50%;
+  border: .5px solid var(--blueColor);
+}
 .nameLogo,
 .logo2 {
   transition: all ease-in-out 0.5s;
@@ -44,18 +49,21 @@
   color: var(--color-one);
 
   &:hover {
-    color: var(--color-two);
+    background-color: #2a68ff;
+    color: white;
+    transform: scale(1.1);
+  
   }
 }
 
 /* large screens */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 500px) {
   .newNav {
     position: static;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 70px;
+    width: 78px;
     height: 100vh;
     position: sticky;
     top: 0;
@@ -64,14 +72,12 @@
   }
   .headerInNav {
     display: block;
-    padding-left: .5rem 0 0 .5rem;
   }
   .headerName{
     display: none;
   }
   .appLogo{
     display: block;
-    margin: 0 0 0 .5rem;
   }
   .newNav1,
   .newNav2 {
