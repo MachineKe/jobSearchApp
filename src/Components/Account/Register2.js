@@ -65,10 +65,11 @@ const Register2 = () => {
         <span className="logo registerLogo">BeyondJobs</span>
         <span className="logo title">Register</span>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="display name" name="display name" />
-          <input type="email" placeholder="email" name="email" />
-          <input type="text" placeholder="password" />
-          <input
+          <input className="loginInput" type="text" placeholder="display name" name="display name" />
+          <input className="loginInput" type="email" placeholder="email" name="email" />
+          <input className="loginInput" type="text" placeholder="password" />
+          <input 
+            className="loginInput"
             type="file"
             id="file"
             style={{ display: "none" }}

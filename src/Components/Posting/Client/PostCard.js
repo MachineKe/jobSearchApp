@@ -41,17 +41,25 @@ const PostCard = ({
     <div className="postContainer">
       <div className="postDiv">
         <div className="postHeader">
-          <p className="username info">{username}</p>
-          <p className="dot">•</p>
-          <Link to={`/posts/${id}`} className="timePosted">
-            {dayjs(createdAt).fromNow(true)}
-          </Link>
+          <span className="postHeader1">
+            <img
+              src="https://xsgames.co/randomusers/avatar.php?g=female"
+              alt=""
+              className="postProfilePicture"
+            />
+            <p className="username">{username}</p>
+          </span>
+          <span className="postHeader2">
+            <p className="dot">•</p>
+            <Link to={`/posts/${id}`} className="timePosted">
+              {dayjs(createdAt).fromNow(true)}
+            </Link>
+          </span>
         </div>
-        <img
-          src="https://xsgames.co/randomusers/avatar.php?g=female"
-          alt=""
-          className="profilePicture"
-        />
+
+        <Link to={`/posts/${id}`} className="post">
+          <p className="info">{body}</p>
+        </Link>
         <div className="postIcons">
           <LikeButton user={user} post={{ id, likes, likeCount }} />
           <button className="commentIconButton" onClick={commentOnPost}>
@@ -62,6 +70,9 @@ const PostCard = ({
             {commentCount}
           </button>
         </div>
+
+      </div>
+
         <Link to={`/posts/${id}`} className="commentsPreview">
           <p className="info">{body}</p>
         </Link>
@@ -87,6 +98,7 @@ const PostCard = ({
         </div>
       )}
     </div>
+
     </div>
   );
 };
