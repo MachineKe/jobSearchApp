@@ -1,13 +1,12 @@
-import React, { useContext, useState,useRef } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Context/auth";
-import { useMutation, useQuery } from "@apollo/client";
-
+import { useMutation } from "@apollo/client";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { FaRegCommentDots } from "react-icons/fa";
 import LikeButton from "./LikeButton";
-import { useParams, useNavigate } from "react-router-dom"; // Import useParams
+import { useParams } from "react-router-dom";
 import gql from "graphql-tag";
 
 dayjs.extend(relativeTime);
@@ -16,26 +15,24 @@ const PostCard = ({
   post: { body, createdAt, id, username, likeCount, commentCount, likes },
 }) => {
   const { user } = useContext(AuthContext);
+  const { postId } = useParams();
+  const commentInputRef = useRef(null);
+  const [comment, setComment] = useState("");
+
   const commentOnPost = () => {
     console.log("comment on post");
-  }
-  const [comment, setComment] = useState("");
-  const { postId } = useParams();
-  const commentInputRef = useRef(null)
+  };
 
-   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
+  const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
     update() {
-
       setComment("");
-
-      commentInputRef.current.blur()
+      commentInputRef.current.blur();
     },
     variables: {
       postId,
       body: comment,
     },
   });
-
 
   return (
     <div className="postContainer">
@@ -64,20 +61,20 @@ const PostCard = ({
           <LikeButton user={user} post={{ id, likes, likeCount }} />
           <button className="commentIconButton" onClick={commentOnPost}>
             <Link to={`/posts/${id}`} className="commentIcon">
-              {" "}
               <FaRegCommentDots />
             </Link>
-            {commentCount}
           </button>
-        </div>
+                     <p className="commentCount"> {commentCount}</p>
 
+        </div>
       </div>
 
-        <Link to={`/posts/${id}`} className="commentsPreview">
-          <p className="info">{body}</p>
-        </Link>
+      {/* <Link to={`/posts/${id}`} className="commentsPreview">
+        <p className="info">{body}</p>
+      </Link> */}
+
       {/* Comments section */}
-      {user && (
+      {/* {user && (
         <div>
           <form>
             <input
@@ -96,12 +93,11 @@ const PostCard = ({
             </button>
           </form>
         </div>
-      )}
-    </div>
-
+      )} */}
     </div>
   );
 };
+
 const SUBMIT_COMMENT_MUTATION = gql`
   mutation ($postId: String!, $body: String!) {
     createComment(postId: $postId, body: $body) {
@@ -116,5 +112,6 @@ const SUBMIT_COMMENT_MUTATION = gql`
     }
   }
 `;
+
 export default PostCard;
 

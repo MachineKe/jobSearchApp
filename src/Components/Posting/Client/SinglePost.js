@@ -82,8 +82,8 @@ const SinglePost = () => {
               <div className="commentIcon ">
                 <FaRegCommentDots />
               </div>
-              {commentCount}
             </button>
+                     <p className="commentCount"> {commentCount}</p>
 
             {/* Render delete button only if the current user is the post owner */}
             {isPostOwner && (
