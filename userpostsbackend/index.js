@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const { MONGODB } = require("./config");
 const typeDefs = require('./graphql/typeDefs')
 const resolvers = require('./graphql/resolvers/index')
+const ws = require('ws')
+
 
 
 // const pubSub = new PubSub()
@@ -28,3 +30,8 @@ mongoose
   .catch(err=>{
     console.error(err)
   })
+
+  const wss = new ws.WebSocketServer({ server })
+wss.on('connection', (connection) => {
+  console.log('connected')
+})

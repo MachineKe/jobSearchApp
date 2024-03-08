@@ -39,9 +39,16 @@ import SinglePost from "./Components/Posting/Client/SinglePost";
 import ErrorBoundary from "./Components/Posting/Client/ErrorBoundary";
 import Header from "./Components/Header/Header";
 import { concat } from '@apollo/client/link/core';
+import BeyondChat from "./Components/BeyondChat/Client/BeyondChat";
+import ChatRegister from "./Components/BeyondChat/Client/ChatRegister";
+import axios from "axios"
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
+
+  axios.defaults.baseURL = "http://localhost:4040"
+  axios.defaults.withCredentials = true
+
   const { user, logout } = useContext(AuthContext);
   // const httpLink = createHttpLink({
   //   uri: "https://beyondjobsuserpostsbackend.onrender.com/",
@@ -118,6 +125,11 @@ const client = new ApolloClient({
               <Route path="/posts" element={<PostsHome />} />
 
               <Route path="/posts/:postId" element={<SinglePost />} />
+            <Route path="/beyondChat" element={<BeyondChat />} />
+
+                          <Route path="/beyondRegister" element={<ChatRegister />} />
+
+
             </Routes>
           </ErrorBoundary>
           <NoNav>

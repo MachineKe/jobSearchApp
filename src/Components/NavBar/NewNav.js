@@ -12,7 +12,12 @@ import { MdOutlineSearch } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdNotificationsNone } from "react-icons/md";
+import { MdOutlineExitToApp } from "react-icons/md";
+
 const NewNav = () => {
+
+    const {user,logout} = useContext(AuthContext)
+
   return (
     <div className="newNav">
       <div className="headerInNav">
@@ -87,6 +92,9 @@ const NewNav = () => {
             </div>
           </Link>
         </li>
+
+
+
         <li className="loginLogo newNavLogo">
           <Link className="link" to="/login">
             <div className="logo2">
@@ -95,6 +103,17 @@ const NewNav = () => {
             </div>
           </Link>
         </li>
+
+<li className="loginLogo newNavLogo">
+<Link className="link" onClick={logout}>
+
+            <div className="logo2">
+              <MdOutlineExitToApp />
+              <p className="nameLogo">Logout</p>
+            </div>
+          </Link>
+        </li>
+
       </div>
     </div>
   );

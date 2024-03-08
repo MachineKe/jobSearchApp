@@ -22,7 +22,7 @@ const Header = () => {
   // return topBar;
   return (
     <>
-    <div className="navBar">
+    <div className="navBar bg-red-500">
        <div className="logoDiv">
         <img src="https://res.cloudinary.com/dmpposta9/image/upload/v1709168114/careerQuest/img/azfdzi2gflcyu8ijquy8.png" alt="logo" className="appLogo "/>
        <p className="headerInNav headerName">CareerQuest</p>

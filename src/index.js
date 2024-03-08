@@ -16,6 +16,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./Components/Account/Account2.css";
 import "./Components/Chat/Chat.css";
 import "./Components/NavBar/NewNav.css"
+import "./Components/BeyondChat/Client/BC.css"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
