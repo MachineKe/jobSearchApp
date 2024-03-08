@@ -64,7 +64,7 @@ const PostCard = ({
               <FaRegCommentDots />
             </Link>
           </button>
-                     <p className="commentCount"> {commentCount}</p>
+                     <p className="commentCount likeCount"> {commentCount}</p>
 
         </div>
       </div>
