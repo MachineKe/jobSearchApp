@@ -25,6 +25,12 @@ module.exports = gql`
     username: String!
   }
 
+  type Follow {
+    id: ID!
+    createdAt: String!
+    username: String!
+  }
+
   type Message {
     id: ID!
     body: String!
@@ -39,6 +45,8 @@ module.exports = gql`
     username: String!
     createdAt: String!
     phone: String!
+    followers: [Follow]!
+    followerCount: Int!
   }
 
   input RegisterInput {
@@ -53,6 +61,8 @@ module.exports = gql`
     getPost(postId: ID!): Post
     getMessages: [Message]
     getMessage(messageId: ID!): Message
+    getUsers: [User]
+    getUser(userId: ID!): User
   }
 
   type Mutation {
@@ -63,6 +73,7 @@ module.exports = gql`
     createComment(postId: String!, body: String!): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!
     likePost(postId: ID!): Post!
+    followUser(userId: ID!): User!
     createMessage(body: String): Message!
   }
 `;

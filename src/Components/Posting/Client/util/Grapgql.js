@@ -21,3 +21,41 @@ export    const FETCH_POSTS_QUERY = gql`
       }
     }
   `;
+
+  // Query to fetch user information
+export const FETCH_USER_QUERY = gql`
+  query getUser($userId: ID!) {
+    getUser(userId: $userId) {
+      id
+      email
+      username
+      createdAt
+      phone
+      followerCount
+      followers {
+        id
+        username
+        createdAt
+      }
+    }
+  }
+`;
+
+// Query to fetch all users
+export const FETCH_USERS_QUERY = gql`
+  query {
+    getUsers {
+      id
+      email
+      username
+      createdAt
+      phone
+      followerCount
+      followers {
+        id
+        username
+        createdAt
+      }
+    }
+  }
+`;

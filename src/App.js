@@ -42,6 +42,7 @@ import { concat } from '@apollo/client/link/core';
 import BeyondChat from "./Components/BeyondChat/Client/BeyondChat";
 import ChatRegister from "./Components/BeyondChat/Client/ChatRegister";
 import axios from "axios"
+import AppUsers from "./Components/Posting/AppUsers";
 loadDevMessages();
 loadErrorMessages();
 const App = () => {
@@ -52,6 +53,8 @@ const App = () => {
   const { user, logout } = useContext(AuthContext);
   const httpLink = createHttpLink({
     uri: "https://beyondjobsuserpostsbackend.onrender.com/",
+        // uri: "http://localhost:5000/",
+
   });
 // const httpLink1 = createHttpLink({
 //   uri: 'https://beyondjobsuserpostsbackend.onrender.com/graphql',
@@ -128,6 +131,7 @@ const authLink = setContext(()=>{
             <Route path="/beyondChat" element={<BeyondChat />} />
 
                           <Route path="/beyondRegister" element={<ChatRegister />} />
+                          <Route path="/appUsers" element={<AppUsers />} />
 
 
             </Routes>

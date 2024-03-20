@@ -1,56 +1,57 @@
-const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
-const User = require("../../models/User")
-const { SECRET_KEY } = require("../../config")
-const { UserInputError } = require("apollo-server")
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("../../models/User");
+const { SECRET_KEY } = require("../../config");
+const { UserInputError } = require("apollo-server");
 const {
-  validateRegisterInput, 
+  validateRegisterInput,
   validateLoginInput,
-} = require("../../util/validators")
+} = require("../../util/validators");
 
 function generateToken(user) {
-  return jwt.sign({
-    id: user.id,
-    email: user.email,
-    username: user.username,
-  },
+  return jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+    },
     SECRET_KEY,
-  {expiresIn: "1h"}
-  )
+    { expiresIn: "1h" }
+  );
 }
 
 module.exports = {
   Mutation: {
     async login(_, { username, password }) {
-      const { errors, valid } = validateLoginInput(username, password)
-      
+      const { errors, valid } = validateLoginInput(username, password);
+
       if (!valid) {
         throw new UserInputError("Errors", {
-          errors
-        })
+          errors,
+        });
       }
 
-      const user = await User.findOne({ username })
+      const user = await User.findOne({ username });
       if (!user) {
-        errors.general = "User not found"
-        throw new UserInputError("User not found", {errors})
+        errors.general = "User not found";
+        throw new UserInputError("User not found", { errors });
       }
 
-      const match = await bcrypt.compare(password, user.password)
+      const match = await bcrypt.compare(password, user.password);
       if (!match) {
-        errors.general = "Wrong credentials"
-        throw new UserInputError("Wrong credentials", { errors })
+        errors.general = "Wrong credentials";
+        throw new UserInputError("Wrong credentials", { errors });
       }
-        const token = generateToken(user)
-        return {
-          ...user._doc,
-          id: user._id,
-          token,
-        }
+      const token = generateToken(user);
+      return {
+        ...user._doc,
+        id: user._id,
+        token,
+      };
     },
     async register(
       _,
-      {registerInput: {username,email,phone,password, confirmPassword}}
+      { registerInput: { username, email, phone, password, confirmPassword } }
     ) {
       // Validate user data
       const { valid, errors } = validateRegisterInput(
@@ -59,56 +60,74 @@ module.exports = {
         phone,
         password,
         confirmPassword
-      )
+      );
 
       if (!valid) {
-        throw new UserInputError("Errors", {errors})
+        throw new UserInputError("Errors", { errors });
       }
       // Make sure user doesnt already exist
-      const user = await User.findOne({ username })
+      const user = await User.findOne({ username });
       if (user) {
         throw new UserInputError("Username is taken", {
           errors: {
-            username: "This username is taken"
+            username: "This username is taken",
           },
-        })
+        });
       }
-      const emailfield = await User.findOne({ email })
+      const emailfield = await User.findOne({ email });
       if (emailfield) {
-         throw new UserInputError("Email in use", {
+        throw new UserInputError("Email in use", {
           errors: {
-            email: "This email is registered"
+            email: "This email is registered",
           },
-        })
+        });
       }
-     const phonefield = await User.findOne({ phone })
+      const phonefield = await User.findOne({ phone });
       if (phonefield) {
-         throw new UserInputError("Phone number in use", {
+        throw new UserInputError("Phone number in use", {
           errors: {
-            phone: "This phone is registered"
+            phone: "This phone is registered",
           },
-        })
+        });
       }
 
       // hash password and create an auth token
-      password = await bcrypt.hash(password, 12)
-      
+      password = await bcrypt.hash(password, 12);
+
       const newUser = new User({
         email,
         phone,
         username,
         password,
         createdAt: new Date().toISOString(),
-      })
+      });
 
-      const res = await newUser.save()
-      const token = generateToken(res)
-   
+      const res = await newUser.save();
+      const token = generateToken(res);
+
       return {
         ...res._doc,
         id: res._id,
         token,
-   }
+      };
+    },
+    async followUser(_, { userId }, context) {
+      const { username } = checkAuth(context);
+      const user = await User.findById(userId);
+      if (user) {
+        if (user.followers.find((follower) => follower.username === username)) {
+          // post already liked, unlike it
+          user.followers = user.followers.filter((follower) => follower.username !== username);
+        } else {
+          // Not liked, like post
+          user.followers.push({
+            username,
+            createdAt: new Date().toISOString(),
+          });
+        }
+        await user.save();
+        return user;
+      }
     },
   },
-}
+};

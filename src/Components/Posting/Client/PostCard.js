@@ -8,11 +8,13 @@ import { FaRegCommentDots } from "react-icons/fa";
 import LikeButton from "./LikeButton";
 import { useParams } from "react-router-dom";
 import gql from "graphql-tag";
+import FollowButton from "./FollowButton";
 
 dayjs.extend(relativeTime);
 
 const PostCard = ({
-  post: { body, createdAt, id, username, likeCount, commentCount, likes },
+  post: { body, createdAt, id, username, likeCount, commentCount, likes, followerCount, followers },
+   
 }) => {
   const { user } = useContext(AuthContext);
   const { postId } = useParams();
@@ -59,6 +61,7 @@ const PostCard = ({
         </Link>
         <div className="postIcons">
           <LikeButton user={user} post={{ id, likes, likeCount }} />
+           <FollowButton user={user} post={{id, followers, followerCount }} />
           <button className="commentIconButton" onClick={commentOnPost}>
             <Link to={`/posts/${id}`} className="commentIcon">
               <FaRegCommentDots />
