@@ -17,7 +17,7 @@ const PostCard = ({
    
 }) => {
   const { user } = useContext(AuthContext);
-  const { postId } = useParams();
+  const { postId,userId } = useParams();
   const commentInputRef = useRef(null);
   const [comment, setComment] = useState("");
 
@@ -32,6 +32,7 @@ const PostCard = ({
     },
     variables: {
       postId,
+      userId,
       body: comment,
     },
   });

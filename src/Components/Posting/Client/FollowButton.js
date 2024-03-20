@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa"; // assuming CiHeart is an icon component you're using
+import { FaHeart } from "react-icons/fa";
 import { SlUserFollow } from "react-icons/sl";
 
-const FollowButton = ({ post: { id, followerCount, followers }, user }) => {
+const FollowButton = ({ user: { id, followerCount, followers }, user }) => {
   const [followed, setFollowed] = useState(false);
 
   useEffect(() => {
