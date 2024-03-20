@@ -15,7 +15,8 @@ const context = useContext(AuthContext)
 
 const {onChange, onSubmit, values} = useForm(registerUser, {
  username: "",
-    email: "",
+  email: "",
+    phone: "",
     password: "",
     confirmPassword: "",
 })
@@ -33,7 +34,15 @@ const {onChange, onSubmit, values} = useForm(registerUser, {
   });
 
   if (loading) {
-    return <h1>Loading ...</h1>;
+    // return <h1>Loading ...</h1>;
+ return (
+      <div>
+        <img className="loadingImg" src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" />
+                <h1>Loading ...</h1>
+
+      </div>
+ )
+
   }
 
 function registerUser() {
@@ -61,7 +70,7 @@ addUser()
             <label htmlFor="">Email</label>
             <input
             className="loginInput"
-              placeholder="Email or Phone"
+              placeholder="Email"
               type="email"
               required
               name="email"
@@ -69,6 +78,21 @@ addUser()
               onChange={onChange}
             ></input>
           </div>
+
+<div className="usernameDiv">
+            <label htmlFor="">Phone</label>
+            <input
+            className="loginInput"
+              placeholder="+254"
+              type="text"
+              required
+              name="phone"
+              value={values.phone}
+              onChange={onChange}
+            ></input>
+          </div>
+
+
           <div className="passwordDiv">
             <label>Password</label>
             <input
@@ -132,12 +156,14 @@ const REGISTER_USER = gql`
       registerInput: {
         username: $username
         email: $email
+        phone: $phone
         password: $password
         confirmPassword: $confirmPassword
       }
     ) {
       id
       email
+      phone
       username
       createdAt
       token
