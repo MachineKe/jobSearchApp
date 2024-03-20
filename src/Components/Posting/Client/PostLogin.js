@@ -105,7 +105,6 @@ const LOGIN_USER = gql`
     login(username: $username, password: $password) {
       id
       email
-      phone
       username
       createdAt
       token

@@ -17,6 +17,7 @@ import "./Components/Account/Account2.css";
 import "./Components/Chat/Chat.css";
 import "./Components/NavBar/NewNav.css"
 import "./Components/BeyondChat/Client/BC.css"
+import "./Components/Posting/Client/Loading.css"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
