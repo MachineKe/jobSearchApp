@@ -61,7 +61,7 @@ const PostCard = ({
         </Link>
         <div className="postIcons">
           <LikeButton user={user} post={{ id, likes, likeCount }} />
-           <FollowButton user={user} post={{id, followers, followerCount }} />
+           {/* <FollowButton user={user} post={{id, followers, followerCount }} /> */}
           <button className="commentIconButton" onClick={commentOnPost}>
             <Link to={`/posts/${id}`} className="commentIcon">
               <FaRegCommentDots />
