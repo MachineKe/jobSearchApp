@@ -149,6 +149,7 @@ const REGISTER_USER = gql`
   mutation register(
     $username: String!
     $email: String!
+    $phone: String!
     $password: String!
     $confirmPassword: String!
   ) {

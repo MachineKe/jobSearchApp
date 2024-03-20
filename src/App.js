@@ -46,21 +46,21 @@ loadDevMessages();
 loadErrorMessages();
 const App = () => {
 
-  axios.defaults.baseURL = "http://localhost:4040"
-  axios.defaults.withCredentials = true
+  // axios.defaults.baseURL = "http://localhost:4040"
+  // axios.defaults.withCredentials = true
 
   const { user, logout } = useContext(AuthContext);
-  // const httpLink = createHttpLink({
-  //   uri: "https://beyondjobsuserpostsbackend.onrender.com/",
-  // });
-const httpLink1 = createHttpLink({
-  uri: 'https://beyondjobsuserpostsbackend.onrender.com/graphql',
-});
+  const httpLink = createHttpLink({
+    uri: "https://beyondjobsuserpostsbackend.onrender.com/",
+  });
+// const httpLink1 = createHttpLink({
+//   uri: 'https://beyondjobsuserpostsbackend.onrender.com/graphql',
+// });
 
 
-const httpLink2 = createHttpLink({
-  uri: 'http://localhost:4000',
-});
+// const httpLink2 = createHttpLink({
+//   uri: 'http://localhost:4000',
+// });
 
 const authLink = setContext(()=>{
   const token = localStorage.getItem('jwtToken')
@@ -73,15 +73,15 @@ const authLink = setContext(()=>{
 
 
 
-  // const client = new ApolloClient({
-  //   link: authLink.concat(httpLink),
-  //   cache: new InMemoryCache(),
-  // });
-
-const client = new ApolloClient({
-    link: authLink.concat(httpLink1, httpLink2),
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
+
+// const client = new ApolloClient({
+//     link: authLink.concat(httpLink1, httpLink2),
+//     cache: new InMemoryCache(),
+//   });
 
   return (
     <div className="App">
